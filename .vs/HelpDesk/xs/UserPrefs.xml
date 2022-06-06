@@ -1,13 +1,10 @@
-﻿<Properties StartupConfiguration="{073B83E1-327B-4AFE-90F5-10F90FE27F43}|Default">
-  <MonoDevelop.Ide.ItemProperties.HelpDesk.myApp PreferredExecutionTarget="MonoDevelop.Default" />
+﻿<Properties StartupConfiguration="{9BED3574-B2EF-4585-A64C-90DF09F80A1E}|Default">
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="HelpDesk" expanded="True">
-            <Node name="HelpDesk" expanded="True">
-              <Node name="myApp" selected="True" />
-            </Node>
+          <Node name="Helpdesk" expanded="True">
+            <Node name="Helpdesk.Angular" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -19,4 +16,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Helpdesk.Angular PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

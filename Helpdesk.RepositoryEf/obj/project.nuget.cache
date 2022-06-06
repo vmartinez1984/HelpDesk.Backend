@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LczutzTpqcsBOUFKgllyaaGP8DTVEli4CqcyeBmzeAWl1UOsIWbL0EstUGJTsalmS8MWPEJQ3mPJdSyvavSoKQ==",
+  "dgSpecHash": "b/I3S4VbSMQT/s8ufezwSR4fRkurpi6O9hwZC6i4EYucDka9TpPG0dZ5+jgGIRGWbgAY2afI4KgbUHFVoVepUQ==",
   "success": true,
-  "projectFilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/helpdesk.RepositoryEf/helpdesk.RepositoryEf.csproj",
+  "projectFilePath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/vmartinez/.nuget/packages/": {}
+    "C:\\Users\\vmartinez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/helpdesk.RepositoryEf/helpdesk.RepositoryEf.csproj",
+      "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\helpdesk.RepositoryEf.csproj",
       "projectName": "helpdesk.RepositoryEf",
-      "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/helpdesk.RepositoryEf/helpdesk.RepositoryEf.csproj",
-      "packagesPath": "/home/vmartinez/.nuget/packages/",
-      "outputPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/helpdesk.RepositoryEf/obj/",
+      "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\helpdesk.RepositoryEf.csproj",
+      "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/vmartinez/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
