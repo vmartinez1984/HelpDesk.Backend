@@ -1,11 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Helpdesk.Core.Dtos.Inputs;
+using Helpdesk.Core.Dtos.Outputs;
 
 namespace Helpdesk.Core.Interfaces.InterfaceBl
 {
-    public interface IBaseBl
+    public interface IBaseBl<T, U> where T : class
     {
         Task<int> AddAsync(T item);
         Task DeleteAsync(int id);
@@ -14,5 +14,5 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task UpdateAsync(T item, int id);
     }
 
-    public interface IUser: IBaseBl{}
+    public interface IUser: IBaseBl<UserDtoIn, UserDtoOut>{}
 }

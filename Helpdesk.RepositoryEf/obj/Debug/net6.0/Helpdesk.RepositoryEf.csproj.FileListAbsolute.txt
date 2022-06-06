@@ -1,0 +1,12 @@
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\bin\Debug\net6.0\Helpdesk.RepositoryEf.deps.json
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\bin\Debug\net6.0\Helpdesk.RepositoryEf.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\bin\Debug\net6.0\Helpdesk.RepositoryEf.pdb
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.csproj.AssemblyReference.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.AssemblyInfoInputs.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.AssemblyInfo.cs
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.csproj.CoreCompileInputs.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\refint\Helpdesk.RepositoryEf.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\Helpdesk.RepositoryEf.pdb
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.RepositoryEf\obj\Debug\net6.0\ref\Helpdesk.RepositoryEf.dll
