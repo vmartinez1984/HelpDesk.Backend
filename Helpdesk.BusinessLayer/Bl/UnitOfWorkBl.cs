@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Helpdesk.Core.Interfaces.InterfaceBl;
 
 namespace Helpdesk.BusinessLayer.Bl
 {

@@ -1,5 +1,8 @@
-﻿<Properties StartupConfiguration="{9BED3574-B2EF-4585-A64C-90DF09F80A1E}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Helpdesk.RepositoryEf/AppDbContext.cs">
+    <Files>
+      <File FileName="Helpdesk.RepositoryEf/AppDbContext.cs" Line="12" Column="30" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">

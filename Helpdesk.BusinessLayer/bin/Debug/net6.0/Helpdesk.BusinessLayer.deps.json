@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Helpdesk.BusinessLayer/1.0.0": {
+        "dependencies": {
+          "Helpdesk.Core": "1.0.0"
+        },
+        "runtime": {
+          "Helpdesk.BusinessLayer.dll": {}
+        }
+      },
+      "Helpdesk.Core/1.0.0": {
+        "runtime": {
+          "Helpdesk.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Helpdesk.BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Helpdesk.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
