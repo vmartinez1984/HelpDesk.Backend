@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Angular", "Helpdesk.Angular\Helpdesk.Angular.csproj", "{9BED3574-B2EF-4585-A64C-90DF09F80A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.BusinessLayer", "Helpdesk.BusinessLayer\Helpdesk.BusinessLayer.csproj", "{59E597EF-035D-463A-A8D4-26397A6FFC4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Core", "Helpdesk.Core\Helpdesk.Core.csproj", "{5B3E8811-8607-4F0B-855C-F8A3A32CEAD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helpdesk.RepositoryEf", "Helpdesk.RepositoryEf\helpdesk.RepositoryEf.csproj", "{27E88F31-C430-41D6-8695-592553C17334}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BED3574-B2EF-4585-A64C-90DF09F80A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BED3574-B2EF-4585-A64C-90DF09F80A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BED3574-B2EF-4585-A64C-90DF09F80A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BED3574-B2EF-4585-A64C-90DF09F80A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E597EF-035D-463A-A8D4-26397A6FFC4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E597EF-035D-463A-A8D4-26397A6FFC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E597EF-035D-463A-A8D4-26397A6FFC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E597EF-035D-463A-A8D4-26397A6FFC4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3E8811-8607-4F0B-855C-F8A3A32CEAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3E8811-8607-4F0B-855C-F8A3A32CEAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3E8811-8607-4F0B-855C-F8A3A32CEAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3E8811-8607-4F0B-855C-F8A3A32CEAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E88F31-C430-41D6-8695-592553C17334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E88F31-C430-41D6-8695-592553C17334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E88F31-C430-41D6-8695-592553C17334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E88F31-C430-41D6-8695-592553C17334}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{073B83E1-327B-4AFE-90F5-10F90FE27F43}|Default">
+  <MonoDevelop.Ide.ItemProperties.HelpDesk.myApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HelpDesk" expanded="True">
+            <Node name="HelpDesk" expanded="True">
+              <Node name="myApp" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

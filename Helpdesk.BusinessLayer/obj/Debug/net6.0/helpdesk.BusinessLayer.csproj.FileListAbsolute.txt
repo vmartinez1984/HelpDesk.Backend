@@ -1,0 +1,5 @@
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/Debug/net6.0/helpdesk.BusinessLayer.csproj.AssemblyReference.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/Debug/net6.0/helpdesk.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/Debug/net6.0/helpdesk.BusinessLayer.AssemblyInfoInputs.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/Debug/net6.0/helpdesk.BusinessLayer.AssemblyInfo.cs
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/Debug/net6.0/helpdesk.BusinessLayer.csproj.CoreCompileInputs.cache
