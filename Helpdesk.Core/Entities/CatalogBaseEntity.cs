@@ -11,7 +11,7 @@ namespace Helpdesk.Core.Entities
         public string Name { get; set; }
     }
 
-    public class BaseEntity : CatalogoEntity
+    public class BaseEntity : CatalogBaseEntity
     {
 
         public DateTime DateRegister { get; set; }
