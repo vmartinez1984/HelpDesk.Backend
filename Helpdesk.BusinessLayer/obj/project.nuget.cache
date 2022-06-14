@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ijo89dX0X8MLW1PgQF38bfWBmNj2zZJJCXqNY4iFMp/1M9YDMJu143sB9mqeTzSkeTHNHtPvLLm5GvSENAiegw==",
+  "dgSpecHash": "3EJHWppSA2RpV6bqfFprGnZ2FBAbokbbscn3Q4M90V9Okv17pvvZGFJz21D5j9ym72RwhZrAYgo1nfJsbvl/Sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
+  "expectedPackageFiles": [
+    "/home/vmartinez/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
+    "/home/vmartinez/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

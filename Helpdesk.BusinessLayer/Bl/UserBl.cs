@@ -1,39 +1,74 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
+using Helpdesk.Core.Entities;
 using Helpdesk.Core.Interfaces.InterfaceBl;
+using Helpdesk.Core.Interfaces.IRepositories;
 
 namespace Helpdesk.BusinessLayer.Bl
 {
-    public class UserBl : IUser
+    public class UserBl : IUserBl
     {
-        public Task<int> AddAsync(UserDtoIn item)
+        private IRepository _repository;
+        private IMapper _mapper;
+
+        public UserBl(IRepository repository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+            _mapper = mapper;
         }
 
-        public Task DeleteAsync(int id)
+        public async Task<int> AddAsync(UserDtoIn item)
         {
-            throw new NotImplementedException();
+            UserEntity entity;
+
+            entity = _mapper.Map<UserEntity>(item);
+            entity.Id = await _repository.User.AddAsync(entity);
+
+            return entity.Id;
         }
 
-        public Task<UserDtoOut> GetAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _repository.User.DeleteAsync(id, 0);
         }
 
-        public Task<List<UserDtoOut>> GetAsync()
+        public async Task<UserDtoOut> GetAsync(int id)
         {
-            throw new NotImplementedException();
+            UserEntity entity;
+            UserDtoOut item;
+
+            entity = await _repository.User.GetAsync(id);
+            item = _mapper.Map<UserDtoOut>(entity);
+
+            return item;
         }
 
-        public Task UpdateAsync(UserDtoIn item, int id)
+        public async Task<List<UserDtoOut>> GetAsync()
         {
-            throw new NotImplementedException();
+            List<UserEntity> entities;
+            List<UserDtoOut> list;
+
+            entities = await _repository.User.GetAsync();
+            list = _mapper.Map<List<UserDtoOut>>(entities);
+
+            return list;
         }
-    }
+
+        public async Task UpdateAsync(UserDtoIn item, int id)
+        {
+            UserEntity entity;
+
+            entity = await _repository.User.GetAsync(id);
+            // entity.Name = item.Name;
+            // entity.Password = item.Password;
+            await _repository.User.UpdateAsync(entity);
+        }
+        
+    }//end class
 }

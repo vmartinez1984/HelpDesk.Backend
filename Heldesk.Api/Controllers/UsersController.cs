@@ -15,9 +15,9 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_unitOfWorkBl.User.GetAsync());
+            return Ok (await _unitOfWorkBl.User.GetAsync());
         }
     }
 }

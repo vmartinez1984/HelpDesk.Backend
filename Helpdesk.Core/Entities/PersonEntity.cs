@@ -1,14 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace helpdesk.core.entities
+namespace Helpdesk.Core.Entities
 {
-    public class PersonEntity
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
+    public class PersonEntity: BaseEntity
+    {        
+
+        [StringLength(255)]
         public string LastName { get; set; }
+
+        [ForeignKey(nameof(UserEntity))]
+        public int UserId { get; set; }
+
+        [ForeignKey(nameof(AgencyEntity))]
+        public int AgencyId { get; set; }
     }
 }
