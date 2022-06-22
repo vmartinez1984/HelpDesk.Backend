@@ -1,33 +1,42 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Helpdesk.Core.Dtos.Inputs
 {
     public class AgencyDtoIn
-    {       
+    {
+        [Required]
         public int AgencyTypeId { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string Code { get; set; }
 
+        [Required]
+        [StringLength(255)]
+        [MinLength(5)]
+        public string Name { get; set; }
+
+        [Required]
         [StringLength(255)]
         public string Address { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string State { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string TownHall { get; set; }
 
+        [Required]
         [StringLength(120)]
         public string Settlement { get; set; }
 
+        [Required]
         [StringLength(5)]
         public string ZipCode { get; set; }
-        
+
+        [Required]
         public int UserId { get; set; }
 
         [StringLength(1000)]

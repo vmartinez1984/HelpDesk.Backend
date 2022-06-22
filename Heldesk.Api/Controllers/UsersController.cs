@@ -1,4 +1,5 @@
-﻿using Helpdesk.Core.Interfaces.InterfaceBl;
+﻿using Helpdesk.Core.Dtos.Inputs;
+using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Heldesk.Api.Controllers
@@ -17,7 +18,38 @@ namespace Heldesk.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok (await _unitOfWorkBl.User.GetAsync());
+            return Ok(await _unitOfWorkBl.User.GetAsync());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await _unitOfWorkBl.User.GetAsync(id));
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, UserDtoIn item)
+        {
+            await _unitOfWorkBl.User.UpdateAsync(item, id);
+            return NoContent();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(UserDtoIn item)
+        {
+            int id;
+
+            id = await _unitOfWorkBl.User.AddAsync(item);
+
+            return Created($"/Api/Users/{id}", new { Id = id });
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _unitOfWorkBl.User.DeleteAsync(id);
+
+            return Accepted();
         }
     }
 }

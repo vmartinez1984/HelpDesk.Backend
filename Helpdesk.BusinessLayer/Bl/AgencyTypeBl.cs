@@ -33,9 +33,15 @@ namespace Helpdesk.BusinessLayer.Bl
             await _repository.AgencyType.DeleteAsync(id, 1);
         }
 
-        public Task<AgencyTypeDtoOut> GetAsync(int id)
+        public async Task<AgencyTypeDtoOut> GetAsync(int id)
         {
-            throw new NotImplementedException();
+            AgencyTypeDtoOut item;
+            AgencyTypeEntity entity;
+
+            entity = await _repository.AgencyType.GetAsync(id);
+            item = _mapper.Map<AgencyTypeDtoOut>(entity);
+
+            return item;
         }
 
         public async Task<List<AgencyTypeDtoOut>> GetAsync()
@@ -58,5 +64,5 @@ namespace Helpdesk.BusinessLayer.Bl
 
             await _repository.AgencyType.UpdateAsync(entity);
         }
-    }
+    }//end class
 }

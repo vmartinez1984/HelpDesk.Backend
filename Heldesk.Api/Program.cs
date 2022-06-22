@@ -6,6 +6,7 @@ using Helpdesk.Core.Interfaces.IRepositories;
 using Helpdesk.Core.Mappers;
 using Helpdesk.RepositoryEf;
 using Helpdesk.RepositoryEf.Repositories;
+using Heldesk.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,12 +26,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AppDbContext>();
 //Repositories
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IAgencyTypeRepository, AgencyTypeRepository>();
 builder.Services.AddScoped<IAgencyRepository, AgencyRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRepository, RepositoryEf>();
 //Business layer
+builder.Services.AddScoped<IPersonBl, PersonBl>();
 builder.Services.AddScoped<IAgencyBl, AgencyBl>();
 builder.Services.AddScoped<IAgencyTypeBl, AgencyTypeBl>();
 builder.Services.AddScoped<IProjectBl, ProjectBl>();
@@ -55,6 +58,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+//app.UseMiddleware<ExampleMiddleware>();
+
 app.UseCors();
 
 app.UseHttpsRedirection();

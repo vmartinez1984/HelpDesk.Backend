@@ -18,6 +18,16 @@ namespace Heldesk.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(AgencyDtoIn item)
         {
+            var agencyType = await _unitOfWorkBl.AgencyType.GetAsync(item.AgencyTypeId);
+            if(agencyType is null){
+                ModelState.AddModelError(nameof(item.AgencyTypeId),"The agencyTypeId is not valid");
+                return Conflict(ModelState);
+            }
+            var user = await _unitOfWorkBl.User.GetAsync(item.UserId);
+            if(user is null){
+                ModelState.AddModelError("UserId","ThisuserId is not valid");
+                return Conflict(ModelState);
+            }
             int id;
 
             id = await _unitOfWorkBl.Agency.AddAsync(item);
@@ -46,9 +56,20 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(int id, AgencyTypeDtoIn item)
+        public async Task<IActionResult> Update(int id, AgencyDtoIn item)
         {
-            await _unitOfWorkBl.AgencyType.UpdateAsync(item, id);
+            var agencyType = await _unitOfWorkBl.AgencyType.GetAsync(item.AgencyTypeId);
+            if(agencyType is null){
+                ModelState.AddModelError(nameof(item.AgencyTypeId),"The agencyTypeId is not valid");
+                return Conflict(ModelState);
+            }
+            var user = await _unitOfWorkBl.User.GetAsync(item.UserId);
+            if(user is null){
+                ModelState.AddModelError("UserId","The userId is not valid");
+                return Conflict(ModelState);
+            }
+
+            await _unitOfWorkBl.Agency.UpdateAsync(item, id);
 
             return Accepted();
         }

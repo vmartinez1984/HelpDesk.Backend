@@ -7,8 +7,7 @@ namespace Heldesk.Api.Controllers
     [ApiController]
     [Route("Api/[controller]")]
     public class ProjectsController : ControllerBase
-    {
-        private readonly ILogger<ProjectsController> _logger;
+    {        
         private IUnitOfWorkBl _unitOfWorkBl;
 
         public ProjectsController(IUnitOfWorkBl unitOfWorkBl)
