@@ -36,7 +36,10 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task UpdateAsync(T entity);
     }
 
-    public interface IUserRepository : IBaseRepository<UserEntity> { }
+    public interface IUserRepository : IBaseRepository<UserEntity>
+    {
+        Task<UserEntity> GetAsync(string userName);
+    }
 
     public interface IProjectRepository : IBaseRepository<ProjectEntity> { }
 

@@ -45,6 +45,11 @@ namespace Helpdesk.RepositoryEf.Repositories
             return await _appDbContext.User.FirstOrDefaultAsync(x=> x.Id == id);
         }
 
+        public async Task<UserEntity> GetAsync(string userName)
+        {
+            return await _appDbContext.User.FirstOrDefaultAsync(x=> x.Name == userName);
+        }
+
         public async Task UpdateAsync(UserEntity entity)
         {
             _appDbContext.User.Update(entity);

@@ -39,7 +39,7 @@ namespace Heldesk.Api.Controllers
             return Accepted();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id){
 
             await _unitOfWorkBl.Project.DeleteAsync(id);

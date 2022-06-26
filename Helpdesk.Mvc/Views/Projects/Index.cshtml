@@ -1,0 +1,44 @@
+@model IEnumerable<Helpdesk.Core.Dtos.Outputs.ProjectDtoOut>
+@{
+    ViewBag.Title = "Proyecto";
+}
+
+<div class="container">
+    <h2>Lista de proyectos</h2>
+    <p>
+        @Html.ActionLink("Agregar nuevo", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRegistration)
+                </td>
+                <td>
+                    <a href="~/Projects/Edit/@item.Id" class="btn btn-warning text-white">
+                        <i class="fas fa-edit text-white"></i>
+                        Editar
+                    </a>
+
+                    <a href="~/Projects/Delete/@item.Id" class="btn btn-danger">
+                        <i class="fas fa-eraser text-white"></i>
+                        Borrar
+                    </a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -20,7 +20,10 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task UpdateAsync(T item, int id);
     }
 
-    public interface IUserBl : IBaseBl<UserDtoIn, UserDtoOut> { }
+    public interface IUserBl : IBaseBl<UserDtoIn, UserDtoOut>
+    {
+        Task<UserDtoOut> Login(LoginDto login);
+    }
 
     public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut> { }
 

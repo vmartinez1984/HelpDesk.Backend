@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
@@ -58,6 +53,20 @@ namespace Helpdesk.BusinessLayer.Bl
             list = _mapper.Map<List<UserDtoOut>>(entities);
 
             return list;
+        }
+
+        public async Task<UserDtoOut> Login(LoginDto login)
+        {
+            UserEntity entity;
+            UserDtoOut item;
+
+            entity = await _repository.User.GetAsync(login.User);
+            if (entity.Password == login.Password)
+                item = _mapper.Map<UserDtoOut>(entity);
+            else
+                item = null;
+
+            return item;
         }
 
         public async Task UpdateAsync(UserDtoIn item, int id)

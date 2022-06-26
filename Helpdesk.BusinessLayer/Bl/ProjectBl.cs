@@ -32,9 +32,15 @@ namespace Helpdesk.BusinessLayer.Bl
             await _repository.Project.DeleteAsync(id, 1);
         }
 
-        public Task<ProjectDtoOut> GetAsync(int id)
+        public async Task<ProjectDtoOut> GetAsync(int id)
         {
-            throw new NotImplementedException();
+            ProjectEntity entity;
+            ProjectDtoOut item;
+
+            entity = await _repository.Project.GetAsync(id);
+            item = _mapper.Map<ProjectDtoOut>(entity);
+
+            return item;
         }
 
         public async Task<List<ProjectDtoOut>> GetAsync()

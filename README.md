@@ -26,4 +26,7 @@ Se coloca en el AppDbContext la cadena de conexión provisionalmente, esto solo 
 
  dotnet ef migrations remove
 
+# Para mvc Razor
+
+dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
  

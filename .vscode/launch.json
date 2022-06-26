@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Heldesk.Api/bin/Debug/net6.0/Heldesk.Api.dll",
+            "program": "${workspaceFolder}/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Mvc.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Heldesk.Api",
+            "cwd": "${workspaceFolder}/Helpdesk.Mvc",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
