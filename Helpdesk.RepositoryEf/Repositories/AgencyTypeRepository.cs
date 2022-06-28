@@ -37,9 +37,9 @@ namespace Helpdesk.RepositoryEf.Repositories
              return await _appDbContext.AgencyType.Where(x => x.IsActive == true).ToListAsync();
         }
 
-        public Task<AgencyTypeEntity> GetAsync(int id)
+        public async Task<AgencyTypeEntity> GetAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _appDbContext.AgencyType.Where(x => x.Id == id).FirstAsync();
         }
 
         public async Task UpdateAsync(AgencyTypeEntity entity)

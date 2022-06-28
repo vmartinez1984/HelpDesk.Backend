@@ -4,6 +4,7 @@ using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Helpdesk.Core.Interfaces.IRepositories;
+using Newtonsoft.Json;
 
 namespace Helpdesk.BusinessLayer.Bl
 {
@@ -40,6 +41,10 @@ namespace Helpdesk.BusinessLayer.Bl
 
             entity = await _repository.Agency.GetAsync(id);
             item = _mapper.Map<AgencyDtoOut>(entity);
+            var agencyType = await _repository.AgencyType.GetAsync(item.AgencyTypeId);
+            item.AgencyTypeName = agencyType.Name;
+            var project = await _repository.Project.GetAsync(item.ProjectId);
+            item.ProjectName = project.Name;
 
             return item;
         }
@@ -69,12 +74,23 @@ namespace Helpdesk.BusinessLayer.Bl
             AgencyEntity entity;
 
             entity = await _repository.Agency.GetAsync(id);
-            var entityActualizada = _mapper.Map<AgencyEntity>(item);
-            entityActualizada.Id = id;
-            entityActualizada.DateRegistration = entity.DateRegistration;
-            entityActualizada.IsActive = entity.IsActive;
+            var entityUpdate = _mapper.Map<AgencyEntity>(item);
+            entity.Id = id;
+            entity.Address = entityUpdate.Address;
+            entity.AgencyTypeId = entityUpdate.AgencyTypeId;
+            entity.Code = entityUpdate.Code;
+            entity.email = entityUpdate.email;
+            entity.Log = $"Modificado por {item.UserId}, {DateTime.Now}." + JsonConvert.SerializeObject(entity) + "\n" + entity.Log;
+            entity.Name = entityUpdate.Name;
+            entity.Notes = entityUpdate.Notes;
+            entity.Phone = entityUpdate.Phone;
+            entity.ProjectId = entityUpdate.ProjectId;
+            entity.Settlement = entityUpdate.Settlement;
+            entity.State = entityUpdate.State;
+            entity.TownHall = entityUpdate.TownHall;
+            entity.ZipCode = entityUpdate.ZipCode;
 
-            await _repository.Agency.UpdateAsync(entityActualizada);
+            await _repository.Agency.UpdateAsync(entityUpdate);
         }
     }
 }

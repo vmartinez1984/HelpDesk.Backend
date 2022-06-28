@@ -44,12 +44,12 @@ namespace Helpdesk.BusinessLayer.Bl
             return item;
         }
 
-        public async Task<List<UserDtoOut>> GetAsync()
+        public async Task<List<UserDtoOut>> GetAsync(int? projectId, int? agencyId)
         {
             List<UserEntity> entities;
             List<UserDtoOut> list;
 
-            entities = await _repository.User.GetAsync();
+            entities = await _repository.User.GetAsync(projectId, agencyId);
             list = _mapper.Map<List<UserDtoOut>>(entities);
 
             return list;

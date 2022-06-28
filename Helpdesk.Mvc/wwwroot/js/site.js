@@ -26,19 +26,16 @@ function searchZipcode(zipCode) {
             if (data.length > 0) {
                 document.getElementById("State").value = data[0].state;
                 document.getElementById("TownHall").value = data[0].municipality;
+                if (document.getElementById("State_") != null)
+                    document.getElementById("State_").value = data[0].state;
+                if (document.getElementById("TownHall_") != null)
+                    document.getElementById("TownHall_").value = data[0].municipality;
+
                 var selectSettlement;
 
                 selectSettlement = document.getElementById("Settlement");
                 selectSettlement.innerHTML = "";
-                // for (i = 0; i < data.length; i++) {
-                //     var option;
-
-                //     option = document.createElement("option")
-                //     option.value = data[i].settementType + " " + data[i].settement
-                //     option.text = data[i].settementType + " " + data[i].settement
-                //     selectSettlement.appendChild(option)
-                // }
-                if(data.length > 1){
+                if (data.length > 1) {
                     option = document.createElement("option")
                     option.value = ""
                     option.text = "Seleccione"
@@ -57,3 +54,9 @@ function searchZipcode(zipCode) {
             }
         })
 }
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    zipCode = document.getElementById("ZipCode").value
+    if (zipCode.length == 5)
+        searchZipcode(zipCode)
+});

@@ -17,6 +17,19 @@ namespace Helpdesk.Core.Interfaces.IRepositories
 
         Task DeleteAsync(int id, int userId);
 
+        Task<List<T>> GetAsync(int? projectId, int? agencyId);
+
+        Task<T> GetAsync(int id);
+
+        Task UpdateAsync(T entity);
+    }
+
+    public interface IBaseRepositoryCatalog<T> where T : class
+    {
+        Task<int> AddAsync(T entity);
+
+        Task DeleteAsync(int id, int userId);
+
         Task<List<T>> GetAsync();
 
         Task<T> GetAsync(int id);
@@ -38,11 +51,13 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     public interface IUserRepository : IBaseRepository<UserEntity>
     {
         Task<UserEntity> GetAsync(string userName);
+
+        Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId);
     }
 
-    public interface IProjectRepository : IBaseRepository<ProjectEntity> { }
+    public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity> { }
 
-    public interface IAgencyTypeRepository : IBaseRepository<AgencyTypeEntity> { }
+    public interface IAgencyTypeRepository : IBaseRepositoryCatalog<AgencyTypeEntity> { }
 
     public interface IAgencyRepository : IBaseRepository02<AgencyEntity>
     {
@@ -50,8 +65,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     }
 
     public interface IPersonRepository : IBaseRepository02<PersonEntity>
-    {
-        Task<List<PersonEntity>> GetListByAgencyId(int agencyId);
-        Task<List<PersonEntity>> GetListByProjecId(int projectId);
+    {        
+        Task<List<PersonEntity>> GetAsync(int? projectId, int? agencyId);
     }
 }

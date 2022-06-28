@@ -16,9 +16,9 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(int? projectId, int? agencyId)
         {
-            return Ok(await _unitOfWorkBl.User.GetAsync());
+            return Ok(await _unitOfWorkBl.User.GetAsync(projectId, agencyId));
         }
 
         [HttpGet("{id}")]

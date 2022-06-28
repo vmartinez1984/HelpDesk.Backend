@@ -37,12 +37,7 @@ namespace Helpdesk.RepositoryEf.Repositories
             return await _appDbContext.Person.FirstOrDefaultAsync(x=> x.Id == id);
         }
 
-        public Task<List<PersonEntity>> GetListByAgencyId(int agencyId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<PersonEntity>> GetListByProjecId(int projectId)
+        public Task<List<PersonEntity>> GetAsync(int? projectId, int? agencyId)
         {
             throw new NotImplementedException();
         }

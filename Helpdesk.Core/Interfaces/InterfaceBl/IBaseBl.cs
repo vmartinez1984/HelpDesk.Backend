@@ -12,6 +12,14 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task UpdateAsync(T item, int id);
     }
 
+    public interface IBaseBl01<T, U> where T : class
+    {
+        Task<int> AddAsync(T item);
+        Task DeleteAsync(int id);
+        Task<U> GetAsync(int id);
+        Task UpdateAsync(T item, int id);
+    }
+
     public interface IBase02Bl<T, U> where T : class
     {
         Task<int> AddAsync(T item);
@@ -20,14 +28,19 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task UpdateAsync(T item, int id);
     }
 
-    public interface IUserBl : IBaseBl<UserDtoIn, UserDtoOut>
+    public interface IUserBl : IBaseBl01<UserDtoIn, UserDtoOut>
     {
         Task<UserDtoOut> Login(LoginDto login);
+
+        Task<List<UserDtoOut>> GetAsync(int? projectId, int? agencyId);
     }
 
     public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut> { }
 
-    public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut> { }
+    public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut>
+    {
+
+    }
 
     public interface IAgencyBl : IBase02Bl<AgencyDtoIn, AgencyDtoOut>
     {
@@ -36,8 +49,7 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
 
     public interface IPersonBl : IBase02Bl<PersonDtoIn, PersonDtoOut>
     {
-        Task<List<PersonDtoOut>> GetListByAgencyIdAsync(int agencyId);
-        Task<List<PersonDtoOut>> GetListByProjectIdAsync(int projectId);
+        Task<List<PersonDtoOut>> GetAsync(int? projectId, int? agencyId);
     }
 
     public interface IZipCodeBl

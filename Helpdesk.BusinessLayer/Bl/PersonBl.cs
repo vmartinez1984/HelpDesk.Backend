@@ -21,12 +21,7 @@ namespace Helpdesk.BusinessLayer.Bl
             throw new NotImplementedException();
         }
 
-        public Task<List<PersonDtoOut>> GetListByAgencyIdAsync(int agencyId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<PersonDtoOut>> GetListByProjectIdAsync(int projectId)
+        public Task<List<PersonDtoOut>> GetAsync(int? projectId, int? agencyId)
         {
             throw new NotImplementedException();
         }

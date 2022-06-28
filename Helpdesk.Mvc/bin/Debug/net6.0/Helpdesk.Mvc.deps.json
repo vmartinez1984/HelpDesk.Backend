@@ -39,6 +39,7 @@
           "Helpdesk.RepositoryEf": "1.0.0",
           "Helpdesk.Services.ZipCodes": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.6",
+          "Newtonsoft.Json": "13.0.1",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "6.0.0.0",
@@ -1023,7 +1024,8 @@
       "Helpdesk.BusinessLayer/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "Helpdesk.Core": "1.0.0"
+          "Helpdesk.Core": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Helpdesk.BusinessLayer.dll": {}

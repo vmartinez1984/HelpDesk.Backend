@@ -907,7 +907,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "Helpdesk.Core": "1.0.0"
+          "Helpdesk.Core": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Helpdesk.BusinessLayer.dll": {}
@@ -2710,7 +2711,8 @@
       "Helpdesk.Core >= 1.0.0",
       "Helpdesk.RepositoryEf >= 1.0.0",
       "Helpdesk.Services.ZipCodes >= 1.0.0",
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.6"
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.6",
+      "Newtonsoft.Json >= 13.0.1"
     ]
   },
   "packageFolders": {
@@ -2766,6 +2768,10 @@
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
             "version": "[6.0.6, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
           }
         },
         "imports": [

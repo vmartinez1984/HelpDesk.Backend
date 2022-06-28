@@ -13,6 +13,7 @@ namespace Helpdesk.RepositoryEf.Repositories
         {
             _appDbContext = appDbContext;
         }
+        
         public async Task<int> AddAsync(ProjectEntity entity)
         {
             _appDbContext.Project.Add(entity);

@@ -31,7 +31,7 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<UserEntity>> GetAsync()
+        public async Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId)
         {
             List<UserEntity> entities;
 

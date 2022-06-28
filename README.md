@@ -35,3 +35,11 @@ dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
  https://ajaxhispano.com/ask/autenticacion-personalizada-en-asp-net-core-94222/
 
  Falta evaluar la autorización pero de momento ya funciona
+
+
+ Se agrega el servico de códigos postales
+
+
+ # NewtonSoft
+
+ dotnet add package Newtonsoft.Json --version 13.0.1

@@ -63,7 +63,7 @@ namespace Helpdesk.Core.Dtos.Inputs
 
         [StringLength(255)]
         [Display(Name = "Correo")]
-        public string? email;
+        public string? email { get; set; }
 
     }//end class
 }
