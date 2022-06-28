@@ -1,3 +1,4 @@
+using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
@@ -15,16 +16,16 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        public async Task<IActionResult> Index(int? projectId, int? agencyId)
-        {
-            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
+        // public async Task<IActionResult> Index()
+        // {
+        //     ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
 
-            List<PersonDtoOut> list;
+        //     List<PersonDtoOut> list;
 
-            list = await _unitOfWorkBl.Person.GetAsync(projectId, agencyId);
+        //     list = await _unitOfWorkBl.Person.GetAsync(projectId, agencyId);
 
-            return View(list);
-        }
+        //     return View(list);
+        // }
 
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         // public IActionResult Error()

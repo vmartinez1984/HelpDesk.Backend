@@ -44,12 +44,12 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
 
     public interface IAgencyBl : IBase02Bl<AgencyDtoIn, AgencyDtoOut>
     {
-        Task<List<AgencyDtoOut>> GetListAsync(int? projectId);
+        Task<List<AgencyDtoOut>> GetListAsync(AgencySearchDtoIn agencySearchDtoIn);
     }
 
     public interface IPersonBl : IBase02Bl<PersonDtoIn, PersonDtoOut>
     {
-        Task<List<PersonDtoOut>> GetAsync(int? projectId, int? agencyId);
+        Task<PagerGenericDtoIn<PersonDtoOut>> GetAsync(int? projectId, int? agencyId);
     }
 
     public interface IZipCodeBl

@@ -49,13 +49,15 @@ namespace Helpdesk.BusinessLayer.Bl
             return item;
         }
 
-        public async Task<List<AgencyDtoOut>> GetListAsync(int? projectId)
+        public async Task<List<AgencyDtoOut>> GetListAsync(AgencySearchDtoIn agencySearchDto)
         {
             List<AgencyDtoOut> list;
             List<AgencyEntity> entities;
             List<AgencyTypeEntity> listAgencyTypeEntities;
+            AgencySearchEntity agencySearchEntity;
 
-            entities = await _repository.Agency.GetListAsync(projectId);
+            agencySearchEntity = _mapper.Map<AgencySearchEntity>(agencySearchDto);
+            entities = await _repository.Agency.GetListAsync(agencySearchEntity);
             listAgencyTypeEntities = await _repository.AgencyType.GetAsync();
             list = _mapper.Map<List<AgencyDtoOut>>(entities);
             list.ForEach(item =>

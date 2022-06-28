@@ -57,4 +57,12 @@ namespace Helpdesk.Core.Mappers
             CreateMap<ZipCodeEntity, ZipCodeDto>().ReverseMap();
         }
     }
+
+    public class AgencySearchMapper : Profile
+    {
+        public AgencySearchMapper()
+        {
+            CreateMap<AgencySearchDtoIn, AgencySearchEntity>().ReverseMap();
+        }
+    }
 }

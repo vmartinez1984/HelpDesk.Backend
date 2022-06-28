@@ -32,14 +32,28 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<AgencyEntity>> GetListAsync(int? projectId)
+        public async Task<List<AgencyEntity>> GetListAsync(AgencySearchEntity search)
         {
             List<AgencyEntity> list;
+            IQueryable<AgencyEntity> queryable;
 
-            if (projectId is null)
-                list = await _appDbContext.Agency.Where(x => x.IsActive).ToListAsync();
-            else
-                list = await _appDbContext.Agency.Where(x => x.IsActive && x.ProjectId == projectId).ToListAsync();
+            list = new List<AgencyEntity>();            
+            queryable = _appDbContext.Agency;
+            queryable = queryable.Where(x => x.IsActive);
+            if (search.ProjectId is not null)
+            {
+                queryable = queryable.Where(x => x.ProjectId == search.ProjectId);
+            }
+            if (!string.IsNullOrEmpty(search.Name))
+            {
+                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.Name.ToUpper()));
+            }
+            list = await queryable            
+            .OrderBy(x => x.Id)
+            .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
+            .Take(search.RecordsPerPage)
+            .ToListAsync();
+            search.TotalRecords = await queryable.CountAsync();
 
             return list;
         }

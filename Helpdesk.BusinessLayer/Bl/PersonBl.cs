@@ -30,5 +30,10 @@ namespace Helpdesk.BusinessLayer.Bl
         {
             throw new NotImplementedException();
         }
+
+        Task<PagerGenericDtoIn<PersonDtoOut>> IPersonBl.GetAsync(int? projectId, int? agencyId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

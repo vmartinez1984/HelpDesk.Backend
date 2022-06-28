@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace Helpdesk.Core.Dtos.Inputs
 {
-    public class PersonSearchDto
+    public class PersonSearchDto : SearchDto
     {
         public int ProjectId { get; set; }
 
         public int AgencyId { get; set; }
-
-        
     }
 }
