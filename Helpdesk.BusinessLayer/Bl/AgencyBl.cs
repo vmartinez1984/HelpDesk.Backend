@@ -44,13 +44,22 @@ namespace Helpdesk.BusinessLayer.Bl
             return item;
         }
 
-        public async Task<List<AgencyDtoOut>> GetListAsync(int projectId)
+        public async Task<List<AgencyDtoOut>> GetListAsync(int? projectId)
         {
             List<AgencyDtoOut> list;
             List<AgencyEntity> entities;
+            List<AgencyTypeEntity> listAgencyTypeEntities;
 
             entities = await _repository.Agency.GetListAsync(projectId);
+            listAgencyTypeEntities = await _repository.AgencyType.GetAsync();
             list = _mapper.Map<List<AgencyDtoOut>>(entities);
+            list.ForEach(item =>
+            {
+                AgencyTypeEntity agencyTypeEntity;
+
+                agencyTypeEntity = listAgencyTypeEntities.Where(x => x.Id == item.AgencyTypeId).FirstOrDefault();
+                item.AgencyTypeName = agencyTypeEntity.Name;
+            });
 
             return list;
         }

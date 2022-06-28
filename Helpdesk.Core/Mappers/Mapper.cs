@@ -42,11 +42,19 @@ namespace Helpdesk.Core.Mappers
     }
 
     public class PersonMapper : Profile
- {
+    {
         public PersonMapper()
-     {
+        {
             CreateMap<PersonEntity, PersonDtoOut>().ReverseMap();
             CreateMap<PersonEntity, PersonDtoIn>().ReverseMap();
+        }
+    }
+
+    public class ZipCodeMapper : Profile
+    {
+        public ZipCodeMapper()
+        {
+            CreateMap<ZipCodeEntity, ZipCodeDto>().ReverseMap();
         }
     }
 }

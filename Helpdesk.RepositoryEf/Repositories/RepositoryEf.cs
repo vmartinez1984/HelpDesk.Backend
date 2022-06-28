@@ -23,6 +23,6 @@ namespace Helpdesk.RepositoryEf
         public IProjectRepository Project { get; }
         public IAgencyTypeRepository AgencyType { get; }
         public IAgencyRepository Agency { get; }
-        public IPersonRepository Person { get; }
+        public IPersonRepository Person { get; }        
     }
 }

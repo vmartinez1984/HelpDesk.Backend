@@ -32,14 +32,21 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<AgencyEntity>> GetListAsync(int projectId)
+        public async Task<List<AgencyEntity>> GetListAsync(int? projectId)
         {
-            return await _appDbContext.Agency.Where(x=> x.IsActive && x.ProjectId == projectId).ToListAsync();
+            List<AgencyEntity> list;
+
+            if (projectId is null)
+                list = await _appDbContext.Agency.Where(x => x.IsActive).ToListAsync();
+            else
+                list = await _appDbContext.Agency.Where(x => x.IsActive && x.ProjectId == projectId).ToListAsync();
+
+            return list;
         }
 
         public async Task<AgencyEntity> GetAsync(int id)
         {
-            return await _appDbContext.Agency.FirstOrDefaultAsync(x=> x.Id == id);
+            return await _appDbContext.Agency.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task UpdateAsync(AgencyEntity entity)

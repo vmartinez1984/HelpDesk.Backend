@@ -31,12 +31,17 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
 
     public interface IAgencyBl : IBase02Bl<AgencyDtoIn, AgencyDtoOut>
     {
-        Task<List<AgencyDtoOut>> GetListAsync(int projectId);
+        Task<List<AgencyDtoOut>> GetListAsync(int? projectId);
     }
 
     public interface IPersonBl : IBase02Bl<PersonDtoIn, PersonDtoOut>
     {
         Task<List<PersonDtoOut>> GetListByAgencyIdAsync(int agencyId);
         Task<List<PersonDtoOut>> GetListByProjectIdAsync(int projectId);
+    }
+
+    public interface IZipCodeBl
+    {
+        Task<List<ZipCodeDto>> GetAsync(string zipCode);
     }
 }

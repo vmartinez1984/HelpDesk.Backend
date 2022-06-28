@@ -7,6 +7,8 @@ using Helpdesk.Core.Mappers;
 using Helpdesk.RepositoryEf;
 using Helpdesk.RepositoryEf.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Helpdesk.Services.ZipCodes;
+using Helpdesk.Core.Interfaces.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -15,7 +17,7 @@ builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme
 ).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
     options =>
-    {        
+    {
         options.LoginPath = "/Login/Index";
         options.LogoutPath = "/Account/Logout";
     });
@@ -30,12 +32,15 @@ builder.Services.AddScoped<IAgencyRepository, AgencyRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRepository, RepositoryEf>();
+//Services
+builder.Services.AddScoped<IZipCodeService, ZipCodeService>();
 //Business layer
 builder.Services.AddScoped<IPersonBl, PersonBl>();
 builder.Services.AddScoped<IAgencyBl, AgencyBl>();
 builder.Services.AddScoped<IAgencyTypeBl, AgencyTypeBl>();
 builder.Services.AddScoped<IProjectBl, ProjectBl>();
 builder.Services.AddScoped<IUserBl, UserBl>();
+builder.Services.AddScoped<IZipCodeBl, ZipCodeBl>();
 builder.Services.AddScoped<IUnitOfWorkBl, UnitOfWorkBl>();
 //Mappers
 var mapperConfig = new MapperConfiguration(mapperConfig =>
@@ -44,6 +49,7 @@ var mapperConfig = new MapperConfiguration(mapperConfig =>
     mapperConfig.AddProfile<ProjectMapper>();
     mapperConfig.AddProfile<AgencyTypeMapper>();
     mapperConfig.AddProfile<AgencyMapper>();
+    mapperConfig.AddProfile<ZipCodeMapper>();
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);

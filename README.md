@@ -30,3 +30,8 @@ Se coloca en el AppDbContext la cadena de conexión provisionalmente, esto solo 
 
 dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
  
+
+ # Para la autenticación
+ https://ajaxhispano.com/ask/autenticacion-personalizada-en-asp-net-core-94222/
+
+ Falta evaluar la autorización pero de momento ya funciona

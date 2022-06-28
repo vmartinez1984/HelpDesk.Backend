@@ -8,8 +8,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         IProjectRepository Project { get; }
         IAgencyTypeRepository AgencyType { get; }
         IAgencyRepository Agency { get; }
-
-        IPersonRepository Person { get; }
+        IPersonRepository Person { get; }        
     }
 
     public interface IBaseRepository<T> where T : class
@@ -47,7 +46,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
 
     public interface IAgencyRepository : IBaseRepository02<AgencyEntity>
     {
-        Task<List<AgencyEntity>> GetListAsync(int projectId);
+        Task<List<AgencyEntity>> GetListAsync(int? projectId);
     }
 
     public interface IPersonRepository : IBaseRepository02<PersonEntity>

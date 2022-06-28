@@ -8,6 +8,6 @@ namespace Helpdesk.Core.Dtos.Outputs
     public class AgencyTypeDtoOut
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
     }
 }
