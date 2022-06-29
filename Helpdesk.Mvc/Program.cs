@@ -50,7 +50,10 @@ var mapperConfig = new MapperConfiguration(mapperConfig =>
     mapperConfig.AddProfile<AgencyTypeMapper>();
     mapperConfig.AddProfile<AgencyMapper>();
     mapperConfig.AddProfile<ZipCodeMapper>();
-    mapperConfig.AddProfile<AgencySearchMapper>();
+    mapperConfig.AddProfile<PagerMapper>();
+    mapperConfig.AddProfile<AgencySearchInMapper>();
+    mapperConfig.AddProfile<AgencySearchOutMapper>();
+    mapperConfig.AddProfile<AgencySearchResultOutMapper>();
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);

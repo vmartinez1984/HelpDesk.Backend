@@ -1,0 +1,44 @@
+@model Helpdesk.Core.Dtos.Outputs.PagerDto
+
+<div class="row">
+    <div class="col-6">
+        <p class="text-infp">
+            @Model.PageCurrent página de @Model.CountPage, @Model.TotalRecords registros
+        </p>
+    </div>
+    <div class="col-6">
+        <ul class="pagination">
+            @* <li>
+                Página actual: @Model.PageCurrent
+            </li>
+            <li>
+                Registros por página: @Model.RecordsPerPage
+            </li>
+            <li>
+                Total de registros: @Model.TotalRecords
+            </li>
+            <li>
+                Total de páginas: @Model.CountPage
+            </li> *@
+            @if (Model.PageCurrent == 1)
+            {
+                <li class="page-item disabled">                         
+                    @Html.ActionLink("Anterior",null, new { PageCurrent = 1}, new{@class = "page-link" })
+                </li>
+            }
+            else
+            {
+                <li class="page-item">@Html.ActionLink("Anterior",null, new { PageCurrent = Model.PageCurrent - 1}, new{@class = "page-link" })</li>
+            }
+
+            @if (Model.PageCurrent == Model.CountPage)
+            {
+                <li class="page-item disabled">@Html.ActionLink("Siguiente",null, new{ PageCurrent = Model.CountPage}, new{@class = "page-link" } )</li>
+            }
+            else
+            {
+                <li class="page-item">@Html.ActionLink("Siguiente", null, new { PageCurrent = Model.PageCurrent +1}, new{@class = "page-link" })</li>
+            }
+        </ul>
+    </div>
+</div>
