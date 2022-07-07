@@ -53,9 +53,13 @@ namespace Helpdesk.RepositoryEf.Repositories
             {
                 queryable = queryable.Where(x => x.AgencyId == search.AgencyId);
             }
-            if (!string.IsNullOrEmpty(search.PersonName))
+            if (!string.IsNullOrEmpty(search.Name))
             {
-                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.PersonName.ToUpper()));
+                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.Name.ToUpper()));
+            }
+            if (!string.IsNullOrEmpty(search.LastName))
+            {
+                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.LastName.ToUpper()));
             }
             list = await queryable
             .OrderByDescending(x => x.Id)

@@ -28,7 +28,7 @@ namespace Helpdesk.RepositoryEf.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 string connectionString;
-                
+
                 connectionString = _configuration.GetConnectionString("DefaultConnection");
                 optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             }
@@ -36,6 +36,8 @@ namespace Helpdesk.RepositoryEf.Contexts
 
         public DbSet<AgencyEntity> Agency { get; set; }
         public DbSet<AgencyTypeEntity> AgencyType { get; set; }
+        public DbSet<DeviceEntity> Device { get; set; }
+        public DbSet<DeviceStateEntity> DeviceState { get; set; }
         public DbSet<PersonEntity> Person { get; set; }
         public DbSet<ProjectEntity> Project { get; set; }
         public DbSet<UserEntity> User { get; set; }
@@ -91,7 +93,9 @@ namespace Helpdesk.RepositoryEf.Contexts
                     AgencyId = 1,
                     Name = "Admin",
                     LastName = "Admin",
-                    UserId = 1
+                    UserId = 1,
+                    DateRegistration = DateTime.Now,
+                    IsActive = true
                 }
             );
 
@@ -106,7 +110,12 @@ namespace Helpdesk.RepositoryEf.Contexts
                     PersonId = 1
                 }
             );
-        }
 
-    }//end class 
+            modelBuilder.Entity<DeviceStateEntity>().HasData(
+                new DeviceStateEntity { Id = 1, Name = "En almacen", IsActive = true, DateRegistration = DateTime.Now },
+                new DeviceStateEntity { Id = 2, Name = "Asignado", IsActive = true, DateRegistration = DateTime.Now },
+                new DeviceStateEntity { Id = 3, Name = "Merma", IsActive = true, DateRegistration = DateTime.Now }
+            );
+        }
+    }//end class
 }

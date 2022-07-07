@@ -45,15 +45,18 @@ builder.Services.AddScoped<IUnitOfWorkBl, UnitOfWorkBl>();
 //Mappers
 var mapperConfig = new MapperConfiguration(mapperConfig =>
 {
-    mapperConfig.AddProfile<UserMapper>();
-    mapperConfig.AddProfile<ProjectMapper>();
     mapperConfig.AddProfile<AgencyTypeMapper>();
-    mapperConfig.AddProfile<AgencyMapper>();
-    mapperConfig.AddProfile<ZipCodeMapper>();
-    mapperConfig.AddProfile<PagerMapper>();
     mapperConfig.AddProfile<AgencySearchInMapper>();
     mapperConfig.AddProfile<AgencySearchOutMapper>();
+    mapperConfig.AddProfile<AgencyMapper>();
     mapperConfig.AddProfile<AgencySearchResultOutMapper>();
+    mapperConfig.AddProfile<PersonMapper>();
+    mapperConfig.AddProfile<PersonSearchMapper>();
+    mapperConfig.AddProfile<ProjectMapper>();
+    mapperConfig.AddProfile<PagerMapper>();
+    mapperConfig.AddProfile<UserMapper>();
+    mapperConfig.AddProfile<ZipCodeMapper>();
+    mapperConfig.AddProfile<ImplementsMapper>();
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);

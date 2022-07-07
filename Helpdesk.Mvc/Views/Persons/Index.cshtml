@@ -5,52 +5,105 @@
 }
 
 <div class="container">
-    <h2>Lista de personas</h2>
-    <p>
-        @Html.ActionLink("Agregar nuevo", "Create")
-    </p>
-
-    <form>
-        <div class="form-group">
-            <label asp-for="PersonSearch.ProjectId" class="control-label"></label>
-            <select asp-for="PersonSearch.ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
-                <option value="">Seleccione</option>
-            </select>
-            <span asp-validation-for="PersonSearch.ProjectId" class="text-danger"></span>
+    <div class="card">
+        <div class="card-header">
+            <h2>Buscar persona</h2>    
         </div>
-    </form>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label asp-for="PersonSearch.ProjectId" class="control-label"></label>
+                    <select asp-for="PersonSearch.ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
+                        <option value="">Seleccione</option>
+                    </select>
+                    <span asp-validation-for="PersonSearch.ProjectId" class="text-danger"></span>
+                </div>
 
-    <table class="table">
-        <tr>
-            <th>
-                @* @Html.DisplayNameFor(model => model.Name) *@
-            </th>
-            <th></th>
-        </tr>
+                <div class="form-group">
+                    <label asp-for="PersonSearch.AgencyId" class="control-label"></label>
+                    <select asp-for="PersonSearch.AgencyId" class="form-select">
+                        <option value="">Seleccione</option>
+                    </select>
+                    <span asp-validation-for="PersonSearch.AgencyId" class="text-danger"></span>
+                </div>
 
-        @foreach (var item in Model.ListPersons)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateRegistration)
-                </td>
-                <td>
-                    <a href="~/Projects/Edit/@item.Id" class="btn btn-warning text-white">
-                        <i class="fas fa-edit text-white"></i>
-                        Editar
-                    </a>
+                <div class="form-group">
+                    <label asp-for="PersonSearch.Name" class="control-label"></label>
+                    <input asp-for="PersonSearch.Name" class="form-control" maxlength="255"/>
+                    <span asp-validation-for="PersonSearch.Name" class="text-danger"></span>
+                </div>
 
-                    <a href="~/Projects/Delete/@item.Id" class="btn btn-danger">
-                        <i class="fas fa-eraser text-white"></i>
-                        Borrar
-                    </a>
+                <div class="form-group">
+                    <label asp-for="PersonSearch.LastName" class="control-label"></label>
+                    <input asp-for="PersonSearch.LastName" class="form-control" maxlength="255"/>
+                    <span asp-validation-for="PersonSearch.LastName" class="text-danger"></span>
+                </div>
 
-                </td>
-            </tr>
-        }
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" >
+                        Buscar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    </table>
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Lista de personas</h2>
+        </div>
+        <div class="card-body">
+            <p>
+                @Html.ActionLink("Agregar nuevo", "Create")
+            </p>
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @* @Html.DisplayNameFor(model => model.Name) *@
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.ListPersons)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            <a href="/Agencies/@item.AgencyId">
+                                @Html.DisplayFor(modelItem => item.AgencyName)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateRegistration)
+                        </td>
+                        <td>
+                            <a href="~/Projects/Edit/@item.Id" class="btn btn-warning text-white">
+                                <i class="fas fa-edit text-white"></i>
+                                Editar
+                            </a>
+
+                            <a href="~/Projects/Delete/@item.Id" class="btn btn-danger">
+                                <i class="fas fa-eraser text-white"></i>
+                                Borrar
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+        <div class="card-footer">
+            @await Html.PartialAsync("_Pager", Model.PersonSearch)
+        </div>
+    </div>
 </div>

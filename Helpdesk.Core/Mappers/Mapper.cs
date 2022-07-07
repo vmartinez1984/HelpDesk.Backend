@@ -46,6 +46,7 @@ namespace Helpdesk.Core.Mappers
         public PersonSearchMapper()
         {
             CreateMap<PersonSearchDtonIn, PersonSearchEntity>().ReverseMap();
+            CreateMap<PersonSearchEntity, PersonSearchDto>().ReverseMap();
         }
     }
     public class PersonMapper : Profile
@@ -98,4 +99,12 @@ namespace Helpdesk.Core.Mappers
         }
     }
 
+    public class ImplementsMapper :Profile
+    {
+        public ImplementsMapper()
+        {
+            CreateMap<PersonSearchEntity,PersonSearchDtonIn>();
+            CreateMap<PersonPagerEntity,PersonPagerDtoOut>();
+        }
+    }
 }

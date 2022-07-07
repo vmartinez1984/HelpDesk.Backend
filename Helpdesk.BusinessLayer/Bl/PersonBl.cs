@@ -18,9 +18,14 @@ namespace Helpdesk.BusinessLayer.Bl
             _mapper = mapper;
         }
 
-        public Task<int> AddAsync(PersonDtoIn item)
+        public async Task<int> AddAsync(PersonDtoIn item)
         {
-            throw new NotImplementedException();
+            PersonEntity entity;
+
+            entity = _mapper.Map<PersonEntity>(item);
+            entity.Id = await _repository.Person.AddAsync(entity);
+
+            return entity.Id;
         }
 
         public Task DeleteAsync(int id)
@@ -44,24 +49,21 @@ namespace Helpdesk.BusinessLayer.Bl
             PersonSearchEntity personSearchEntity;
             PersonPagerEntity personPagerEntity;
 
-            personSearchEntity = new PersonSearchEntity
-            {
-                AgencyId = search.AgencyId,
-                PageCurrent = search.PageCurrent,
-                PersonLastName = search.PersonLastName,
-                PersonName = search.PersonName,
-                ProjectId = search.ProjectId,
-                RecordsPerPage = search.RecordsPerPage,
-                TotalRecords = search.TotalRecords
-            };
+            personSearchEntity = _mapper.Map<PersonSearchEntity>(search);
             personPagerEntity = await _repository.Person.SearchAsync(personSearchEntity);
-
-            response = new PersonPagerDtoOut
-            {
-                ListPersons = new List<PersonDtoOut>()
-            };
+            response = _mapper.Map<PersonPagerDtoOut>(personPagerEntity);
+            await SetAgencyNamesAsync(response);
 
             return response;
+        }
+
+        private async Task SetAgencyNamesAsync(PersonPagerDtoOut response)
+        {
+            foreach (var item in response.ListPersons)
+            {
+                var agency = await _repository.Agency.GetAsync(item.AgencyId);
+                item.AgencyName = agency.Code + " " + agency.Name;
+            }
         }
     }
 }

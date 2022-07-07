@@ -2,6 +2,7 @@ using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Helpdesk.Mvc.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Helpdesk.Mvc.Controllers
@@ -16,6 +17,7 @@ namespace Helpdesk.Mvc.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var userId = SessionHelper.GetNameIdentifier(User);
@@ -26,12 +28,29 @@ namespace Helpdesk.Mvc.Controllers
             return View(list);
         }
 
+        [Authorize]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            ProjectDtoOut item;
+
+            item = await _unitOfWorkBl.Project.GetAsync((int)id);
+
+            return View(item);
+        }
+
+        [Authorize]
         public IActionResult Create()
         {
 
             return View();
         }        
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProjectDtoIn item)
@@ -47,7 +66,8 @@ namespace Helpdesk.Mvc.Controllers
                 return View();
             }
         }
-                        
+                 
+        [Authorize]      
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -62,6 +82,7 @@ namespace Helpdesk.Mvc.Controllers
             return View(item);
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ProjectDtoIn item)
@@ -77,6 +98,7 @@ namespace Helpdesk.Mvc.Controllers
             }
         }
 
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -91,6 +113,7 @@ namespace Helpdesk.Mvc.Controllers
             return View(item);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Delete(ProjectDtoOut item)
         {

@@ -39,8 +39,33 @@ namespace Helpdesk.BusinessLayer.Bl
 
             entity = await _repository.Project.GetAsync(id);
             item = _mapper.Map<ProjectDtoOut>(entity);
+            await SetUserNameAsync(item);
+            await SetTotalAgenciesAsync(item);
 
             return item;
+        }
+
+        private async Task SetTotalAgenciesAsync(ProjectDtoOut item)
+        {
+            var agencyPager = await _repository.Agency.GetAsync(new AgencySearchEntity
+            {
+                ProjectId = item.Id,
+                PageCurrent = 1,
+                RecordsPerPage = 10
+            });
+            item.TotalAgencies = agencyPager.TotalRecords;
+        }
+
+        private async Task SetUserNameAsync(ProjectDtoOut item)
+        {
+            UserEntity userEntity;
+            PersonEntity person;
+
+
+            userEntity = await _repository.User.GetAsync(item.UserId);
+            person = await _repository.Person.GetAsync(userEntity.PersonId);
+
+            item.UserName = $"{person.Name} {person.LastName}";
         }
 
         public async Task<List<ProjectDtoOut>> GetAsync()

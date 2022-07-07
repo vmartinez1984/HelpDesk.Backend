@@ -8,7 +8,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         IProjectRepository Project { get; }
         IAgencyTypeRepository AgencyType { get; }
         IAgencyRepository Agency { get; }
-        IPersonRepository Person { get; }        
+        IPersonRepository Person { get; }
     }
 
     public interface IBaseRepository<T> where T : class
@@ -16,8 +16,6 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<int> AddAsync(T entity);
 
         Task DeleteAsync(int id, int userId);
-
-        Task<List<T>> GetAsync(int? projectId, int? agencyId);
 
         Task<T> GetAsync(int id);
 
@@ -35,6 +33,11 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<T> GetAsync(int id);
 
         Task UpdateAsync(T entity);
+    }
+
+    public interface IDeviceRepository : IBaseRepository02<DeviceEntity>
+    {
+
     }
 
     public interface IBaseRepository02<T> where T : class
@@ -65,7 +68,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     }
 
     public interface IPersonRepository : IBaseRepository02<PersonEntity>
-    {        
+    {
         Task<PersonPagerEntity> SearchAsync(PersonSearchEntity search);
     }
 }

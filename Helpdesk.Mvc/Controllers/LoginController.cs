@@ -23,7 +23,7 @@ namespace Helpdesk.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginDto login)
+        public async Task<IActionResult> Index(LoginDto login)
         {
             if (ModelState.IsValid == false)
             {

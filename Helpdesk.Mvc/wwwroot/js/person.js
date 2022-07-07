@@ -10,7 +10,7 @@ function onchange_SelectProject() {
     selectProject = document.getElementById("selectProject")
     url = "/Api/agencies/" +  selectProject.value
 
-    console.log(selectProject.value)
+    //console.log(selectProject.value)
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -20,11 +20,11 @@ function onchange_SelectProject() {
             }
         })
         .then(data => {
-            console.log(data)
+            //console.log(data)
             if (data.length > 0) {   
                 var selectAgency
                 
-                selectAgency = document.getElementById("selectAgency");
+                selectAgency = document.getElementById("AgencyId");
                 selectAgency.innerHTML = "";
                 if (data.length > 1) {
                     option = document.createElement("option")

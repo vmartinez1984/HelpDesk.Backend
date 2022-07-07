@@ -7,14 +7,14 @@ namespace Helpdesk.Core.Dtos.Outputs
         public int Id { get; set; }
 
         [Display(Name = "Nombre")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "Apellidos")]
-        public string? LastName { get; set; }
+        public string LastName { get; set; }
 
         [StringLength(1000)]
         [Display(Name = "Notas")]
-        public string? Notes { get; set; }
+        public string Notes { get; set; }
 
         public int UserId { get; set; }
 
@@ -22,7 +22,7 @@ namespace Helpdesk.Core.Dtos.Outputs
         public int AgencyId { get; set; }
 
         [Display(Name = "Agencia")]
-        public string? AgencyName { get; set; }
+        public string AgencyName { get; set; }
 
         [Display(Name = "Fecha de registro")]
         [DataType(DataType.Date)]

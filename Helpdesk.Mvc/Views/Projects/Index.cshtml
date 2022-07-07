@@ -2,43 +2,60 @@
 @{
     ViewBag.Title = "Proyecto";
 }
+<h1 class="h3 mb-3">Proyectos</h1>
 
-<div class="container">
-    <h2>Lista de proyectos</h2>
-    <p>
-        @Html.ActionLink("Agregar nuevo", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th></th>
-        </tr>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Lista de proyectos</h5>
+            </div>
+            <div class="card-body">                
+                <p>
+                    @Html.ActionLink("Agregar nuevo", "Create")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateRegistration)
+                        </th>
+                        <th></th>
+                    </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateRegistration)
-                </td>
-                <td>
-                    <a href="~/Projects/Edit/@item.Id" class="btn btn-warning text-white">
-                        <i class="fas fa-edit text-white"></i>
-                        Editar
-                    </a>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateRegistration)
+                            </td>
+                            <td>
+                                <a href="~/Projects/Details/@item.Id" class="btn btn-info text-white">
+                                    <i class="align-middle" data-feather="clipboard"></i> 
+                                    <span class="align-middle">Detalles</span>
+                                </a>
 
-                    <a href="~/Projects/Delete/@item.Id" class="btn btn-danger">
-                        <i class="fas fa-eraser text-white"></i>
-                        Borrar
-                    </a>
+                                <a href="~/Projects/Edit/@item.Id" class="btn btn-warning text-white">
+                                    <i class="align-middle" data-feather="edit"></i> 
+                                    <span class="align-middle">Editar</span>
+                                </a>
 
-                </td>
-            </tr>
-        }
+                                <a href="~/Projects/Delete/@item.Id" class="btn btn-danger">
+                                    <i class="align-middle" data-feather="delete"></i> 
+                                    <span class="align-middle">Borrar</span>
+                                </a>
+                            </td>
+                        </tr>
+                    }
 
-    </table>
+                </table>
+
+            </div>
+        </div>
+    </div>
 </div>

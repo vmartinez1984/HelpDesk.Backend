@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Helpdesk.Core.Dtos.Outputs
 {
-    public class PersonSearchDto : SearchDto
+    public class PersonSearchDto : PagerDto
     {
         [Display(Name = "Proyecto")]
         public int ProjectId { get; set; }
