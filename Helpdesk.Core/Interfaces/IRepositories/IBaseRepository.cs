@@ -61,11 +61,11 @@ namespace Helpdesk.Core.Interfaces.IRepositories
 
     public interface IAgencyRepository : IBaseRepository02<AgencyEntity>
     {
-        Task<List<AgencyEntity>> GetListAsync(AgencySearchEntity agencySearchEntity);
+        Task<AgencySearchEntityOut> GetAsync(AgencySearchEntity agencySearchEntity);
     }
 
     public interface IPersonRepository : IBaseRepository02<PersonEntity>
     {        
-        Task<List<PersonEntity>> GetAsync(int? projectId, int? agencyId);
+        Task<PersonPagerEntity> SearchAsync(PersonSearchEntity search);
     }
 }

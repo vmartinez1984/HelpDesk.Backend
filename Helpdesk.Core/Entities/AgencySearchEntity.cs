@@ -1,6 +1,6 @@
 namespace Helpdesk.Core.Entities
 {
-    public class AgencySearchEntity : SearchEntity
+    public class AgencySearchEntity: PagerEntity
     {
         public int? ProjectId { get; set; }
 
@@ -9,12 +9,8 @@ namespace Helpdesk.Core.Entities
         public string? Code { get; set; }
     }
 
-    public class SearchEntity
+    public class AgencySearchEntityOut: AgencySearchEntity
     {
-        public int PageCurrent { get; set; }
-
-        public int RecordsPerPage { get; set; }
-
-        public int TotalRecords { get; set; }
+        public List<AgencyEntity>? ListAgencies { get; set; }        
     }
 }

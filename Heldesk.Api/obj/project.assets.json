@@ -410,6 +410,15 @@
           "lib/net6.0/MySqlConnector.dll": {}
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Pomelo.EntityFrameworkCore.MySql/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -706,7 +715,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "Helpdesk.Core": "1.0.0"
+          "Helpdesk.Core": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Helpdesk.BusinessLayer.dll": {}
@@ -742,6 +752,20 @@
         },
         "runtime": {
           "bin/placeholder/Helpdesk.RepositoryEf.dll": {}
+        }
+      },
+      "Helpdesk.Services.ZipCodes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Helpdesk.Core": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Helpdesk.Services.ZipCodes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Helpdesk.Services.ZipCodes.dll": {}
         }
       }
     }
@@ -1513,6 +1537,33 @@
         "mysqlconnector.nuspec"
       ]
     },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Pomelo.EntityFrameworkCore.MySql/6.0.1": {
       "sha512": "sFIo5e9RmQoCTEvH6EeSV8ptmX3dw/6XgyD8R93X/i7A9+XCeG9KTjSNjrszVjVOtCu/eyvYqqcv2uZ/BHhlYA==",
       "type": "package",
@@ -2106,6 +2157,11 @@
       "type": "project",
       "path": "../Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj",
       "msbuildProject": "../Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj"
+    },
+    "Helpdesk.Services.ZipCodes/1.0.0": {
+      "type": "project",
+      "path": "../Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj",
+      "msbuildProject": "../Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2113,6 +2169,7 @@
       "Helpdesk.BusinessLayer >= 1.0.0",
       "Helpdesk.Core >= 1.0.0",
       "Helpdesk.RepositoryEf >= 1.0.0",
+      "Helpdesk.Services.ZipCodes >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2149,6 +2206,9 @@
             },
             "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj": {
               "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj"
+            },
+            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj": {
+              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj"
             }
           }
         }

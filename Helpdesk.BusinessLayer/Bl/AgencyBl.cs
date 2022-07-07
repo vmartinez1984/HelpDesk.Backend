@@ -49,26 +49,33 @@ namespace Helpdesk.BusinessLayer.Bl
             return item;
         }
 
-        public async Task<List<AgencyDtoOut>> GetListAsync(AgencySearchDtoIn agencySearchDto)
+        public async Task<AgencyListDtoOut> GetAsync(AgencySearchDtoIn agencySearchDto)
         {
-            List<AgencyDtoOut> list;
-            List<AgencyEntity> entities;
-            List<AgencyTypeEntity> listAgencyTypeEntities;
+            AgencyListDtoOut response;
             AgencySearchEntity agencySearchEntity;
+            AgencySearchEntityOut agencySearchEntityOut;
 
             agencySearchEntity = _mapper.Map<AgencySearchEntity>(agencySearchDto);
-            entities = await _repository.Agency.GetListAsync(agencySearchEntity);
-            listAgencyTypeEntities = await _repository.AgencyType.GetAsync();
-            list = _mapper.Map<List<AgencyDtoOut>>(entities);
-            list.ForEach(item =>
+            agencySearchEntityOut = await _repository.Agency.GetAsync(agencySearchEntity);
+            response = _mapper.Map<AgencyListDtoOut>(agencySearchEntityOut);
+            await LoadAgencyTypeName(response);
+
+            return response;
+        }
+
+        private async Task LoadAgencyTypeName(AgencyListDtoOut agencySearch)
+        {
+            List<AgencyTypeEntity> listAgencyTypeEntities;
+
+            listAgencyTypeEntities = await _repository.AgencyType.GetAsync();            
+            agencySearch.ListAgencies?.ForEach(item =>
             {
                 AgencyTypeEntity agencyTypeEntity;
 
                 agencyTypeEntity = listAgencyTypeEntities.Where(x => x.Id == item.AgencyTypeId).FirstOrDefault();
-                item.AgencyTypeName = agencyTypeEntity.Name;
+                
+                item.AgencyTypeName = agencyTypeEntity?.Name;
             });
-
-            return list;
         }
 
         public async Task UpdateAsync(AgencyDtoIn item, int id)
@@ -76,8 +83,7 @@ namespace Helpdesk.BusinessLayer.Bl
             AgencyEntity entity;
 
             entity = await _repository.Agency.GetAsync(id);
-            var entityUpdate = _mapper.Map<AgencyEntity>(item);
-            entity.Id = id;
+            var entityUpdate = _mapper.Map<AgencyEntity>(item);            
             entity.Address = entityUpdate.Address;
             entity.AgencyTypeId = entityUpdate.AgencyTypeId;
             entity.Code = entityUpdate.Code;
@@ -92,7 +98,7 @@ namespace Helpdesk.BusinessLayer.Bl
             entity.TownHall = entityUpdate.TownHall;
             entity.ZipCode = entityUpdate.ZipCode;
 
-            await _repository.Agency.UpdateAsync(entityUpdate);
+            await _repository.Agency.UpdateAsync(entity);
         }
     }
 }

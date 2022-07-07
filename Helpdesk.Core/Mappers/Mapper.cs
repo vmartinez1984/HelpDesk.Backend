@@ -41,6 +41,13 @@ namespace Helpdesk.Core.Mappers
         }
     }
 
+    public class PersonSearchMapper : Profile
+    {
+        public PersonSearchMapper()
+        {
+            CreateMap<PersonSearchDtonIn, PersonSearchEntity>().ReverseMap();
+        }
+    }
     public class PersonMapper : Profile
     {
         public PersonMapper()
@@ -58,11 +65,37 @@ namespace Helpdesk.Core.Mappers
         }
     }
 
-    public class AgencySearchMapper : Profile
+    public class PagerMapper : Profile
     {
-        public AgencySearchMapper()
+        public PagerMapper()
+        {
+            CreateMap<PagerDto, PagerEntity>().ReverseMap();
+            CreateMap<PagerDtoIn, PagerEntity>().ReverseMap();
+        }
+    }
+
+    public class AgencySearchInMapper : Profile
+    {
+        public AgencySearchInMapper()
         {
             CreateMap<AgencySearchDtoIn, AgencySearchEntity>().ReverseMap();
         }
     }
+
+    public class AgencySearchOutMapper : Profile
+    {
+        public AgencySearchOutMapper()
+        {
+            CreateMap<AgencySearchDtoOut, AgencySearchEntity>().ReverseMap();
+        }
+    }
+
+    public class AgencySearchResultOutMapper : Profile
+    {
+        public AgencySearchResultOutMapper()
+        {
+            CreateMap<AgencyListDtoOut, AgencySearchEntityOut>().ReverseMap();
+        }
+    }
+
 }

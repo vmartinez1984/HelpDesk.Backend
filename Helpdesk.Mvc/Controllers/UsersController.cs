@@ -15,11 +15,12 @@ namespace Helpdesk.Mvc.Controllers
 
         public async Task<IActionResult> Index(int? projectId, int? agencyId)
         {
-            List<UserDtoOut> list;
+            UserListDtoOut userListDtoOut;
 
-            list = await _unitOfWorkBl.User.GetAsync(projectId, agencyId);
+            userListDtoOut = new UserListDtoOut();
+            userListDtoOut.ListUsers = await _unitOfWorkBl.User.GetAsync(projectId, agencyId);
 
-            return View(list);
+            return View(userListDtoOut);
         }
 
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

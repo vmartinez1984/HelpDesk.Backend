@@ -35,10 +35,10 @@ namespace Heldesk.Api.Controllers
             return Ok(new { Id = id });
         }
 
-        [HttpGet("Projects/{projectId}")]
-        public async Task<ActionResult> GetByProjectId(int projectId)
+        [HttpGet]
+        public async Task<ActionResult> GetByProjectId([FromQuery] AgencySearchDtoIn searchDto)
         {
-            return Ok(await _unitOfWorkBl.Agency.GetListAsync(projectId));
+            return Ok(await _unitOfWorkBl.Agency.GetAsync(searchDto));
         }
 
         [HttpGet("{id}")]
@@ -75,6 +75,3 @@ namespace Heldesk.Api.Controllers
         }
     }
 }
-
-
-//002028650641338820

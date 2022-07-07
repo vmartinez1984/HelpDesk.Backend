@@ -97,3 +97,6 @@ C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Heldesk.Api/obj/D
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Heldesk.Api/bin/Debug/net6.0/AutoMapper.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Heldesk.Api/bin/Debug/net6.0/MySqlConnector.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Heldesk.Api/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Heldesk.Api/bin/Debug/net6.0/Newtonsoft.Json.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Heldesk.Api/bin/Debug/net6.0/Helpdesk.Services.ZipCodes.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Heldesk.Api/bin/Debug/net6.0/Helpdesk.Services.ZipCodes.pdb

@@ -1,6 +1,7 @@
-@* @model IEnumerable<Helpdesk.Core.Dtos.Outputs.PersonDtoOut>
+@using Helpdesk.Core.Dtos.Outputs
+@model PersonPagerDtoOut
 @{
-    ViewBag.Title = "Proyecto";
+    ViewBag.Title = "Personas";
 }
 
 <div class="container">
@@ -11,23 +12,23 @@
 
     <form>
         <div class="form-group">
-            <label asp-for="ProjectId" class="control-label"></label>
-            <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
+            <label asp-for="PersonSearch.ProjectId" class="control-label"></label>
+            <select asp-for="PersonSearch.ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
                 <option value="">Seleccione</option>
             </select>
-            <span asp-validation-for="ProjectId" class="text-danger"></span>
+            <span asp-validation-for="PersonSearch.ProjectId" class="text-danger"></span>
         </div>
     </form>
 
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @* @Html.DisplayNameFor(model => model.Name) *@
             </th>
             <th></th>
         </tr>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.ListPersons)
         {
             <tr>
                 <td>
@@ -52,4 +53,4 @@
         }
 
     </table>
-</div> *@
+</div>

@@ -5,8 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Helpdesk.Mvc.Controllers
-{
-    [Route("[controller]")]
+{    
     public class PersonsController : Controller
     {
         private IUnitOfWorkBl _unitOfWorkBl;
@@ -16,16 +15,23 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        // public async Task<IActionResult> Index()
-        // {
-        //     ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
+        public async Task<IActionResult> Index([FromQuery] PersonSearchDtonIn personSearch)
+        {
 
-        //     List<PersonDtoOut> list;
+            PersonPagerDtoOut personPagerDtoOut;
 
-        //     list = await _unitOfWorkBl.Person.GetAsync(projectId, agencyId);
+            personPagerDtoOut = await _unitOfWorkBl.Person.GetAsync(personSearch);
+            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");            
 
-        //     return View(list);
-        // }
+            return View(personPagerDtoOut);
+        }
+
+        public async Task<IActionResult> Create()
+        {
+            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
+
+            return View();
+        }
 
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         // public IActionResult Error()

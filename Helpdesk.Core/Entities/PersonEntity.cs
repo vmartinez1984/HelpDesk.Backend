@@ -7,7 +7,7 @@ namespace Helpdesk.Core.Entities
     {
 
         [StringLength(255)]
-        public string? LastName { get; set; }
+        public string LastName { get; set; }
 
         [ForeignKey(nameof(UserEntity))]
         public int UserId { get; set; }
@@ -15,7 +15,9 @@ namespace Helpdesk.Core.Entities
         [ForeignKey(nameof(AgencyEntity))]
         public int AgencyId { get; set; }
 
+        public virtual AgencyEntity Agency { get; set; }
+
         [StringLength(1000)]
-        public string? Notes { get; set; }
+        public string Notes { get; set; }
     }
 }

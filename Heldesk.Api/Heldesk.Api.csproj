@@ -14,6 +14,7 @@
     <ProjectReference Include="..\Helpdesk.Core\Helpdesk.Core.csproj" />
     <ProjectReference Include="..\Helpdesk.BusinessLayer\Helpdesk.BusinessLayer.csproj" />
     <ProjectReference Include="..\Helpdesk.RepositoryEf\Helpdesk.RepositoryEf.csproj" />
+    <ProjectReference Include="..\Helpdesk.Services.ZipCodes\Helpdesk.Services.ZipCodes.csproj" />
   </ItemGroup>
 
 </Project>
