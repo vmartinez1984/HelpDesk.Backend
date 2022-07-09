@@ -31,23 +31,32 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
+        public async Task<bool> ExistsAsync(string email)
+        {
+            bool exists;
+
+            exists = await _appDbContext.User.CountAsync(x => x.Email == email) == 0 ? false : true;
+
+            return exists;
+        }
+
         public async Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId)
         {
             List<UserEntity> entities;
 
-            entities =  await _appDbContext.User.Where(x => x.IsActive).ToListAsync();
+            entities = await _appDbContext.User.Where(x => x.IsActive).ToListAsync();
 
             return entities;
         }
 
         public async Task<UserEntity> GetAsync(int id)
         {
-            return await _appDbContext.User.FirstOrDefaultAsync(x=> x.Id == id);
+            return await _appDbContext.User.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<UserEntity> GetAsync(string userName)
         {
-            return await _appDbContext.User.FirstOrDefaultAsync(x=> x.Name == userName);
+            return await _appDbContext.User.FirstOrDefaultAsync(x => x.Email == userName);
         }
 
         public async Task UpdateAsync(UserEntity entity)

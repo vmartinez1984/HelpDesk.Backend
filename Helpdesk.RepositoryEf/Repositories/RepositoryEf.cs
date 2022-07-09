@@ -9,7 +9,8 @@ namespace Helpdesk.RepositoryEf
             IProjectRepository projectRepository,
             IAgencyTypeRepository agencyTypeRepository,
             IAgencyRepository agencyRepository,
-            IPersonRepository personRepository
+            IPersonRepository personRepository,
+            IRoleRepository roleRepository
         )
         {
             this.User = user;
@@ -17,12 +18,14 @@ namespace Helpdesk.RepositoryEf
             this.AgencyType = agencyTypeRepository;
             this.Agency = agencyRepository;
             this.Person = personRepository;
+            this.Role = roleRepository;
         }
 
         public IUserRepository User { get;}
         public IProjectRepository Project { get; }
         public IAgencyTypeRepository AgencyType { get; }
         public IAgencyRepository Agency { get; }
-        public IPersonRepository Person { get; }        
+        public IPersonRepository Person { get; }
+        public IRoleRepository Role { get; }
     }
 }

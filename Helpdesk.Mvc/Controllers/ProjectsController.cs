@@ -48,7 +48,7 @@ namespace Helpdesk.Mvc.Controllers
         {
 
             return View();
-        }        
+        }
 
         [Authorize]
         [HttpPost]
@@ -66,8 +66,8 @@ namespace Helpdesk.Mvc.Controllers
                 return View();
             }
         }
-                 
-        [Authorize]      
+
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -107,19 +107,47 @@ namespace Helpdesk.Mvc.Controllers
             }
 
             ProjectDtoOut item;
+            ProjectDeleteDtoIn projectDeleteDtoIn;
 
             item = await _unitOfWorkBl.Project.GetAsync((int)id);
+            projectDeleteDtoIn = new ProjectDeleteDtoIn
+            {
+                DateRegistration = item.DateRegistration,
+                Id = item.Id,
+                Name = item.Name,
+                Notes = item.Notes,
+                UserId = item.UserId
+            };
 
-            return View(item);
+            return View(projectDeleteDtoIn);
         }
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Delete(ProjectDtoOut item)
+        public async Task<IActionResult> Delete(ProjectDeleteDtoIn item)
         {
-            await _unitOfWorkBl.Project.DeleteAsync(item.Id);
+            if (ModelState.IsValid)
+            {
+                item.DeleteUserId = SessionHelper.GetNameIdentifier(User);
+                await _unitOfWorkBl.Project.DeleteAsync(item);
 
-            return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
+            }
+
+
+            ProjectDeleteDtoIn projectDeleteDtoIn;
+
+            var item1 = await _unitOfWorkBl.Project.GetAsync(item.Id);
+            projectDeleteDtoIn = new ProjectDeleteDtoIn
+            {
+                DateRegistration = item.DateRegistration,
+                Id = item1.Id,
+                Name = item1.Name,
+                Notes = item1.Notes,
+                UserId = item1.UserId
+            };
+
+            return View(projectDeleteDtoIn);
         }
     }
 }

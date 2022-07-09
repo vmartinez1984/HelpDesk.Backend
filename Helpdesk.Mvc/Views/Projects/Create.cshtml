@@ -1,35 +1,51 @@
 @model Helpdesk.Core.Dtos.Inputs.ProjectDtoIn
 
 @{
-    ViewBag.Title = "Agregar proyecto";
+    ViewBag.Title = "Proyectos";
 }
 
-<div class="row">
-    <h2>Agregar Proyecto</h2>
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" maxlength="255"/>
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label"></label>
-                <input asp-for="Notes" class="form-control" maxlength="1000"/>
-                <span asp-validation-for="Notes" class="text-danger"></span>
-            </div>
+<div class="mb-3">
+	<h1 class="h3 d-inline align-middle">Proyectos</h1>
+</div>
 
-            <br/>    
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+<div class="row">
+   <div class="col-12">
+		<div class="card">
+            <div class="card-header">
+				<h5 class="card-title mb-0">Agregar proyecto</h5>
+			</div>
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" maxlength="255" placeholder="Nombre"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Notes" class="control-label"></label>                        
+                        <textarea asp-for="Notes" class="form-control" rows="2" maxlength="1000" placeholder="Notas"></textarea>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+
+                    <br/>    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="align-middle" data-feather="save"></i> 
+                            <span class="align-middle">Guardar</span>                            
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Regresar a la lista</a>
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span> 
+    </a>
 </div>
 
 @section Scripts {

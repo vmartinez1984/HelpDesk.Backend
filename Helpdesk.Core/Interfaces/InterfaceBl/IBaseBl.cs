@@ -1,3 +1,4 @@
+using System.Collections;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 
@@ -33,9 +34,14 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task<UserDtoOut> Login(LoginDto login);
 
         Task<List<UserDtoOut>> GetAsync(int? projectId, int? agencyId);
+
+        Task<bool> Exists(string email);
     }
 
-    public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut> { }
+    public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut> 
+    { 
+         Task DeleteAsync(ProjectDeleteDtoIn item);
+    }
 
     public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut>
     {
@@ -55,5 +61,10 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     public interface IZipCodeBl
     {
         Task<List<ZipCodeDto>> GetAsync(string zipCode);
+    }
+
+    public interface IRoleBl
+    {
+        Task<List<RoleDto>> GetAsync();
     }
 }

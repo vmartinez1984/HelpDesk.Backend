@@ -13,7 +13,7 @@ namespace Helpdesk.RepositoryEf.Repositories
         {
             _appDbContext = appDbContext;
         }
-        
+
         public async Task<int> AddAsync(ProjectEntity entity)
         {
             _appDbContext.Project.Add(entity);
@@ -22,24 +22,30 @@ namespace Helpdesk.RepositoryEf.Repositories
             return entity.Id;
         }
 
-        public async Task DeleteAsync(int id, int userId)
+        public async Task DeleteAsync(int id, string reason)
         {
             ProjectEntity entity;
 
-            entity = await _appDbContext.Project.Where(x=> x.Id == id).FirstAsync();
+            entity = await _appDbContext.Project.Where(x => x.Id == id).FirstAsync();
+            entity.Reason = reason;
             entity.IsActive = false;
 
             await _appDbContext.SaveChangesAsync();
         }
 
+        public Task DeleteAsync(int id, int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<ProjectEntity>> GetAsync()
         {
-            return await _appDbContext.Project.Where(x=> x.IsActive).ToListAsync();
+            return await _appDbContext.Project.Where(x => x.IsActive).ToListAsync();
         }
 
         public async Task<ProjectEntity> GetAsync(int id)
         {
-            return await _appDbContext.Project.Where(x=> x.Id == id).FirstAsync();
+            return await _appDbContext.Project.Where(x => x.Id == id).FirstAsync();
         }
 
         public async Task UpdateAsync(ProjectEntity entity)

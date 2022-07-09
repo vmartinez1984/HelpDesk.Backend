@@ -1,18 +1,27 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Helpdesk.Core.Validators;
 
 namespace Helpdesk.Core.Dtos.Inputs
 {
-    public class UserDtoIn
+    public class UserDtoIn : PersonDtoIn
     {
-        [Required]
+        [Required(ErrorMessage = "El {0} es requerido")]
+        [Display(Name = "Rol")]
+        public int RoleId { get; set; }
+
+        [Required(ErrorMessage = "El {0} es requerido")]
+        [Display(Name = "Proyecto")]
+        public int ProjectId { get; set; }
+
+        [Required(ErrorMessage = ("El correo es requerido"))]
         [StringLength(255)]
-        public string? Name { get; set; }
+        [DataType(DataType.EmailAddress)]
+        [EmailExists]  
+        public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("La contraseña requerida"))]
         [StringLength(12)]
-        public string? Password { get; set; }
-
-        [Required]
-        public int PersonId { get; set; }
+        [Display(Name = "Contraseña")]
+        public string Password { get; set; }
     }
 }

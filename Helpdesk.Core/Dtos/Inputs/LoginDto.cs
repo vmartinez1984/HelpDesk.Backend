@@ -6,12 +6,12 @@ namespace Helpdesk.Core.Dtos.Inputs
     {
         [Required(ErrorMessage = "El usuario es obligatorio")]
         [Display(Name = "Usuario")]
-        [StringLength(20)]
-        public string? User { get; set; }
+        [StringLength(50)]
+        public string User { get; set; }
 
         [Required(ErrorMessage = "La contraseña es obligatoria")]
         [Display(Name = "Contraseña")]
         [StringLength(20)]
-        public string? Password { get; set; }
+        public string Password { get; set; }
     }
 }

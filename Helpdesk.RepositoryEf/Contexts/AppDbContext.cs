@@ -29,7 +29,8 @@ namespace Helpdesk.RepositoryEf.Contexts
             {
                 string connectionString;
 
-                connectionString = _configuration.GetConnectionString("DefaultConnection");
+                //connectionString = _configuration.GetConnectionString("DefaultConnection");
+                connectionString = "Server=localhost; Port=13306; Database=HelpDesk; Uid=root; Pwd=;";
                 optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             }
         }
@@ -41,6 +42,7 @@ namespace Helpdesk.RepositoryEf.Contexts
         public DbSet<PersonEntity> Person { get; set; }
         public DbSet<ProjectEntity> Project { get; set; }
         public DbSet<UserEntity> User { get; set; }
+        public DbSet<RoleEntity> Role { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -99,15 +101,23 @@ namespace Helpdesk.RepositoryEf.Contexts
                 }
             );
 
+            modelBuilder.Entity<RoleEntity>().HasData(
+                new RoleEntity {Id = 1, Name = "Nivel 1", DateRegistration= DateTime.Now, IsActive = true},
+                new RoleEntity {Id = 2, Name = "Nivel 2", DateRegistration= DateTime.Now, IsActive = true},
+                new RoleEntity {Id = 3, Name = "Nivel 3", DateRegistration= DateTime.Now, IsActive = true},
+                new RoleEntity {Id = 4, Name = "Nivel 4", DateRegistration= DateTime.Now, IsActive = true}
+            );
+
             modelBuilder.Entity<UserEntity>().HasData(
                 new UserEntity
                 {
                     Id = 1,
                     DateRegistration = DateTime.Now,
                     IsActive = true,
-                    Name = "administrador",
+                    Email = "administrador",
                     Password = "123456",
-                    PersonId = 1
+                    PersonId = 1,
+                    RoleId = 1
                 }
             );
 

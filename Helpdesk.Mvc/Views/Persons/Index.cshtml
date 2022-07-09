@@ -53,8 +53,11 @@
             <h2>Lista de personas</h2>
         </div>
         <div class="card-body">
-            <p>
-                @Html.ActionLink("Agregar nuevo", "Create")
+            <p>                
+                <a asp-action="Index">
+                    <i class="align-middle" data-feather="plus-circle"></i> 
+                    <span class="align-middle">Agregar nuevo</span> 
+                </a>
             </p>
 
             <table class="table">

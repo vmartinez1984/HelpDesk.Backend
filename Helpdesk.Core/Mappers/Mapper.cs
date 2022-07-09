@@ -99,12 +99,14 @@ namespace Helpdesk.Core.Mappers
         }
     }
 
-    public class ImplementsMapper :Profile
+    public class ImplementsMapper : Profile
     {
         public ImplementsMapper()
         {
-            CreateMap<PersonSearchEntity,PersonSearchDtonIn>();
-            CreateMap<PersonPagerEntity,PersonPagerDtoOut>();
+            CreateMap<PersonSearchEntity, PersonSearchDtonIn>();
+            CreateMap<PersonPagerEntity, PersonPagerDtoOut>();
+
+            CreateMap<RoleEntity, RoleDto>();
         }
     }
 }

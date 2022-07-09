@@ -10,7 +10,8 @@ namespace Helpdesk.BusinessLayer.Bl
             IAgencyTypeBl agencyTypeBl,
             IAgencyBl agencyBl,
             IPersonBl personBl,
-            IZipCodeBl zipCodeBl
+            IZipCodeBl zipCodeBl,
+            IRoleBl roleBl
         )
         {
             this.User = user;
@@ -19,6 +20,7 @@ namespace Helpdesk.BusinessLayer.Bl
             this.Agency = agencyBl;
             this.Person = personBl;
             this.ZipCode = zipCodeBl;
+            this.Role = roleBl;
         }
 
         public IUserBl User { get; }
@@ -27,5 +29,6 @@ namespace Helpdesk.BusinessLayer.Bl
         public IAgencyBl Agency { get; }
         public IPersonBl Person { get; }
         public IZipCodeBl ZipCode { get; }
+        public IRoleBl Role { get; }
     }
 }

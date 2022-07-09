@@ -27,9 +27,14 @@ namespace Helpdesk.BusinessLayer.Bl
             return entity.Id;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(ProjectDeleteDtoIn item)
         {
-            await _repository.Project.DeleteAsync(id, 1);
+            UserEntity userEntity;
+
+            userEntity = await _repository.User.GetAsync(item.DeleteUserId);
+            item.Reason = $"{item.Reason}, baja por {userEntity.Email} {userEntity.Id}, {DateTime.Now} ";
+            
+            await _repository.Project.DeleteAsync(item.Id, item.Reason);
         }
 
         public async Task<ProjectDtoOut> GetAsync(int id)
@@ -88,6 +93,11 @@ namespace Helpdesk.BusinessLayer.Bl
             entity.Notes = item.Notes;
 
             await _repository.Project.UpdateAsync(entity);
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

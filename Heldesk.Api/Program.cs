@@ -33,6 +33,7 @@ builder.Services.AddScoped<IAgencyTypeRepository, AgencyTypeRepository>();
 builder.Services.AddScoped<IAgencyRepository, AgencyRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IRepository, RepositoryEf>();
 //Services
 builder.Services.AddScoped<IZipCodeService, ZipCodeService>();
@@ -43,6 +44,7 @@ builder.Services.AddScoped<IAgencyTypeBl, AgencyTypeBl>();
 builder.Services.AddScoped<IProjectBl, ProjectBl>();
 builder.Services.AddScoped<IUserBl, UserBl>();
 builder.Services.AddScoped<IZipCodeBl, ZipCodeBl>();
+builder.Services.AddScoped<IRoleBl, RoleBl>();
 builder.Services.AddScoped<IUnitOfWorkBl, UnitOfWorkBl>();
 //Mappers
 var mapperConfig = new MapperConfiguration(mapperConfig =>

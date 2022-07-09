@@ -12,5 +12,7 @@ namespace Helpdesk.Core.Entities
         public string Notes { get; set; }
 
         public int UserId { get; set; }
+
+        public string Reason { get; set; }
     }
 }

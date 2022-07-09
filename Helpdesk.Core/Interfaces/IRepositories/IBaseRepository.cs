@@ -9,6 +9,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         IAgencyTypeRepository AgencyType { get; }
         IAgencyRepository Agency { get; }
         IPersonRepository Person { get; }
+        IRoleRepository Role { get; }
     }
 
     public interface IBaseRepository<T> where T : class
@@ -56,9 +57,14 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<UserEntity> GetAsync(string userName);
 
         Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId);
+        
+        Task<bool> ExistsAsync(string email);
     }
 
-    public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity> { }
+    public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity> 
+    { 
+        Task DeleteAsync(int id, string reason);
+    }
 
     public interface IAgencyTypeRepository : IBaseRepositoryCatalog<AgencyTypeEntity> { }
 
@@ -70,5 +76,10 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     public interface IPersonRepository : IBaseRepository02<PersonEntity>
     {
         Task<PersonPagerEntity> SearchAsync(PersonSearchEntity search);
+    }
+
+    public interface IRoleRepository 
+    {
+         Task<List<RoleEntity>> GetAsync();
     }
 }

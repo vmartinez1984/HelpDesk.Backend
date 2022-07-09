@@ -3,7 +3,7 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     public interface IUnitOfWorkBl
     {
         public IUserBl User { get; }
-        
+
         public IProjectBl Project { get; }
 
         public IAgencyTypeBl AgencyType { get; }
@@ -12,6 +12,8 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
 
         public IPersonBl Person { get; }
 
-        public IZipCodeBl ZipCode { get;}
+        public IZipCodeBl ZipCode { get; }
+
+        public IRoleBl Role { get; }
     }
 }

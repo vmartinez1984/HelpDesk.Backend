@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    @* <div class="card mt-5">
+    <div class="card mt-5">
         <div class="card-header">
             <h2>Lista de agencias</h2>
         </div>
@@ -55,42 +55,34 @@
             <table class="table">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].Code)
+                        @Html.DisplayNameFor(model => model.ListUsers[0].Name)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].AgencyTypeName)
+                        @Html.DisplayNameFor(model => model.ListUsers[0].LastName)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].Name)
+                        @Html.DisplayNameFor(model => model.ListUsers[0].Email)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].State)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].DateRegistration)
+                        @Html.DisplayNameFor(model => model.ListUsers[0].DateRegistration)
                     </th>
                     <th></th>
                 </tr>
                 <tbody>
-                @foreach (var item in Model.ListAgencies)
+                @foreach (var item in Model.ListUsers)
                 {
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Code)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AgencyTypeName)
-                        </td>
-
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
 
                         <td>
-                            @Html.DisplayFor(modelItem => item.State)
+                            @Html.DisplayFor(modelItem => item.LastName)
                         </td>
 
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.DateRegistration)
                         </td>
@@ -110,11 +102,11 @@
                 }
                 </tbody>
             </table>
-        </div> *@
+        </div>
         <div class="card-footer">
-            @{
+            @* @{
                 await Html.RenderPartialAsync("_Pager", Model);
-            }
+            } *@
         </div>
     </div>
 </div>

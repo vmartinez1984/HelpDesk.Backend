@@ -43,3 +43,9 @@ dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
  # NewtonSoft
 
  dotnet add package Newtonsoft.Json --version 13.0.1
+
+ # Base de datos
+
+ dotnet ef database drop
+
+dotnet ef migrations remove
