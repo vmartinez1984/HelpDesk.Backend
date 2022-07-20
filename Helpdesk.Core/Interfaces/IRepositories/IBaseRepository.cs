@@ -1,3 +1,4 @@
+using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
 
 namespace Helpdesk.Core.Interfaces.IRepositories
@@ -59,6 +60,8 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId);
         
         Task<bool> ExistsAsync(string email);
+        
+        Task<string> GetNameAsync(int userId);
     }
 
     public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity> 

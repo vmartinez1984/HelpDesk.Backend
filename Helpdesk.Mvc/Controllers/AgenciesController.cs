@@ -62,6 +62,7 @@ namespace Helpdesk.Mvc.Controllers
             item = await _unitOfWorkBl.Agency.GetAsync((int)id);
             ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
             ViewData["ListAgencyType"] = new SelectList(await _unitOfWorkBl.AgencyType.GetAsync(), "Id", "Name");
+            ViewData["ListZipCodes"] = new SelectList(await _unitOfWorkBl.ZipCode.GetAsync(item.ZipCode), "Settement", "Settement");
 
             return View(item);
         }
@@ -118,10 +119,13 @@ namespace Helpdesk.Mvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        // public IActionResult Error()
-        // {
-        //     return View("Error!");
-        // }
+        public async Task<IActionResult> Details(int id)
+        {
+            AgencyDtoOut item;
+
+            item = await _unitOfWorkBl.Agency.GetAsync(id);
+
+            return View(item);
+        }
     }
 }

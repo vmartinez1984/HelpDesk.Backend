@@ -3,9 +3,7 @@
 @{
     ViewBag.Title = "Usuarios";
 }
-<h2 class="text-info">
-    EL usuario debe de contener correo y los datos basicos de persona, asi como cel y correo
-</h2>
+
 <div class="container">
     
     <div class="card">
@@ -14,7 +12,7 @@
         </div>
         <div class="card-body">
             <form>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label asp-for="ProjectId" class="control-label"></label>
                     <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
                         <option value="">Seleccione</option>
@@ -22,7 +20,7 @@
                     <span asp-validation-for="ProjectId" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label asp-for="AgencyId" class="control-label"></label>
                     <select asp-for="AgencyId" class="form-select" asp-items="ViewBag.ListAgencies">
                         <option value="">Seleccione</option>
@@ -30,27 +28,32 @@
                     <span asp-validation-for="AgencyId" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label asp-for="UserName" class="control-label"></label>
-                    <input asp-for="UserName" class="form-control"  placeholder="Nombre de la agencia"/>
+                    <input asp-for="UserName" class="form-control"  placeholder="Nombre de usuario"/>
                     <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
 
-                <br/>
-                <button type="submit" class="btn btn-primary">
-                    Buscar 
-                </button>        
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="align-middle" data-feather="search"></i> 
+                        <span class="align-middle">Buscar</span> 
+                    </button>        
+                </div>        
             </form>
         </div>
     </div>
 
     <div class="card mt-5">
         <div class="card-header">
-            <h2>Lista de agencias</h2>
+            <h2>Lista de usuario</h2>
         </div>
         <div class="card-body">
             <p>
-                @Html.ActionLink("Agregar nuevo", "Create")
+                <a asp-action="Create">
+                    <i class="align-middle" data-feather="plus-circle"></i> 
+                    <span class="align-middle">Agregar nuevo</span> 
+                </a>
             </p>
             <table class="table">
                 <tr>
@@ -87,14 +90,19 @@
                             @Html.DisplayFor(modelItem => item.DateRegistration)
                         </td>
                         <td>
-                            <a href="~/Agencies/Edit/@item.Id" class="btn btn-warning text-white">
-                                <i class="fas fa-edit text-white"></i>
-                                Editar
+                           <a asp-controller="Users" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info text-white">
+                                <i class="align-middle" data-feather="clipboard"></i> 
+                                <span class="align-middle">Detalles</span>
                             </a>
 
-                            <a href="~/Agencies/Delete/@item.Id" class="btn btn-danger">
-                                <i class="fas fa-eraser text-white"></i>
-                                Borrar
+                            <a asp-controller="Users" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning text-white">
+                                <i class="align-middle" data-feather="edit"></i> 
+                                <span class="align-middle">Editar</span>
+                            </a>
+
+                            <a asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                                <i class="align-middle" data-feather="delete"></i> 
+                                <span class="align-middle">Borrar</span>
                             </a>
 
                         </td>

@@ -18,6 +18,9 @@ namespace Helpdesk.Core.Dtos.Outputs
 
         public int UserId { get; set; }
 
+        [Display(Name = "Usuario que registro")]
+        public string UserName { get; set; }
+
         [Display(Name = "Agencia")]
         public int AgencyId { get; set; }
 

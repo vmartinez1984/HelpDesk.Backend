@@ -4,106 +4,119 @@
     ViewData["Title"] = "Agencia";
 }
 
-<h4>Agregar agencia</h4>
-<hr />
+<div class="mb-3">
+	<h1 class="h3 d-inline align-middle">@ViewData["title"]</h1>
+</div>
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <input asp-for="Id" type="hidden"/>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+    <div class="col-md-12">
 
-            <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
-                    <option value="">Seleccione</option>
-                </select>
-                <span asp-validation-for="ProjectId" class="text-danger"></span>
-            </div>
+        <div class="card">
+            <div class="card-header">
+				<h5 class="card-title mb-0">Editar proyecto</h5>
+			</div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <input asp-for="Id" type="hidden"/>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
 
-            <div class="form-group">
-                <label asp-for="AgencyTypeId" class="control-label"></label>
-                <select asp-for="AgencyTypeId" class="form-select" asp-items="ViewBag.ListAgencyType">
-                    <option value="">Seleccione</option>
-                </select>
-                <span asp-validation-for="AgencyTypeId" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ProjectId" class="control-label"></label>
+                        <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Code" class="control-label"></label>
-                <input asp-for="Code" class="form-control" placeholder="Clave de la agencia"/>
-                <span asp-validation-for="Code" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="AgencyTypeId" class="control-label"></label>
+                        <select asp-for="AgencyTypeId" class="form-select" asp-items="ViewBag.ListAgencyType">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="AgencyTypeId" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control"  placeholder="Nombre de la agencia"/>
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Code" class="control-label"></label>
+                        <input asp-for="Code" class="form-control" placeholder="Clave de la agencia"/>
+                        <span asp-validation-for="Code" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="ZipCode" class="control-label"></label>
-                <input asp-for="ZipCode" class="form-control" maxlength="5" placeholder="Código postal" onkeyup="onkeyupZipCode(event);"/>
-                <span asp-validation-for="ZipCode" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control"  placeholder="Nombre de la agencia"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
 
-             <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" type="hidden"/>
-                <input id="State_" class="form-control" maxlength="50" placeholder="Estado" disabled/>
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ZipCode" class="control-label"></label>
+                        <input asp-for="ZipCode" class="form-control" maxlength="5" placeholder="Código postal" onkeyup="onkeyupZipCode(event);"/>
+                        <span asp-validation-for="ZipCode" class="text-danger"></span>
+                    </div>
 
-             <div class="form-group">
-                <label asp-for="TownHall" class="control-label"></label>
-                <input asp-for="TownHall" type="hidden"/>
-                <input id="TownHall_" class="form-control" maxlength="50" placeholder="Alcaldia" disabled/>
-                <span asp-validation-for="TownHall" class="text-danger"></span>
-            </div>
-           
-            <div class="form-group">
-                <label asp-for="Settlement" class="control-label"></label>
-                <select asp-for="Settlement" class="form-select">
-                    <option value="">Seleccione</option>
-                </select>
-                <span asp-validation-for="Settlement" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="State" class="control-label"></label>
+                        <input asp-for="State" type="hidden"/>
+                        <input id="State_" class="form-control" maxlength="50" placeholder="Estado" disabled/>
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" maxlength="255" placeholder="Dirección"/>
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="TownHall" class="control-label"></label>
+                        <input asp-for="TownHall" type="hidden"/>
+                        <input id="TownHall_" class="form-control" maxlength="50" placeholder="Alcaldia" disabled/>
+                        <span asp-validation-for="TownHall" class="text-danger"></span>
+                    </div>
+                
+                    <div class="form-group mb-3">
+                        <input type="hidden" value="@Model.Settlement" id="SettlementAux"/>
+                        <label asp-for="Settlement" class="control-label"></label>
+                        <select asp-for="Settlement" class="form-select" asp-items="ViewBag.ListZipCodes">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="Settlement" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" maxlength="2555" placeholder="Teléfono"/>
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Address" class="control-label"></label>
+                        <input asp-for="Address" class="form-control" maxlength="255" placeholder="Dirección"/>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" maxlength="255" placeholder="correo"/>
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" maxlength="2555" placeholder="Teléfono"/>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
 
-            <div class="form-floating">
-                <textarea asp-for="Notes" class="form-control" placeholder="Leave a comment here" style="height: 100px"></textarea>
-                <label for="Notes">Notas</label>
-            </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="email" class="control-label"></label>
+                        <input asp-for="email" class="form-control" maxlength="255" placeholder="correo"/>
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <div class="form-floating mb-3">
+                        <textarea asp-for="Notes" class="form-control" placeholder="Leave a comment here" style="height: 100px"></textarea>
+                        <label for="Notes">Notas</label>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary" >
+                            <i class="align-middle" data-feather="save"></i> 
+                            <span class="align-middle">Guardar</span>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
-@* <div>
-    <a asp-action="Index" asp-controller="Agencies" asp-route-id="@Model.ProjectId">Regresar</a>
-</div> *@
-
 <div>
-    <a asp-action="Index" asp-controller="Agencies">Regresar</a>
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span> 
+    </a>
 </div>
 
 @section Scripts {

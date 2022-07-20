@@ -45,8 +45,20 @@ namespace Helpdesk.BusinessLayer.Bl
             item.AgencyTypeName = agencyType.Name;
             var project = await _repository.Project.GetAsync(item.ProjectId);
             item.ProjectName = project.Name;
+            await SetUserNameAsync(item);
 
             return item;
+        }
+
+        private async Task SetUserNameAsync(AgencyDtoOut item)
+        {
+            UserEntity userEntity;
+            PersonEntity personEntity;
+
+            userEntity = await _repository.User.GetAsync(item.UserId);
+            personEntity = await _repository.Person.GetAsync(userEntity.PersonId);
+
+            item.UserName = $"{personEntity.Name} {personEntity.LastName}";
         }
 
         public async Task<AgencyListDtoOut> GetAsync(AgencySearchDtoIn agencySearchDto)
@@ -67,13 +79,13 @@ namespace Helpdesk.BusinessLayer.Bl
         {
             List<AgencyTypeEntity> listAgencyTypeEntities;
 
-            listAgencyTypeEntities = await _repository.AgencyType.GetAsync();            
+            listAgencyTypeEntities = await _repository.AgencyType.GetAsync();
             agencySearch.ListAgencies?.ForEach(item =>
             {
                 AgencyTypeEntity agencyTypeEntity;
 
                 agencyTypeEntity = listAgencyTypeEntities.Where(x => x.Id == item.AgencyTypeId).FirstOrDefault();
-                
+
                 item.AgencyTypeName = agencyTypeEntity?.Name;
             });
         }
@@ -83,7 +95,7 @@ namespace Helpdesk.BusinessLayer.Bl
             AgencyEntity entity;
 
             entity = await _repository.Agency.GetAsync(id);
-            var entityUpdate = _mapper.Map<AgencyEntity>(item);            
+            var entityUpdate = _mapper.Map<AgencyEntity>(item);
             entity.Address = entityUpdate.Address;
             entity.AgencyTypeId = entityUpdate.AgencyTypeId;
             entity.Code = entityUpdate.Code;

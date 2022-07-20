@@ -37,7 +37,7 @@ namespace Helpdesk.Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(UserDtoIn user)
         //public async Task<IActionResult> Create(Helpdesk.Dtos.Inputs.UserDtoIn user1)
-        {           
+        {
             user.UserId = SessionHelper.GetNameIdentifier(User);
             if (ModelState.IsValid)
             {
@@ -51,6 +51,15 @@ namespace Helpdesk.Mvc.Controllers
             ViewData["ListRoles"] = new SelectList(await _unitOfWorkBl.Role.GetAsync(), "Id", "Name");
 
             return View(user);
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            UserDtoOut item;
+
+            item = await _unitOfWorkBl.User.GetAsync(id);
+
+            return View(item);
         }
     }
 }

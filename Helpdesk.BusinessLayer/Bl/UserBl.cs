@@ -45,7 +45,7 @@ namespace Helpdesk.BusinessLayer.Bl
                 IsActive = true,
                 LastName = item.LastName,
                 Name = item.Name,
-                Notes = item.Name,
+                Notes = item.Notes,
                 UserId = item.UserId
             };
 
@@ -64,8 +64,20 @@ namespace Helpdesk.BusinessLayer.Bl
 
             entity = await _repository.User.GetAsync(id);
             item = _mapper.Map<UserDtoOut>(entity);
+            await SetPersonAsync(item);
+            await SetAgencyAsync(item);
+            item.UserName = await _repository.User.GetNameAsync(item.UserId);
 
             return item;
+        }
+
+        private async Task SetAgencyAsync(UserDtoOut item)
+        {
+            AgencyEntity agencyEntity;
+
+            agencyEntity= await _repository.Agency.GetAsync(item.AgencyId);
+
+            item.AgencyName = $"{agencyEntity.Code} {agencyEntity.Name}";
         }
 
         public async Task<List<UserDtoOut>> GetAsync(int? projectId, int? agencyId)
@@ -91,13 +103,16 @@ namespace Helpdesk.BusinessLayer.Bl
                 item.LastName = person.LastName;
             }
         }
+        
         private async Task SetPersonAsync(UserDtoOut item)
         {
             PersonEntity person;
 
             person = await _repository.Person.GetAsync(item.PersonId);
             item.Name = person.Name;
-            item.LastName = person.LastName;            
+            item.LastName = person.LastName;   
+            item.AgencyId = person.AgencyId;
+            item.Notes = person.Notes;        
         }
 
         public async Task<UserDtoOut> Login(LoginDto login)

@@ -29,8 +29,8 @@ namespace Helpdesk.RepositoryEf.Contexts
             {
                 string connectionString;
 
-                //connectionString = _configuration.GetConnectionString("DefaultConnection");
-                connectionString = "Server=localhost; Port=13306; Database=HelpDesk; Uid=root; Pwd=;";
+                connectionString = _configuration.GetConnectionString("DefaultConnection");
+                //connectionString = "Server=localhost; Port=13306; Database=HelpDesk; Uid=root; Pwd=;";
                 optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             }
         }

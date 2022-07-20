@@ -48,6 +48,11 @@ function searchZipcode(zipCode) {
                     option = document.createElement("option")
                     option.value = element.settementType + " " + element.settement
                     option.text = element.settementType + " " + element.settement
+                    if (document.getElementById("SettlementAux") != undefined) {
+                        if (element.settementType + " " + element.settement == document.getElementById("SettlementAux").value) {
+                            option.selected = true;
+                        }
+                    }
 
                     selectSettlement.appendChild(option)
                 });

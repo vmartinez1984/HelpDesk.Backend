@@ -59,6 +59,17 @@ namespace Helpdesk.RepositoryEf.Repositories
             return await _appDbContext.User.FirstOrDefaultAsync(x => x.Email == userName);
         }
 
+        public async Task<string> GetNameAsync(int userId)
+        {
+            UserEntity userEntity;
+            PersonEntity personEntity;
+
+            userEntity = await GetAsync(userId);
+            personEntity = await _appDbContext.Person.Where(x=> x.Id == userEntity.PersonId).FirstAsync();
+
+            return $"{personEntity.Name} {personEntity.LastName}";
+        }
+
         public async Task UpdateAsync(UserEntity entity)
         {
             _appDbContext.User.Update(entity);
