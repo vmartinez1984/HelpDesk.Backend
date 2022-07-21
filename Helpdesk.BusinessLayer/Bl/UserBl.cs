@@ -20,7 +20,7 @@ namespace Helpdesk.BusinessLayer.Bl
 
         public async Task<int> AddAsync(UserDtoIn item)
         {
-            if (await _repository.User.ExistsAsync(item.Email))
+            if (await _repository.User.ExistsAsync(item.Email, 0))
             {
                 throw new Exception("El correo ya existe");
             }
@@ -75,21 +75,26 @@ namespace Helpdesk.BusinessLayer.Bl
         {
             AgencyEntity agencyEntity;
 
-            agencyEntity= await _repository.Agency.GetAsync(item.AgencyId);
+            agencyEntity = await _repository.Agency.GetAsync(item.AgencyId);
 
+            item.ProjectId = agencyEntity.ProjectId;
             item.AgencyName = $"{agencyEntity.Code} {agencyEntity.Name}";
         }
 
-        public async Task<List<UserDtoOut>> GetAsync(int? projectId, int? agencyId)
+        public async Task<UserListDtoOut> GetAsync(UserSearchDtoIn userSearch)
         {
-            List<UserEntity> entities;
-            List<UserDtoOut> list;
+            UserSearchEntity userSearchEntity;            
+            UserListDtoOut userListDtoOut;
+            List<UserEntity> listUserEntities;
 
-            entities = await _repository.User.GetAsync(projectId, agencyId);
-            list = _mapper.Map<List<UserDtoOut>>(entities);
-            await SetPersonsAsync(list);
+            userSearchEntity = _mapper.Map<UserSearchEntity>(userSearch);
+            //El total de registros se pasa por referencia en userSearchEntity
+            listUserEntities = await _repository.User.GetAsync(userSearchEntity);
+            userListDtoOut = _mapper.Map<UserListDtoOut>(userSearchEntity);
+            userListDtoOut.ListUsers = _mapper.Map<List<UserDtoOut>>(listUserEntities);
+            await SetPersonsAsync(userListDtoOut.ListUsers);
 
-            return list;
+            return userListDtoOut;
         }
 
         private async Task SetPersonsAsync(List<UserDtoOut> list)
@@ -103,16 +108,16 @@ namespace Helpdesk.BusinessLayer.Bl
                 item.LastName = person.LastName;
             }
         }
-        
+
         private async Task SetPersonAsync(UserDtoOut item)
         {
             PersonEntity person;
 
             person = await _repository.Person.GetAsync(item.PersonId);
             item.Name = person.Name;
-            item.LastName = person.LastName;   
+            item.LastName = person.LastName;
             item.AgencyId = person.AgencyId;
-            item.Notes = person.Notes;        
+            item.Notes = person.Notes;
         }
 
         public async Task<UserDtoOut> Login(LoginDto login)
@@ -142,9 +147,31 @@ namespace Helpdesk.BusinessLayer.Bl
             await _repository.User.UpdateAsync(entity);
         }
 
-        public async Task<bool> Exists(string email)
+        public async Task<bool> Exists(string email, int userId)
         {
-            return await _repository.User.ExistsAsync(email);
+            return await _repository.User.ExistsAsync(email, userId);
+        }
+
+        public async Task UpdateAsync(UserDtoOut item)
+        {
+            UserEntity userEntity;
+
+            userEntity = await _repository.User.GetAsync(item.Id);
+            userEntity.Password = item.Password;
+            userEntity.RoleId = item.RoleId;
+            userEntity.Email = item.Email;
+
+            await _repository.User.UpdateAsync(userEntity);
+
+            PersonEntity personEntity;
+
+            personEntity = await _repository.Person.GetAsync(userEntity.PersonId);
+            personEntity.Name = item.Name;
+            personEntity.LastName = item.LastName;
+            personEntity.AgencyId = item.AgencyId;
+            personEntity.Notes = item.Notes;
+
+            await _repository.Person.UpdateAsync(personEntity);
         }
     }//end class
 }

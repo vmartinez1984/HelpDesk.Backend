@@ -1,0 +1,98 @@
+@using Helpdesk.Core.Dtos.Outputs
+@model UserDtoOut
+
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<h1 class="h3 mb-3">Usuarios</h1>
+
+<div class="row">    
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+				<h5 class="card-title mb-0">Agregar usuario</h5>
+			</div>
+            <div class="card-body">
+                <form asp-action="Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label" asp-for="ProjectId"></label>
+                        <select class="form-select" asp-for="ProjectId" id="selectProject" asp-items="ViewBag.ListProjects" onchange="onchange_SelectProject();">
+                            <option value="">Seleccione</option>
+                        </select>                
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        @* <input id="AgencyIdAux" value="@Model.AgencyId" type="hidden"/> *@
+                        <label asp-for="AgencyId" class="control-label"></label>
+                        <select asp-for="AgencyId" class="form-select" asp-items="ViewBag.ListAgencies">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="AgencyId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" maxlength="255"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" maxlength="255"/>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" maxlength="255"/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" type="password" class="form-control" maxlength="255" value="@Model.Password"/>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label" asp-for="RoleId"></label>
+                        <select class="form-select" asp-for="RoleId" asp-items="ViewBag.ListRoles">
+                            <option value="">Seleccione</option>
+                        </select>                
+                        <span asp-validation-for="RoleId" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Notes" class="control-label"></label>
+                        <textarea asp-for="Notes" class="form-control" row="1" maxlength="1000"></textarea>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+
+                    
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary" >
+                            <i class="align-middle" data-feather="save"></i> 
+                            <span class="align-middle">Guardar</span> 
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span> 
+    </a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="/js/person.js"></script>
+}

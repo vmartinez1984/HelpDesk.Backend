@@ -8,9 +8,9 @@ namespace Helpdesk.Core.Dtos.Outputs
         public int? ProjectId { get; set; }
 
         [Display(Name = "Agencia")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "Clave")]
-        public string? Code { get; set; }
+        public string Code { get; set; }
     }
 }

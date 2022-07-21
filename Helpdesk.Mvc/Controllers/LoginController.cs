@@ -74,7 +74,7 @@ namespace Helpdesk.Mvc.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return Redirect("/Login");
+            return Redirect("Index");
         }
     }
 }

@@ -57,9 +57,9 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     {
         Task<UserEntity> GetAsync(string userName);
 
-        Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId);
+        Task<List<UserEntity>> GetAsync(UserSearchEntity userSearch);
         
-        Task<bool> ExistsAsync(string email);
+        Task<bool> ExistsAsync(string email, int userId);
         
         Task<string> GetNameAsync(int userId);
     }
@@ -74,6 +74,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     public interface IAgencyRepository : IBaseRepository02<AgencyEntity>
     {
         Task<AgencySearchEntityOut> GetAsync(AgencySearchEntity agencySearchEntity);
+        Task<List<AgencyEntity>> GetByProjectIdAsync(int projectId);
     }
 
     public interface IPersonRepository : IBaseRepository02<PersonEntity>

@@ -2,11 +2,13 @@ using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Helpdesk.Mvc.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Helpdesk.Mvc.Controllers
 {
+    [Authorize]
     public class AgenciesController : Controller
     {
         private IUnitOfWorkBl _unitOfWorkBl;

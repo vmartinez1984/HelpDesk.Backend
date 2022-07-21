@@ -31,22 +31,46 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<bool> ExistsAsync(string email)
+        public async Task<bool> ExistsAsync(string email, int userId)
         {
             bool exists;
 
-            exists = await _appDbContext.User.CountAsync(x => x.Email == email) == 0 ? false : true;
+            if (userId == 0)
+                exists = await _appDbContext.User.CountAsync(x => x.Email == email) == 0 ? false : true;
+            else
+                exists = await _appDbContext.User.CountAsync(x => x.Email == email && x.Id != userId) == 0 ? false : true;
 
             return exists;
         }
 
-        public async Task<List<UserEntity>> GetAsync(int? projectId, int? agencyId)
-        {
-            List<UserEntity> entities;
+        public async Task<List<UserEntity>> GetAsync(UserSearchEntity search)
+        {            
+            List<UserEntity> list;
+            IQueryable<UserEntity> queryable;
 
-            entities = await _appDbContext.User.Where(x => x.IsActive).ToListAsync();
+            queryable = _appDbContext.User.Include(x => x.Person);
+            queryable = queryable.Where(x => x.IsActive);
+            if (search.ProjectId is not null)
+            {
+                queryable = queryable.Where(x => x.Person.Agency.ProjectId == search.ProjectId);
+            }
+            if (search.ProjectId is not null)
+            {
+                queryable = queryable.Where(x => x.Person.AgencyId == search.AgencyId);
+            }
+            if (!string.IsNullOrEmpty(search.UserEmail))
+            {
+                queryable = queryable.Where(x => x.Email.ToUpper().Contains(search.UserEmail.ToUpper()));
+            }
 
-            return entities;
+            list = await queryable
+            .OrderByDescending(x => x.Id)
+            .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
+            .Take(search.RecordsPerPage)
+            .ToListAsync();
+            search.TotalRecords = await queryable.CountAsync();
+
+            return list;
         }
 
         public async Task<UserEntity> GetAsync(int id)
@@ -65,7 +89,7 @@ namespace Helpdesk.RepositoryEf.Repositories
             PersonEntity personEntity;
 
             userEntity = await GetAsync(userId);
-            personEntity = await _appDbContext.Person.Where(x=> x.Id == userEntity.PersonId).FirstAsync();
+            personEntity = await _appDbContext.Person.Where(x => x.Id == userEntity.PersonId).FirstAsync();
 
             return $"{personEntity.Name} {personEntity.LastName}";
         }

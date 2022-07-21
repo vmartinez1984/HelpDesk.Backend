@@ -61,7 +61,9 @@ function searchZipcode(zipCode) {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    zipCode = document.getElementById("ZipCode").value
-    if (zipCode.length == 5)
-        searchZipcode(zipCode)
+    if (document.getElementById("ZipCode") != undefined) {
+        zipCode = document.getElementById("ZipCode").value
+        if (zipCode.length == 5)
+            searchZipcode(zipCode)
+    }
 });

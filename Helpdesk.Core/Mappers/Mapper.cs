@@ -107,6 +107,11 @@ namespace Helpdesk.Core.Mappers
             CreateMap<PersonPagerEntity, PersonPagerDtoOut>();
 
             CreateMap<RoleEntity, RoleDto>();
+
+            CreateMap<UserSearchDtoIn, UserSearchEntity>();
+            CreateMap<UserSearchEntity, UserListDtoOut>();
+            CreateMap<UserSearchEntity, UserSearchDtoIn>();
+            CreateMap<PagerEntity, UserSearchEntity>();
         }
     }
 }

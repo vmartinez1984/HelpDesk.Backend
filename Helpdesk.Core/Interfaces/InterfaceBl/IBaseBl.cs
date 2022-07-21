@@ -33,24 +33,24 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     {
         Task<UserDtoOut> Login(LoginDto login);
 
-        Task<List<UserDtoOut>> GetAsync(int? projectId, int? agencyId);
+        Task<UserListDtoOut> GetAsync(UserSearchDtoIn userSearch);
 
-        Task<bool> Exists(string email);
+        Task<bool> Exists(string email, int id);
+
+        Task UpdateAsync(UserDtoOut item);
     }
 
-    public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut> 
-    { 
-         Task DeleteAsync(ProjectDeleteDtoIn item);
-    }
-
-    public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut>
+    public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut>
     {
-
+        Task DeleteAsync(ProjectDeleteDtoIn item);
     }
+
+    public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut> { }
 
     public interface IAgencyBl : IBase02Bl<AgencyDtoIn, AgencyDtoOut>
     {
         Task<AgencyListDtoOut> GetAsync(AgencySearchDtoIn agencySearchDtoIn);
+        Task<List<AgencyDtoOut>> GetByProjectIdAsync(int projectId);
     }
 
     public interface IPersonBl : IBase02Bl<PersonDtoIn, PersonDtoOut>

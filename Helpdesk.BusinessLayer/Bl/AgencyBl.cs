@@ -112,5 +112,16 @@ namespace Helpdesk.BusinessLayer.Bl
 
             await _repository.Agency.UpdateAsync(entity);
         }
+
+        public async Task<List<AgencyDtoOut>> GetByProjectIdAsync(int projectId)
+        {
+            List<AgencyDtoOut> list;
+            List<AgencyEntity> entities;
+
+            entities = await _repository.Agency.GetByProjectIdAsync(projectId);
+            list = _mapper.Map<List<AgencyDtoOut>>(entities);
+
+            return list;
+        }
     }
 }

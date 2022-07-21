@@ -39,7 +39,12 @@ function onchange_SelectProject() {
                     option = document.createElement("option")
                     option.value = element.id
                     option.text = element.code + " " + element.name
-
+                    if (document.getElementById("SettlementAux") != undefined) {
+                        if (element.settementType + " " + element.settement == document.getElementById("SettlementAux").value) {
+                            option.selected = true;
+                        }
+                    }
+                    
                     selectAgency.appendChild(option)
                 });
             }

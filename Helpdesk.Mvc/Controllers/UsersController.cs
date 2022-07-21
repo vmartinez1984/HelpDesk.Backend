@@ -2,11 +2,13 @@ using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Helpdesk.Mvc.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Helpdesk.Mvc.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private IUnitOfWorkBl _unitOfWorkBl;
@@ -16,12 +18,13 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        public async Task<IActionResult> Index(int? projectId, int? agencyId)
+        public async Task<IActionResult> Index(UserSearchDtoIn userSearch)
         {
             UserListDtoOut userListDtoOut;
-
-            userListDtoOut = new UserListDtoOut();
-            userListDtoOut.ListUsers = await _unitOfWorkBl.User.GetAsync(projectId, agencyId);
+            
+            userListDtoOut = await _unitOfWorkBl.User.GetAsync(userSearch);
+            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
+            //ViewData["ListAgencies"] = new SelectList(await _unitOfWorkBl.Agency.GetByProjectIdAsync(item.ProjectId), "Id", "Name");
 
             return View(userListDtoOut);
         }
@@ -60,6 +63,43 @@ namespace Helpdesk.Mvc.Controllers
             item = await _unitOfWorkBl.User.GetAsync(id);
 
             return View(item);
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            UserDtoOut item;
+
+            item = await _unitOfWorkBl.User.GetAsync(id);
+            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
+            ViewData["ListAgencies"] = new SelectList(await _unitOfWorkBl.Agency.GetByProjectIdAsync(item.ProjectId), "Id", "Name");
+            ViewData["ListRoles"] = new SelectList(await _unitOfWorkBl.Role.GetAsync(), "Id", "Name");
+
+            return View(item);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(UserDtoOut item)
+        {
+            await _unitOfWorkBl.User.UpdateAsync(item);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            UserDtoOut item;
+
+            item = await _unitOfWorkBl.User.GetAsync(id);
+
+            return View(item);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(UserDtoOut item)
+        {
+            await _unitOfWorkBl.User.DeleteAsync(item.Id);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

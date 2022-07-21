@@ -16,6 +16,7 @@ namespace Helpdesk.Core.Entities
 
         [ForeignKey(nameof(PersonEntity))]
         public int PersonId { get; set; }
+        public virtual PersonEntity Person { get; set; }
 
         [ForeignKey(nameof(RoleEntity))]
         public int RoleId { get; set; }

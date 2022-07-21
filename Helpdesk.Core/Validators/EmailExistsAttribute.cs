@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 
 namespace Helpdesk.Core.Validators
@@ -8,12 +9,12 @@ namespace Helpdesk.Core.Validators
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-
             bool result;
+            UserDtoOut user;            
 
-            var _unitOfWorkBl = validationContext.GetService(typeof(IUnitOfWorkBl)) as IUnitOfWorkBl;
-
-            result = _unitOfWorkBl.User.Exists(value.ToString()).Result;
+            user = validationContext.ObjectInstance as UserDtoOut;
+            var _unitOfWorkBl = validationContext.GetService(typeof(IUnitOfWorkBl)) as IUnitOfWorkBl;            
+            result = _unitOfWorkBl.User.Exists(value.ToString(), user.Id).Result;
             if (result)
                 return new ValidationResult("El correo ya existe");
 

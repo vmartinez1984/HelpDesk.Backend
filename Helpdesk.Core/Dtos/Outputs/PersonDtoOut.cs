@@ -24,6 +24,9 @@ namespace Helpdesk.Core.Dtos.Outputs
         [Display(Name = "Agencia")]
         public int AgencyId { get; set; }
 
+        [Display(Name = "Proyecto")]
+        public int ProjectId { get; set; }
+
         [Display(Name = "Agencia")]
         public string AgencyName { get; set; }
 
