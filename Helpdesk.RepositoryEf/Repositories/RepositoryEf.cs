@@ -10,7 +10,9 @@ namespace Helpdesk.RepositoryEf
             IAgencyTypeRepository agencyTypeRepository,
             IAgencyRepository agencyRepository,
             IPersonRepository personRepository,
-            IRoleRepository roleRepository
+            IRoleRepository roleRepository,
+            IDeviceRepository deviceRepository,
+            IDeviceStateRepository deviceStateRepository
         )
         {
             this.User = user;
@@ -19,13 +21,19 @@ namespace Helpdesk.RepositoryEf
             this.Agency = agencyRepository;
             this.Person = personRepository;
             this.Role = roleRepository;
+            this.Device = deviceRepository;
+            this.DeviceState = deviceStateRepository;
         }
 
-        public IUserRepository User { get;}
+        public IUserRepository User { get; }
         public IProjectRepository Project { get; }
         public IAgencyTypeRepository AgencyType { get; }
         public IAgencyRepository Agency { get; }
         public IPersonRepository Person { get; }
         public IRoleRepository Role { get; }
+
+        public IDeviceRepository Device { get; }
+
+        public IDeviceStateRepository DeviceState { get; }
     }
 }
