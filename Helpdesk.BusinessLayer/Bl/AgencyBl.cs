@@ -40,6 +40,8 @@ namespace Helpdesk.BusinessLayer.Bl
             AgencyEntity entity;
 
             entity = await _repository.Agency.GetAsync(id);
+            if (entity is null)
+                return null;
             item = _mapper.Map<AgencyDtoOut>(entity);
             var agencyType = await _repository.AgencyType.GetAsync(item.AgencyTypeId);
             item.AgencyTypeName = agencyType.Name;

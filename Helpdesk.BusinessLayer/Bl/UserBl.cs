@@ -64,11 +64,16 @@ namespace Helpdesk.BusinessLayer.Bl
 
             entity = await _repository.User.GetAsync(id);
             item = _mapper.Map<UserDtoOut>(entity);
+            await SetDataUserDto(item);
+
+            return item;
+        }
+
+        private async Task SetDataUserDto(UserDtoOut item)
+        {
             await SetPersonAsync(item);
             await SetAgencyAsync(item);
             item.UserName = await _repository.User.GetNameAsync(item.UserId);
-
-            return item;
         }
 
         private async Task SetAgencyAsync(UserDtoOut item)
@@ -100,12 +105,8 @@ namespace Helpdesk.BusinessLayer.Bl
         private async Task SetPersonsAsync(List<UserDtoOut> list)
         {
             foreach (var item in list)
-            {
-                PersonEntity person;
-
-                person = await _repository.Person.GetAsync(item.PersonId);
-                item.Name = person.Name;
-                item.LastName = person.LastName;
+            {               
+               await SetDataUserDto(item);
             }
         }
 
