@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using Helpdesk.Core.Dtos.Inputs;
+using Helpdesk.Core.Dtos.Outputs;
 
 namespace Helpdesk.Core.Dtos
 {
@@ -54,5 +56,39 @@ namespace Helpdesk.Core.Dtos
     public class FormAgencyDto : FormAgencyDtoIn
     {
         public string Id { get; set; }
+
+        [Display(Name = "Proyecto")]
+        public string ProjectName { get; set; }
+
+        [Display(Name = "Tipo")]
+        public string AgencyTypeName { get; set; }
+
+        [Display(Name = "Nombre")]
+        public string AgencyName { get; set; }
+
+        [Display(Name = "Código")]
+        public string AgencyCode { get; set; }
+
+        [Display(Name = "Dirección")]
+        public string AgencyAddress { get; set; }
+
+        public List<DeviceDto> ListDevices { get; set; }
+
+        public PersonDtoIn Person { get; set; }
+    }
+
+    public class FormAgencyRegisterDtoIn
+    {
+        public string FormAgencyId { get; set; }
+
+        
+
+        // public ProjectDtoOut Project { get; set; }
+
+        // public AgencyDtoOut Agency { get; set; }
+        
+        public PersonDtoIn Person { get; set; }
+        
+        // public List<DeviceDto> ListDevices { get; set; }
     }
 }

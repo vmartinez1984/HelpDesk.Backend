@@ -98,8 +98,47 @@ namespace Helpdesk.BusinessLayer.Bl
 
             entity = await _repositoryMongoDb.FormAgency.GetAsync(id);
             item = _mapper.Map<FormAgencyDto>(entity);
+            await SetProjectName(item);
+            await SetAgencyData(item);
+            await SetDeviceStateAsync(item.ListDevices);
 
             return item; 
+        }
+
+        private async Task SetDeviceStateAsync(List<DeviceDto> listDevices)
+        {
+            List<DeviceStateEntity>  listDeviceStates;
+
+            listDeviceStates = await _repository.DeviceState.GetAsync();
+            foreach (var item in listDevices)
+            {
+                DeviceStateEntity deviceState;
+
+                deviceState = listDeviceStates.Where(x=> x.Id == item.DeviceStateId).FirstOrDefault();
+                item.DeviceStateName = deviceState.Name;
+            }
+        }
+
+        private async Task SetAgencyData(FormAgencyDto item)
+        {
+            AgencyEntity agency;
+            AgencyTypeEntity agencyType;
+
+            agency = await _repository.Agency.GetAsync(item.AgencyId);
+            item.AgencyName  = agency.Name;
+            item.AgencyCode = agency.Code;
+            item.AgencyAddress = $"{agency.Address} {agency.Settlement} {agency.State} {agency.ZipCode}";            
+            agencyType = await _repository.AgencyType.GetAsync(agency.AgencyTypeId);
+            item.AgencyTypeName = agencyType.Name;
+        }
+
+        private async Task SetProjectName(FormAgencyDto item)
+        {
+            ProjectEntity entity;
+
+            entity = await _repository.Project.GetAsync(item.ProjectId);
+            
+            item.ProjectName = entity.Name;
         }
     }//end class
 }

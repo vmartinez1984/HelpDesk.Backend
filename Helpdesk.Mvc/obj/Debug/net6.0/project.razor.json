@@ -16308,6 +16308,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Register.cshtml",
+      "TargetPath": "Views\\FormAgencies\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Delete.cshtml",
       "TargetPath": "Views\\Projects\\Delete.cshtml",
       "FileKind": "mvc"

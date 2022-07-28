@@ -1,0 +1,160 @@
+@using Helpdesk.Core.Dtos
+@model FormAgencyDto
+
+@{
+    ViewData["Title"] = "Formulario";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Formulario de agencia</h5>
+            </div>
+            <div class="card-body">
+                <h6 class="text-info">Datos de la agencia</h6>
+                <dl class="row">
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.ProjectName)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.ProjectName)
+                    </dd> 
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.AgencyCode)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.AgencyCode)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.AgencyName)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.AgencyName)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.AgencyTypeName)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.AgencyTypeName)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.AgencyAddress)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.AgencyAddress)
+                    </dd>
+                    <dt class = "col-sm-2"> 
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Notes)
+                    </dd>
+                     <dt class = "col-sm-2"> 
+                        @Html.DisplayNameFor(model => model.TextResponsive)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.TextResponsive)
+                    </dd>
+                </dl>
+
+                <h6 class="text-info">Lista de dispositivos</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListDevices[0].Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListDevices[0].SerialNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListDevices[0].DateStart)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListDevices[0].DateEnd)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListDevices[0].DeviceStateName)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model.ListDevices)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateStart)
+                                </td>
+                                 <td>
+                                    @Html.DisplayFor(modelItem => item.DateEnd)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DeviceStateName)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                    
+                <h6 class="text-info">Datos del responsable</h6>
+                <form asp-action="ConfirmRegister" asp-controller="FormAgencies" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type= "hidden" asp-for="Person.AgencyId"  value="@Model.AgencyId"/>
+                    <input type= "hidden" Name="FormAgencyId"  value="@Model.Id"/>
+
+                    <div class="form-group">
+                        <label asp-for="Person.Name" class="control-label"></label>
+                        <input asp-for="Person.Name" class="form-control" maxlength="255"/>
+                        <span asp-validation-for="Person.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Person.LastName" class="control-label"></label>
+                        <input asp-for="Person.LastName" class="form-control" maxlength="255"/>
+                        <span asp-validation-for="Person.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Person.Notes" class="control-label"></label>
+                        <input asp-for="Person.Notes" class="form-control" maxlength="1000"/>
+                        <span asp-validation-for="Person.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="align-middle" data-feather="save"></i> 
+                        <span class="align-middle">Guardar</span>                            
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span> 
+    </a>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="/js/formAgency.js"></script>
+}
