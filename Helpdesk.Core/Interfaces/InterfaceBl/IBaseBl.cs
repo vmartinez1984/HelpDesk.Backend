@@ -1,4 +1,4 @@
-using System.Collections;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 
@@ -11,6 +11,24 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task<U> GetAsync(int id);
         Task<List<U>> GetAsync();
         Task UpdateAsync(T item, int id);
+    }
+
+    public interface IResponsiveBl
+    {
+        Task<bool> ExistsWithoutSendAsync();
+        Task<ResponsiveDto> GetWithoutSendAsync();
+
+        void SendResponsive(string documentId);
+
+        void SendResponsive(string email, string documentId);
+        void UpdateDateSend(int id);
+    }
+
+    public interface IFormAgencyBl
+    {
+        Task<int> AddAsync(FormAgencyDtoIn item);
+        Task<List<FormAgencyDto>> GetAsync();
+        Task<FormAgencyDto> GetAsync(string id);
     }
 
     public interface IBaseBl01<T, U> where T : class
@@ -66,5 +84,14 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     public interface IRoleBl
     {
         Task<List<RoleDto>> GetAsync();
+    }
+
+    public interface IDeviceBl
+    {
+        Task<int> AddAsync(DeviceDtoIn item);
+
+        Task<DeviceListDto> GetAsync(DeviceSearchDtoIn deviceSearch);
+
+        Task<DeviceDto> GetAsync(int id);
     }
 }

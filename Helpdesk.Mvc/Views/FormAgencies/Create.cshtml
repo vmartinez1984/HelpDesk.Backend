@@ -1,0 +1,136 @@
+@using Helpdesk.Core.Dtos
+@model FormAgencyDtoIn
+
+@{
+    ViewData["Title"] = "Formulario";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Formulario de agencia</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create">
+                    <input type="hidden" asp-for="AgencyId"/>
+                    <div id="inputDevices"></div>
+
+                    <h6 class="text-info">Datos de agencia</h6>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+
+                    <button class="btn btn-info" type="button" onclick="cleanForm()">
+                        <i class="align-middle" data-feather="plus"></i> 
+                        <span class="align-middle">Agencia nueva</span> 
+                    </button>
+
+                    @await Html.PartialAsync("_ModalSearchAgency")
+
+                    <div class="newAgency">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="ProjectId" class="control-label"></label>
+                                    <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
+                                        <option value="">Seleccione</option>
+                                    </select>
+                                    <span asp-validation-for="ProjectId" class="text-danger"></span>
+                                </div>                    
+                            </div>                    
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="AgencyTypeId" class="control-label"></label>
+                                    <select asp-for="AgencyTypeId" class="form-select" asp-items="ViewBag.ListAgencyType">
+                                        <option value="">Seleccione</option>
+                                    </select>
+                                    <span asp-validation-for="AgencyTypeId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="Code" class="control-label"></label>
+                                    <input asp-for="Code" class="form-control" placeholder="Clave de la agencia"/>
+                                    <span asp-validation-for="Code" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="Name" class="control-label"></label>
+                                    <input asp-for="Name" class="form-control"  placeholder="Nombre de la agencia"/>
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="Phone" class="control-label"></label>
+                                    <input asp-for="Phone" class="form-control" maxlength="2555" placeholder="Teléfono"/>
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="email" class="control-label"></label>
+                                    <input asp-for="email" class="form-control" maxlength="255" placeholder="correo"/>
+                                    <span asp-validation-for="email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea asp-for="Notes" class="form-control" placeholder="Leave a comment here" style="height: 100px"></textarea>
+                            <label for="Notes">Notas</label>
+                        </div>
+                    </div>
+
+                    <h6 class="text-info">Texto de responsiva</h6>
+                    <div class="form-floating mb-3">
+                        <textarea asp-for="TextResponsive" class="form-control" placeholder="Leave a comment here" style="height: 100px">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales in leo sed malesuada. 
+                            Suspendisse consequat luctus viverra. Maecenas eget dolor sed augue sollicitudin sagittis. 
+                            Cras pretium rutrum consequat. Donec at mauris vitae nibh rutrum accumsan. 
+                            Donec ornare eget lectus eu pharetra. Nunc pulvinar aliquet lorem, vitae pharetra ligula porttitor pretium. 
+                            Donec egestas, mi ut auctor porttitor, arcu lacus finibus libero, ut eleifend sapien elit in quam. Nullam in felis ultrices, fringilla ipsum eu, accumsan nisi. Fusce a quam a magna feugiat congue. Integer et neque luctus, faucibus mauris eget, egestas sem. Morbi non lacus luctus, sollicitudin ex a, euismod eros. In quis egestas nibh, et vehicula orci. 
+                            Cras bibendum porttitor laoreet. 
+                            Nullam nibh urna, dignissim sit amet sapien vitae, congue rhoncus nunc. 
+                        </textarea>
+                        <label for="Notes">Texto de responsiva</label>
+                    </div>
+
+                    @await Html.PartialAsync("_Device")
+                    
+                    <div class="form-group mb-3 mt-3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="align-middle" data-feather="save"></i> 
+                            <span class="align-middle">Guardar</span>                            
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span> 
+    </a>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="/js/formAgency.js"></script>
+}

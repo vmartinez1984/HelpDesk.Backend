@@ -1,0 +1,12 @@
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.csproj.AssemblyReference.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.GeneratedMSBuildEditorConfig.editorconfig
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.AssemblyInfoInputs.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.AssemblyInfo.cs
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.csproj.CoreCompileInputs.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/bin/Debug/net6.0/Helpdesk.Notifications.deps.json
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/bin/Debug/net6.0/Helpdesk.Notifications.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/bin/Debug/net6.0/Helpdesk.Notifications.pdb
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/refint/Helpdesk.Notifications.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.pdb
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/ref/Helpdesk.Notifications.dll

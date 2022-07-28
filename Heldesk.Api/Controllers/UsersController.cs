@@ -23,7 +23,7 @@ namespace Heldesk.Api.Controllers
             UserListDtoOut item;
 
             item = await _unitOfWorkBl.User.GetAsync(userSearch);
-            HttpContext.AddHeaderTotalRecords(userSearch.TotalRecords);
+            HttpContext.AddHeaderTotalRecords(item.TotalRecords);
 
             return Ok(item.ListUsers);
         }

@@ -75,7 +75,11 @@ namespace Helpdesk.RepositoryEf.Repositories
 
         public async Task<AgencyEntity> GetAsync(int id)
         {
-            return await _appDbContext.Agency.FirstOrDefaultAsync(x => x.Id == id);
+            AgencyEntity entity;
+
+            entity = await _appDbContext.Agency.FirstOrDefaultAsync(x => x.Id == id);
+            
+            return entity;
         }
 
         public async Task<List<AgencyEntity>> GetByProjectIdAsync(int projectId)

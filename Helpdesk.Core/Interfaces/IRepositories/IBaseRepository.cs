@@ -1,4 +1,3 @@
-using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
 
 namespace Helpdesk.Core.Interfaces.IRepositories
@@ -11,6 +10,23 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         IAgencyRepository Agency { get; }
         IPersonRepository Person { get; }
         IRoleRepository Role { get; }
+        IDeviceRepository Device { get; }
+        IDeviceStateRepository DeviceState { get; }
+        IResponsiveRepository Resposive { get; }
+    }
+
+    public interface IResponsiveRepository : IBaseARepository<ResponsiveEntity>
+    {
+        Task<bool> ExistsWithoutSendAsync();
+
+        Task<ResponsiveEntity> GetWithoutSendAsync();
+
+        Task<ResponsiveEntity> GetAsync(string documentId);
+    }
+
+    public interface IDeviceStateRepository
+    {
+        Task<List<DeviceStateEntity>> GetAsync();
     }
 
     public interface IBaseRepository<T> where T : class
@@ -18,6 +34,17 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<int> AddAsync(T entity);
 
         Task DeleteAsync(int id, int userId);
+
+        Task<T> GetAsync(int id);
+
+        Task UpdateAsync(T entity);
+    }
+
+    public interface IBaseARepository<T> where T : class
+    {
+        Task<int> AddAsync(T entity);
+
+        Task DeleteAsync(int id);
 
         Task<T> GetAsync(int id);
 
@@ -37,9 +64,15 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task UpdateAsync(T entity);
     }
 
-    public interface IDeviceRepository : IBaseRepository02<DeviceEntity>
+    public interface IDeviceRepository
     {
+        Task<int> AddAsync(DeviceEntity entity);
 
+        Task<DeviceEntity> GetAsync(int id);
+
+        Task UpdateAsync(DeviceEntity entity);
+
+        Task<List<DeviceEntity>> GetAsync(DeviceSearchEntity search);
     }
 
     public interface IBaseRepository02<T> where T : class
@@ -58,14 +91,14 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<UserEntity> GetAsync(string userName);
 
         Task<List<UserEntity>> GetAsync(UserSearchEntity userSearch);
-        
+
         Task<bool> ExistsAsync(string email, int userId);
-        
+
         Task<string> GetNameAsync(int userId);
     }
 
-    public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity> 
-    { 
+    public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity>
+    {
         Task DeleteAsync(int id, string reason);
     }
 
@@ -82,8 +115,9 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<PersonPagerEntity> SearchAsync(PersonSearchEntity search);
     }
 
-    public interface IRoleRepository 
+    public interface IRoleRepository
     {
-         Task<List<RoleEntity>> GetAsync();
+        Task<List<RoleEntity>> GetAsync();
     }
+
 }

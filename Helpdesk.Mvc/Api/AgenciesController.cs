@@ -1,4 +1,5 @@
 using Helpdesk.Core.Dtos.Inputs;
+using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,15 +16,32 @@ namespace Helpdesk.Mvc.Api
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        [HttpGet("{projectId}")]
-        public async Task<IActionResult> Get(int projectId)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int? id)
         {
-            var response = await _unitOfWorkBl.Agency.GetAsync(new AgencySearchDtoIn
+            if (id == null)
             {
-                ProjectId = projectId
-            });
+                return NotFound();
+            }
 
-            return Ok(response.ListAgencies);
+            AgencyDtoOut item;
+
+            item = await _unitOfWorkBl.Agency.GetAsync((int)id);
+            if (item is null)
+                return NotFound();
+            else
+                return Ok(item);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> SearchAgency([FromQuery] AgencySearchDtoIn agencySearchDtoIn)
+        {
+            AgencyListDtoOut agencyListDto;
+
+            agencyListDto = await _unitOfWorkBl.Agency.GetAsync(agencySearchDtoIn);
+
+            return Ok(agencyListDto.ListAgencies);
         }
     }
 }

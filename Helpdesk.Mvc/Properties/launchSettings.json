@@ -3,16 +3,19 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:16276",
+      "applicationUrl": "http://localhost:16277",
       "sslPort": 44310
     }
+  },
+  "emmet.includeLanguages": {
+    "aspnetcorerazor": "html"
   },
   "profiles": {
     "Helpdesk.Mvc": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:10021;http://localhost:20021",
+      "applicationUrl": "https://localhost:11028;http://localhost:21028",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -2,8 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>    
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.21.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />    
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Helpdesk.Core\Helpdesk.Core.csproj" />    
+    <!-- <ProjectReference Include="..\Helpdesk.BusinessLayer\Helpdesk.BusinessLayer.csproj" /> -->
+  </ItemGroup>
 
 </Project>

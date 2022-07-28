@@ -23,7 +23,7 @@ namespace Helpdesk.Mvc.Controllers
             AgencyListDtoOut agencyListDto;
 
             agencyListDto = await _unitOfWorkBl.Agency.GetAsync(agencySearchDtoIn);
-            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");            
+            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
 
             return View(agencyListDto);
         }
@@ -84,17 +84,6 @@ namespace Helpdesk.Mvc.Controllers
             {
                 return View();
             }
-        }
-
-        //https://localhost:7018/Api/zipcodes/42950
-        [Route("/Api/Zipcodes/{zipCode}")]
-        public async Task<IActionResult> ZipCodes(string zipCode)
-        {
-            List<ZipCodeDto> list;
-
-            list = await _unitOfWorkBl.ZipCode.GetAsync(zipCode);
-
-            return Ok(list);
         }
 
         public async Task<IActionResult> Delete(int? id)

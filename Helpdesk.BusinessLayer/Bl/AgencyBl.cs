@@ -101,7 +101,7 @@ namespace Helpdesk.BusinessLayer.Bl
             entity.Address = entityUpdate.Address;
             entity.AgencyTypeId = entityUpdate.AgencyTypeId;
             entity.Code = entityUpdate.Code;
-            entity.email = entityUpdate.email;
+            entity.Email = entityUpdate.Email;
             entity.Log = $"Modificado por {item.UserId}, {DateTime.Now}." + JsonConvert.SerializeObject(entity) + "\n" + entity.Log;
             entity.Name = entityUpdate.Name;
             entity.Notes = entityUpdate.Notes;

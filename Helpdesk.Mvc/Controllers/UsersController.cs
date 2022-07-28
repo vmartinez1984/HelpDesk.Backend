@@ -38,8 +38,7 @@ namespace Helpdesk.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(UserDtoIn user)
-        //public async Task<IActionResult> Create(Helpdesk.Dtos.Inputs.UserDtoIn user1)
+        public async Task<IActionResult> Create(UserDtoIn user)        
         {
             user.UserId = SessionHelper.GetNameIdentifier(User);
             if (ModelState.IsValid)

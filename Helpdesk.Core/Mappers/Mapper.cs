@@ -1,4 +1,5 @@
 using AutoMapper;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
@@ -66,15 +67,6 @@ namespace Helpdesk.Core.Mappers
         }
     }
 
-    public class PagerMapper : Profile
-    {
-        public PagerMapper()
-        {
-            CreateMap<PagerDto, PagerEntity>().ReverseMap();
-            CreateMap<PagerDtoIn, PagerEntity>().ReverseMap();
-        }
-    }
-
     public class AgencySearchInMapper : Profile
     {
         public AgencySearchInMapper()
@@ -108,10 +100,24 @@ namespace Helpdesk.Core.Mappers
 
             CreateMap<RoleEntity, RoleDto>();
 
+            CreateMap<PagerDto, PagerEntity>().ReverseMap();
+            CreateMap<PagerDtoIn, PagerEntity>().ReverseMap();
+
             CreateMap<UserSearchDtoIn, UserSearchEntity>();
             CreateMap<UserSearchEntity, UserListDtoOut>();
             CreateMap<UserSearchEntity, UserSearchDtoIn>();
             CreateMap<PagerEntity, UserSearchEntity>();
+
+            CreateMap<DeviceSearchDtoIn, DeviceSearchEntity>();
+            CreateMap<DeviceSearchEntity, DeviceListDto>();
+            CreateMap<DeviceDtoIn, DeviceEntity>();
+            CreateMap<DeviceEntity, DeviceDto>();
+
+            CreateMap<FormAgencyDtoIn, AgencyEntity>();
+            CreateMap<FormAgencyDtoIn, FormAgencyEntity>();
+
+            CreateMap<ResponsiveEntity, ResponsiveDto>();
+            CreateMap<FormAgencyEntity, FormAgencyDto>();
         }
     }
 }

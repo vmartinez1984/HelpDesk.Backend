@@ -91,7 +91,7 @@ namespace Helpdesk.RepositoryEf.Migrations
                             Address = "Domicilio conocido",
                             AgencyTypeId = 1,
                             Code = "01",
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(8985),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2941),
                             IsActive = true,
                             Log = "",
                             Name = "Principal",
@@ -131,28 +131,28 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(8953),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2910),
                             IsActive = true,
                             Name = "Corporativo"
                         },
                         new
                         {
                             Id = 2,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(8957),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2914),
                             IsActive = true,
                             Name = "Matriz"
                         },
                         new
                         {
                             Id = 3,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(8960),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2917),
                             IsActive = true,
                             Name = "Sucursal"
                         },
                         new
                         {
                             Id = 4,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(8964),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2921),
                             IsActive = true,
                             Name = "Punto de venta"
                         });
@@ -162,6 +162,9 @@ namespace Helpdesk.RepositoryEf.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AgencyId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("DateEnd")
@@ -174,9 +177,6 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("DeviceStateId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FormAgencyEntityId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
@@ -199,8 +199,6 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FormAgencyEntityId");
 
                     b.ToTable("Device");
                 });
@@ -230,93 +228,24 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9062),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(3020),
                             IsActive = true,
                             Name = "En almacen"
                         },
                         new
                         {
                             Id = 2,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9066),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(3023),
                             IsActive = true,
                             Name = "Asignado"
                         },
                         new
                         {
                             Id = 3,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9069),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(3027),
                             IsActive = true,
                             Name = "Merma"
                         });
-                });
-
-            modelBuilder.Entity("Helpdesk.Core.Entities.FormAgencyDevicesEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("DeviceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FormAgencyId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DeviceId");
-
-                    b.HasIndex("FormAgencyId");
-
-                    b.ToTable("FormAgencyDevices");
-                });
-
-            modelBuilder.Entity("Helpdesk.Core.Entities.FormAgencyEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("AgencyId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Text")
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AgencyId");
-
-                    b.ToTable("FormAgency");
                 });
 
             modelBuilder.Entity("Helpdesk.Core.Entities.PersonEntity", b =>
@@ -361,7 +290,7 @@ namespace Helpdesk.RepositoryEf.Migrations
                         {
                             Id = 1,
                             AgencyId = 1,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9003),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2962),
                             IsActive = true,
                             LastName = "Admin",
                             Name = "Admin",
@@ -404,12 +333,40 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(8828),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2793),
                             IsActive = true,
                             Name = "Proyecto inicial",
                             Notes = "Proyecto inicial",
                             UserId = 1
                         });
+                });
+
+            modelBuilder.Entity("Helpdesk.Core.Entities.ResponsiveEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("AgencyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateRegistration")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("DocumentId")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Responsive");
                 });
 
             modelBuilder.Entity("Helpdesk.Core.Entities.RoleEntity", b =>
@@ -437,28 +394,28 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9019),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2978),
                             IsActive = true,
                             Name = "Nivel 1"
                         },
                         new
                         {
                             Id = 2,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9023),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2982),
                             IsActive = true,
                             Name = "Nivel 2"
                         },
                         new
                         {
                             Id = 3,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9026),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2985),
                             IsActive = true,
                             Name = "Nivel 3"
                         },
                         new
                         {
                             Id = 4,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9029),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(2988),
                             IsActive = true,
                             Name = "Nivel 4"
                         });
@@ -503,7 +460,7 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 21, 16, 27, 55, 506, DateTimeKind.Local).AddTicks(9044),
+                            DateRegistration = new DateTime(2022, 7, 25, 11, 0, 45, 194, DateTimeKind.Local).AddTicks(3005),
                             Email = "administrador",
                             IsActive = true,
                             Password = "123456",
@@ -511,43 +468,6 @@ namespace Helpdesk.RepositoryEf.Migrations
                             RoleId = 1,
                             UserId = 0
                         });
-                });
-
-            modelBuilder.Entity("Helpdesk.Core.Entities.DeviceEntity", b =>
-                {
-                    b.HasOne("Helpdesk.Core.Entities.FormAgencyEntity", null)
-                        .WithMany("ListDevices")
-                        .HasForeignKey("FormAgencyEntityId");
-                });
-
-            modelBuilder.Entity("Helpdesk.Core.Entities.FormAgencyDevicesEntity", b =>
-                {
-                    b.HasOne("Helpdesk.Core.Entities.DeviceEntity", "Device")
-                        .WithMany()
-                        .HasForeignKey("DeviceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Helpdesk.Core.Entities.FormAgencyEntity", "FormAgency")
-                        .WithMany()
-                        .HasForeignKey("FormAgencyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Device");
-
-                    b.Navigation("FormAgency");
-                });
-
-            modelBuilder.Entity("Helpdesk.Core.Entities.FormAgencyEntity", b =>
-                {
-                    b.HasOne("Helpdesk.Core.Entities.AgencyEntity", "Agency")
-                        .WithMany()
-                        .HasForeignKey("AgencyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Agency");
                 });
 
             modelBuilder.Entity("Helpdesk.Core.Entities.PersonEntity", b =>
@@ -570,11 +490,6 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .IsRequired();
 
                     b.Navigation("Person");
-                });
-
-            modelBuilder.Entity("Helpdesk.Core.Entities.FormAgencyEntity", b =>
-                {
-                    b.Navigation("ListDevices");
                 });
 #pragma warning restore 612, 618
         }

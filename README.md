@@ -49,3 +49,18 @@ dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
  dotnet ef database drop
 
 dotnet ef migrations remove
+
+Application startup exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+
+echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+# Worker service
+
+https://medium.com/@daniel.sagita/backgroundservice-for-a-long-running-work-3debe8f8d25b
+
+https://stackoverflow.com/questions/6481304/how-to-use-a-backgroundworker
+
+Se utiliza un backgroung worker por que es mas facil de administrar ya que puedes hacer que no se encimen los hilos con isBusy en caso que se requiera que se haga de uno en uno
+
+# How should I inject a DbContext instance into an IHostedService?
+https://stackoverflow.com/questions/48368634/how-should-i-inject-a-dbcontext-instance-into-an-ihostedservice

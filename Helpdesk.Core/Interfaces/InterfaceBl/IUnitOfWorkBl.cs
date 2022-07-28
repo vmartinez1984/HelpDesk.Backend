@@ -15,5 +15,11 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         public IZipCodeBl ZipCode { get; }
 
         public IRoleBl Role { get; }
+
+        public IDeviceBl Device { get; }
+
+        public IFormAgencyBl FormAgency { get; }
+
+        public IResponsiveBl Responsive { get; }
     }
 }

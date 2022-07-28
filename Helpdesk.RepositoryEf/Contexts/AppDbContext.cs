@@ -29,8 +29,8 @@ namespace Helpdesk.RepositoryEf.Contexts
             {
                 string connectionString;
 
-                //connectionString = _configuration.GetConnectionString("DefaultConnection");
-                connectionString = "Server=localhost; Port=13306; Database=HelpDesk; Uid=root; Pwd=;";
+                connectionString = _configuration.GetConnectionString("DefaultConnection");
+                //connectionString = "Server=localhost; Port=13306; Database=HelpDesk; Uid=root; Pwd=;";
                 optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             }
         }
@@ -42,9 +42,8 @@ namespace Helpdesk.RepositoryEf.Contexts
         public DbSet<PersonEntity> Person { get; set; }
         public DbSet<ProjectEntity> Project { get; set; }
         public DbSet<UserEntity> User { get; set; }
-        public DbSet<RoleEntity> Role { get; set; }
-        public DbSet<FormAgencyEntity> FormAgency { get; set; }
-        public DbSet<FormAgencyDevicesEntity> FormAgencyDevices { get; set; }
+        public DbSet<RoleEntity> Role { get; set; }        
+        public DbSet<ResponsiveEntity> Responsive { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -85,7 +84,7 @@ namespace Helpdesk.RepositoryEf.Contexts
                     Notes = string.Empty,
                     Log = string.Empty,
                     Phone = string.Empty,
-                    email = string.Empty,
+                    Email = string.Empty,
                     ZipCode = string.Empty
                 }
             );

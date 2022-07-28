@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Helpdesk.Core\Helpdesk.Core.csproj" />
+    <ProjectReference Include="..\Helpdesk.Notifications\Helpdesk.Notifications.csproj" />
   </ItemGroup>
 
   <ItemGroup>
