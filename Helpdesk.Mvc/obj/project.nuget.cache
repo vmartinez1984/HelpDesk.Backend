@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mB6TE1wrKFeOFr4m0Cm7V2DcEIH9tRc8YYt7IcEhQkADCrvFDl0uJzVJoX/0R/VwzTCFNQLwat1qe17YXVMXdg==",
+  "dgSpecHash": "2VTmBatxwUpJkjmsqx4Nh2ltvo7p7fFQDZu0ZCn+o0XW1HCQaGP6sG109FdVuiCfZwiUSfjXJQLTGamiKpon3g==",
   "success": true,
   "projectFilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/Helpdesk.Mvc.csproj",
   "expectedPackageFiles": [
@@ -156,6 +156,7 @@
     "/home/vmartinez/.nuget/packages/system.io.filesystem/4.3.0/system.io.filesystem.4.3.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.io.filesystem.primitives/4.3.0/system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.linq/4.3.0/system.linq.4.3.0.nupkg.sha512",
+    "/home/vmartinez/.nuget/packages/system.linq.dynamic.core/1.2.18/system.linq.dynamic.core.1.2.18.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.linq.expressions/4.3.0/system.linq.expressions.4.3.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.net.http/4.3.0/system.net.http.4.3.0.nupkg.sha512",

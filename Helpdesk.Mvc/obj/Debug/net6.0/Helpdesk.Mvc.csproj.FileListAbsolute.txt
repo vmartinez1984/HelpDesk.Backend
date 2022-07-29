@@ -421,3 +421,4 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Microsoft.Extensions.Logging.ApplicationInsights.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.WorkerServices.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.WorkerServices.pdb
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/System.Linq.Dynamic.Core.dll

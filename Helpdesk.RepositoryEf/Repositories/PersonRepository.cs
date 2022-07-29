@@ -2,6 +2,7 @@ using Helpdesk.Core.Entities;
 using Helpdesk.Core.Interfaces.IRepositories;
 using Helpdesk.RepositoryEf.Contexts;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
 
 namespace Helpdesk.RepositoryEf.Repositories
 {
@@ -37,43 +38,30 @@ namespace Helpdesk.RepositoryEf.Repositories
             return await _appDbContext.Person.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<PersonPagerEntity> SearchAsync(PersonSearchEntity search)
+        public async Task<List<PersonEntity>> GetAsync(PersonSearchEntity search)
         {
             List<PersonEntity> list;
             IQueryable<PersonEntity> queryable;
-            PersonPagerEntity personPagerEntity;
 
             queryable = _appDbContext.Person.Include(x => x.Agency);
             queryable = queryable.Where(x => x.IsActive);
-            if (search.ProjectId is not null)
+            search.TotalRecords = queryable.Count();
+            if (string.IsNullOrEmpty(search.Search) == false)
+                queryable = queryable.Where(
+                    x => string.Concat(x.Name, x.LastName, x.Agency.Name, x.Agency.Code).Contains(search.Search)
+                );
+            if (string.IsNullOrEmpty(search.SortColumn) == false && string.IsNullOrEmpty(search.SortColumnDir) == false)
             {
-                queryable = queryable.Where(x => x.Agency.ProjectId == search.ProjectId);
+                queryable = queryable.OrderBy(char.ToUpper(search.SortColumn[0]) + search.SortColumn.Substring(1) + " " + search.SortColumnDir);
             }
-            if (search.AgencyId is not null)
-            {
-                queryable = queryable.Where(x => x.AgencyId == search.AgencyId);
-            }
-            if (!string.IsNullOrEmpty(search.Name))
-            {
-                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.Name.ToUpper()));
-            }
-            if (!string.IsNullOrEmpty(search.LastName))
-            {
-                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.LastName.ToUpper()));
-            }
+            var query = queryable.ToString();
             list = await queryable
-            .OrderByDescending(x => x.Id)
-            .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
             .Take(search.RecordsPerPage)
+            .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
             .ToListAsync();
-            search.TotalRecords = await queryable.CountAsync();
-            personPagerEntity = new PersonPagerEntity
-            {
-                ListPersons = list,
-                PersonSearch = search
-            };
+            search.TotalRecordsFiltered = await queryable.CountAsync();
 
-            return personPagerEntity;
+            return list;
         }
 
         public async Task UpdateAsync(PersonEntity entity)

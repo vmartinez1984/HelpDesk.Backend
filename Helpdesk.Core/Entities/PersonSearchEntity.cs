@@ -2,12 +2,12 @@ namespace Helpdesk.Core.Entities
 {
     public class PersonSearchEntity : PagerEntity
     {
-        public int? ProjectId { get; set; }
+        public string Search { get; set; }
 
-        public int? AgencyId { get; set; }
+        public string SortColumn { get; set; }
+        
+        public string SortColumnDir { get; set; }
 
-        public string Name { get; set; }
-
-        public string LastName { get; set; }
+        public int TotalRecordsFiltered { get; set; }
     }
 }

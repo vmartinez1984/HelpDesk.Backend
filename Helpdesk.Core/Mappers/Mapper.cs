@@ -95,8 +95,7 @@ namespace Helpdesk.Core.Mappers
     {
         public ImplementsMapper()
         {
-            CreateMap<PersonSearchEntity, PersonSearchDtonIn>();
-            CreateMap<PersonPagerEntity, PersonPagerDtoOut>();
+            CreateMap<PersonSearchEntity, PersonSearchDtonIn>();            
 
             CreateMap<RoleEntity, RoleDto>();
 

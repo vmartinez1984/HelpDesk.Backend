@@ -7,5 +7,6 @@ namespace Helpdesk.Core.Entities
         public int RecordsPerPage { get; set; }
 
         public int TotalRecords { get; set; }
+
     }
 }

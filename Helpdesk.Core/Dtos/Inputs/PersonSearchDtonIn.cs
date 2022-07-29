@@ -4,17 +4,9 @@ namespace Helpdesk.Core.Dtos.Inputs
 {
     public class PersonSearchDtonIn : PagerDtoIn
     {
-        [Display(Name = "Proyecto")]
-        public int? ProjectId { get; set; }
-
-        [Display(Name = "Agencia")]
-        public int? AgencyId { get; set; }
-
-        [Display(Name = "Nombre")]
-        public string Name { get; set; }
-
-        [Display(Name = "Apellidos")]
-        public string LastName { get; set; }
+        public string Search { get; set; }
+        public string SortColumn { get; set; }
+        public string SortColumnDir { get; set; }
     }
 
     public class PagerDtoIn

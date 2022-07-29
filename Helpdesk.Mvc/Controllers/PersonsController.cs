@@ -24,7 +24,8 @@ namespace Helpdesk.Mvc.Controllers
             personPagerDtoOut = await _unitOfWorkBl.Person.GetAsync(personSearch);
             ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");            
 
-            return View(personPagerDtoOut);
+            //return View(personPagerDtoOut);
+            return View();
         }
 
         public async Task<IActionResult> Create()

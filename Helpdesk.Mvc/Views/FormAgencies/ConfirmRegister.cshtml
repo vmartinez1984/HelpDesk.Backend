@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">Formulario de agencia</h5>
+                <h5 class="card-title mb-0">Responsiva/h5>
             </div>
             <div class="card-body">
                 <h6 class="text-info">Datos de la agencia</h6>
@@ -111,42 +111,22 @@
                 </table>
                     
                 <h6 class="text-info">Datos del responsable</h6>
-                <form asp-action="ConfirmRegister" asp-controller="FormAgencies" method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type= "hidden" asp-for="Person.AgencyId"  value="@Model.AgencyId"/>
-                    <input type= "hidden" Name="FormAgencyId"  value="@Model.Id"/>
-
-                    <div class="form-group">
-                        <label asp-for="Person.Name" class="control-label"></label>
-                        <input asp-for="Person.Name" class="form-control" maxlength="255"/>
-                        <span asp-validation-for="Person.Name" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Person.LastName" class="control-label"></label>
-                        <input asp-for="Person.LastName" class="form-control" maxlength="255"/>
-                        <span asp-validation-for="Person.LastName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Person.Notes" class="control-label"></label>
-                        <input asp-for="Person.Notes" class="form-control" maxlength="1000"/>
-                        <span asp-validation-for="Person.Notes" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group mb-3 mt-3">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="align-middle" data-feather="save"></i> 
-                        <span class="align-middle">Guardar</span>                            
-                    </button>
-                </div>
-                </form>
+               <dl class="row">
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Person.Name)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Person.Name)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Person.LastName)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Person.LastName)
+                    </dd>                    
+                </dl>
+               
             </div>
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script src="/js/formAgency.js"></script>
-}

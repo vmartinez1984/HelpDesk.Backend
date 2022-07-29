@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using Helpdesk.Core.Dtos.Inputs;
-using Helpdesk.Core.Dtos.Outputs;
 
 namespace Helpdesk.Core.Dtos
 {

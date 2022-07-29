@@ -4,6 +4,7 @@ using Helpdesk.Mvc.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Rotativa.AspNetCore;
 
 namespace Helpdesk.Mvc.Controllers
 {
@@ -69,8 +70,9 @@ namespace Helpdesk.Mvc.Controllers
             FormAgencyDto dto;
 
             dto = await _unitOfWorkBl.FormAgency.GetAsync(item.FormAgencyId);
+            dto.Person = item.Person;
 
-            return View(dto);
+            return new ViewAsPdf(dto);
         }
     }
 }

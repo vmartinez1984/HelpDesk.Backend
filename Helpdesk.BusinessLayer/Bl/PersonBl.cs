@@ -47,11 +47,21 @@ namespace Helpdesk.BusinessLayer.Bl
         {
             PersonPagerDtoOut response;
             PersonSearchEntity personSearchEntity;
-            PersonPagerEntity personPagerEntity;
+            List<PersonEntity> entities;
 
             personSearchEntity = _mapper.Map<PersonSearchEntity>(search);
-            personPagerEntity = await _repository.Person.SearchAsync(personSearchEntity);
-            response = _mapper.Map<PersonPagerDtoOut>(personPagerEntity);
+            entities = await _repository.Person.GetAsync(personSearchEntity);
+            response = new PersonPagerDtoOut
+            {
+                ListPersons = _mapper.Map<List<PersonDtoOut>>(entities),
+                PersonSearch = new PersonSearchDto
+                {
+                    PageCurrent = personSearchEntity.PageCurrent,
+                    RecordsPerPage = personSearchEntity.RecordsPerPage,
+                    TotalRecords = personSearchEntity.TotalRecords,
+                    TotalRecordsFiltered = personSearchEntity.TotalRecordsFiltered
+                }
+            };
             await SetAgencyNamesAsync(response);
 
             return response;
