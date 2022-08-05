@@ -1,7 +1,12 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace Tickets.Core.Entities
 {
     public class TicketEntity
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
         public string Title { get; set; }
@@ -29,6 +34,5 @@ namespace Tickets.Core.Entities
         public string Tipo { get; set; }
         
         public List<LogEntity> ListLog { get; set; }        
-        
     }
 }

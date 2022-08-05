@@ -5,7 +5,11 @@ namespace Tickets.Core.Interfaces.IBusinessLayer
     public interface IUnitOfWorkTickets
     {
         ITicketBl Ticket { get; }
-        ICategory Category { get; }
+        
+        ICategoryBl Category { get; }
+
+        ISubcategoryBl Subcategory { get; }
+        IStateBl State { get; }
     }
 
     public interface ITicketBl
@@ -15,13 +19,20 @@ namespace Tickets.Core.Interfaces.IBusinessLayer
         Task<string> AddAsync(TicketDtoIn item);
     }
 
-    public interface ICategory
+    public interface ICategoryBl
     {
         Task<List<CategoryDto>> GetAsync();
     }
+    
+    public interface IStateBl
+    {
+        Task<List<StateDto>> GetAsync();
+    }
 
-    public interface ISubcategory
+    public interface ISubcategoryBl
     {
         Task<List<SubcategoryDto>> GetAsync();
+        
+        Task<List<SubcategoryDto>> GetByCategoryAsync(string categoryId);
     }
 }

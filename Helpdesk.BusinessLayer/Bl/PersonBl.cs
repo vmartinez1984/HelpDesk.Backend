@@ -73,5 +73,16 @@ namespace Helpdesk.BusinessLayer.Bl
                 item.AgencyName = agency.Code + " " + agency.Name;
             }
         }
+
+        public async Task<List<PersonDtoOut>> GetByAgencyAsync(int agencyId)
+        {
+            List<PersonEntity> entities;
+            List<PersonDtoOut> list;
+
+            entities = await _repository.Person.GetByAgencyAsync(agencyId);
+            list = _mapper.Map<List<PersonDtoOut>>(entities);
+
+            return list;
+        }
     }
 }

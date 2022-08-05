@@ -79,6 +79,8 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     public interface IPersonBl : IBase02Bl<PersonDtoIn, PersonDtoOut>
     {
         Task<PersonPagerDtoOut> GetAsync(SearchDtoIn personSearch);
+        
+        Task<List<PersonDtoOut>> GetByAgencyAsync(int agencyId);
     }
 
     public interface IZipCodeBl

@@ -9,5 +9,6 @@ namespace Tickets.Repository
         public string TicketsCollection { get; set; }
         public string CategoriesCollection { get; set; }
         public string SubcategoriesCollection { get; set; }
+        public string StateCollection { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 @model TicketDtoIn
 
 @{
-    ViewBag.Title = "Personas";
+    ViewBag.Title = "Tickets";
 }
 
 <div class="col-md-12">
@@ -13,33 +13,54 @@
         <div class="card-body">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <h2 class="text-info">Seleccionar la agencia desde modal</h2>
+                <h2 class="text-info">Seleccionar la agencia desde modal</h2>                
+                <input asp-for="State" value="Abierto" type="hidden"/>
+                @await Html.PartialAsync("_ModalSearchAgency")                
 
-                <div class="form-group mb-3">
+                <div class="form-group mb-3">                    
                     <label asp-for="AgencyId" class="control-label"></label>
-                    <select asp-for="AgencyId" class="form-select">
-                        <option value="">Seleccione</option>
-                    </select>
+                    <input id="agency" class="form-control" disabled/>                
+                    <input type="hidden" asp-for="AgencyId"/>
                     <span asp-validation-for="AgencyId" class="text-danger"></span>
                 </div>
 
-                @* 
                 <div class="form-group mb-3">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" maxlength="255"/>
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <label asp-for="PersonId" class="control-label"></label>
+                    <select asp-for="PersonId" class="form-select"></select>
+                    <span asp-validation-for="PersonId" class="text-danger"></span>
                 </div>
+
                 <div class="form-group mb-3">
-                    <label asp-for="LastName" class="control-label"></label>
-                    <input asp-for="LastName" class="form-control" maxlength="255"/>
-                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    <label asp-for="Tags" class="control-label"></label>
+                    <input asp-for="Tags" class="form-control" maxlength="255"/>
+                    <span asp-validation-for="Tags" class="text-danger"></span>
                 </div>
+
                 <div class="form-group mb-3">
-                    <label asp-for="Notes" class="control-label"></label>
-                    <input asp-for="Notes" class="form-control" maxlength="1000"/>
-                    <span asp-validation-for="Notes" class="text-danger"></span>
-                </div> 
-                *@
+                    <label asp-for="CategoryId" class="control-label"></label>
+                    <select asp-for="CategoryId" class="form-select" asp-items="@ViewBag.Categories" onchange="loadSubcategories()">
+                        <option value="">Seleccione</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="SubcategoryId" class="control-label"></label>
+                    <select asp-for="SubcategoryId" class="form-select"></select>
+                    <span asp-validation-for="SubcategoryId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Description" class="control-label"></label>
+                    <textarea asp-for="Description" class="form-control" row="4"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Solution" class="control-label"></label>
+                    <textarea asp-for="Solution" class="form-control" row="4"></textarea>
+                    <span asp-validation-for="Solution" class="text-danger"></span>
+                </div>
 
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary">
@@ -60,6 +81,17 @@
 </div>
 
 @section Scripts {
+    <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script src="/js/person.js"></script>
+    <script src="/js/tickets.js"></script>
 }

@@ -64,6 +64,17 @@ namespace Helpdesk.RepositoryEf.Repositories
             return list;
         }
 
+        public async Task<List<PersonEntity>> GetByAgencyAsync(int agencyId)
+        {
+            List<PersonEntity> entities;
+
+            entities = await _appDbContext.Person.Include(x=> x.Agency)
+            .Where(x=> x.AgencyId == agencyId && x.Id != 1)
+            .ToListAsync();
+
+            return entities;
+        }
+
         public async Task UpdateAsync(PersonEntity entity)
         {
             _appDbContext.Person.Update(entity);

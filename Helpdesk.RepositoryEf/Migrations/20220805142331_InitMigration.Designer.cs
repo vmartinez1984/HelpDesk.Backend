@@ -3,6 +3,7 @@ using System;
 using Helpdesk.RepositoryEf.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -11,15 +12,17 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Helpdesk.RepositoryEf.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220708191032_Roles")]
-    partial class Roles
+    [Migration("20220805142331_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.5")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Helpdesk.Core.Entities.AgencyEntity", b =>
                 {
@@ -27,62 +30,66 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<string>("Address")
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("AgencyTypeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Code")
                         .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Log")
-                        .HasColumnType("longtext");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Notes")
                         .HasMaxLength(1000)
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Phone")
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
                     b.Property<string>("Settlement")
                         .HasMaxLength(120)
-                        .HasColumnType("varchar(120)");
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("State")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("TownHall")
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<string>("ZipCode")
                         .HasMaxLength(5)
-                        .HasColumnType("varchar(5)");
+                        .HasColumnType("nvarchar(5)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("Agency");
 
@@ -93,7 +100,7 @@ namespace Helpdesk.RepositoryEf.Migrations
                             Address = "Domicilio conocido",
                             AgencyTypeId = 1,
                             Code = "01",
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4287),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4428),
                             IsActive = true,
                             Log = "",
                             Name = "Principal",
@@ -114,16 +121,18 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -133,28 +142,28 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4255),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4395),
                             IsActive = true,
                             Name = "Corporativo"
                         },
                         new
                         {
                             Id = 2,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4259),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4399),
                             IsActive = true,
                             Name = "Matriz"
                         },
                         new
                         {
                             Id = 3,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4262),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4402),
                             IsActive = true,
                             Name = "Sucursal"
                         },
                         new
                         {
                             Id = 4,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4265),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4405),
                             IsActive = true,
                             Name = "Punto de venta"
                         });
@@ -166,33 +175,41 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AgencyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DateEnd")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateStart")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("DeviceStateId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTime>("LicenseDateEnd")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("LicenseDateStart")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Notes")
                         .HasMaxLength(1000)
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("SerialNumber")
                         .HasMaxLength(120)
-                        .HasColumnType("varchar(120)");
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -205,16 +222,18 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -224,21 +243,21 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4370),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4555),
                             IsActive = true,
                             Name = "En almacen"
                         },
                         new
                         {
                             Id = 2,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4373),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4558),
                             IsActive = true,
                             Name = "Asignado"
                         },
                         new
                         {
                             Id = 3,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4376),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4561),
                             IsActive = true,
                             Name = "Merma"
                         });
@@ -250,27 +269,29 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<int>("AgencyId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Notes")
                         .HasMaxLength(1000)
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -286,7 +307,7 @@ namespace Helpdesk.RepositoryEf.Migrations
                         {
                             Id = 1,
                             AgencyId = 1,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4307),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4446),
                             IsActive = true,
                             LastName = "Admin",
                             Name = "Admin",
@@ -300,20 +321,25 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Notes")
                         .HasMaxLength(1000)
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("Reason")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -326,12 +352,45 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4142),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4256),
                             IsActive = true,
                             Name = "Proyecto inicial",
                             Notes = "Proyecto inicial",
                             UserId = 1
                         });
+                });
+
+            modelBuilder.Entity("Helpdesk.Core.Entities.ResponsiveEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AgencyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateRegistration")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateSend")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DocumentId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AgencyId");
+
+                    b.ToTable("Responsive");
                 });
 
             modelBuilder.Entity("Helpdesk.Core.Entities.RoleEntity", b =>
@@ -340,16 +399,18 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -359,28 +420,28 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4325),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4507),
                             IsActive = true,
                             Name = "Nivel 1"
                         },
                         new
                         {
                             Id = 2,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4329),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4511),
                             IsActive = true,
                             Name = "Nivel 2"
                         },
                         new
                         {
                             Id = 3,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4332),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4514),
                             IsActive = true,
                             Name = "Nivel 3"
                         },
                         new
                         {
                             Id = 4,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4336),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4518),
                             IsActive = true,
                             Name = "Nivel 4"
                         });
@@ -392,20 +453,21 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<DateTime>("DateRegistration")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Password")
                         .HasMaxLength(12)
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("nvarchar(12)");
 
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
@@ -413,7 +475,12 @@ namespace Helpdesk.RepositoryEf.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
 
                     b.ToTable("User");
 
@@ -421,13 +488,25 @@ namespace Helpdesk.RepositoryEf.Migrations
                         new
                         {
                             Id = 1,
-                            DateRegistration = new DateTime(2022, 7, 8, 14, 10, 32, 193, DateTimeKind.Local).AddTicks(4352),
+                            DateRegistration = new DateTime(2022, 8, 5, 9, 23, 30, 973, DateTimeKind.Local).AddTicks(4536),
+                            Email = "administrador",
                             IsActive = true,
-                            Name = "administrador",
                             Password = "123456",
                             PersonId = 1,
-                            RoleId = 1
+                            RoleId = 1,
+                            UserId = 0
                         });
+                });
+
+            modelBuilder.Entity("Helpdesk.Core.Entities.AgencyEntity", b =>
+                {
+                    b.HasOne("Helpdesk.Core.Entities.ProjectEntity", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("Helpdesk.Core.Entities.PersonEntity", b =>
@@ -439,6 +518,28 @@ namespace Helpdesk.RepositoryEf.Migrations
                         .IsRequired();
 
                     b.Navigation("Agency");
+                });
+
+            modelBuilder.Entity("Helpdesk.Core.Entities.ResponsiveEntity", b =>
+                {
+                    b.HasOne("Helpdesk.Core.Entities.AgencyEntity", "Agency")
+                        .WithMany()
+                        .HasForeignKey("AgencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Agency");
+                });
+
+            modelBuilder.Entity("Helpdesk.Core.Entities.UserEntity", b =>
+                {
+                    b.HasOne("Helpdesk.Core.Entities.PersonEntity", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
                 });
 #pragma warning restore 612, 618
         }

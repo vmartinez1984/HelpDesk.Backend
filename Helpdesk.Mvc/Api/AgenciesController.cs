@@ -47,13 +47,24 @@ namespace Helpdesk.Mvc.Api
                 SortColumnDir = dataTablesIn.SortColumnDir
             });
 
-               return Ok(new
-                {
-                    draw = dataTablesIn.Draw,
-                    recordsFiltered = response.TotalRecordsFiltered,
-                    recordsTotal = response.TotalRecords,
-                    data = response.ListAgencies
-                });
+            return Ok(new
+            {
+                draw = dataTablesIn.Draw,
+                recordsFiltered = response.TotalRecordsFiltered,
+                recordsTotal = response.TotalRecords,
+                data = response.ListAgencies
+            });
+        }
+
+        [HttpGet]
+        [Route("/Api/Agencies/{agencyId}/Persons")]
+        public async Task<IActionResult> GetPersons(int agencyId)
+        {
+            List<PersonDtoOut> list;
+
+            list = await _unitOfWorkBl.Person.GetByAgencyAsync(agencyId);
+
+            return Ok(list);
         }
     }
 }

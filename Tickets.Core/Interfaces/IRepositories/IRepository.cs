@@ -9,11 +9,17 @@ namespace Tickets.Core.Interfaces.IRepositories
         ICategoryRepository Category { get; }
 
         ISubcategoryRepository Subcategory { get; }
+        IStateRepository State { get; }
+    }
+
+    public interface IStateRepository
+    {
+        Task<List<StateEntity>> GetAsync();
     }
 
     public interface ITicketRepository
     {
-        Task<List<TicketEntity>> GetAsync();
+        Task<string> AddAsync(TicketEntity entity);
 
         Task<TicketEntity> GetAsync(string id);
 
@@ -34,7 +40,7 @@ namespace Tickets.Core.Interfaces.IRepositories
         Task<List<SubcategoryEntity>> GetAsync();
 
         Task<SubcategoryEntity> GetAsync(string id);
-
+        Task<List<SubcategoryEntity>> GetByCategoryAsync(string categoryId);
         Task UpdateAsync(SubcategoryEntity entity);
     }
 }

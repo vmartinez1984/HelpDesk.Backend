@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 using Tickets.Core.Entities;
 using Tickets.Core.Interfaces.IRepositories;
 
@@ -5,14 +7,32 @@ namespace Tickets.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
-        public Task UpdateAsync(CategoryEntity entity)
+        private readonly IMongoCollection<CategoryEntity> _collection;
+
+        public CategoryRepository(IOptions<TicketsDbSettings> databaseSettings)
+        {
+            var mongoClient = new MongoClient(
+           databaseSettings.Value.ConnectionString);
+
+            var mongoDatabase = mongoClient.GetDatabase(
+                databaseSettings.Value.DatabaseName);
+
+            _collection = mongoDatabase.GetCollection<CategoryEntity>(
+                databaseSettings.Value.CategoriesCollection);
+        }
+
+        public async Task UpdateAsync(CategoryEntity entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<CategoryEntity>> GetAsync()
+        public async Task<List<CategoryEntity>> GetAsync()
         {
-            throw new NotImplementedException();
+            List<CategoryEntity> entities;
+
+            entities = await _collection.Find(x => x.IsActive == true).ToListAsync();
+
+            return entities;
         }
 
         public Task<CategoryEntity> GetAsync(string id)

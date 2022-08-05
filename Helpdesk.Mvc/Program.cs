@@ -18,7 +18,7 @@ using Tickets.Core.Interfaces.IRepositories;
 using Tickets.Repository;
 using Tickets.Core.Interfaces.IBusinessLayer;
 using Tickets.BusinessLayer.Bl;
-//using Tickets.BusinessLayer;
+using Tickets.Core.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -35,6 +35,7 @@ builder.Services.AddAuthentication(
 builder.Services.AddControllersWithViews();
 //Configuration mongoDb
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("HelpdeskDatabaseMongoDb"));
+builder.Services.Configure<TicketsDbSettings>(builder.Configuration.GetSection("TicketsDbSettings"));
 builder.Services.AddScoped<AppDbContext>();
 //Repositories
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
@@ -54,8 +55,12 @@ builder.Services.AddScoped<IRepositoryMongoDb, RepositoryMongoDb>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ISubcategoryRepository, SubcategoryRepository>();
+builder.Services.AddScoped<IStateRepository, StateRepository>();
 builder.Services.AddScoped<IRepositoryTickets, RepositoryTickets>();
 builder.Services.AddScoped<ITicketBl, TicketBl>();
+builder.Services.AddScoped<ICategoryBl, CategoryBl>();
+builder.Services.AddScoped<ISubcategoryBl, SubcategoryBl>();
+builder.Services.AddScoped<IStateBl, StateBl>();
 builder.Services.AddScoped<IUnitOfWorkTickets, UnitOfWorkTickets>();
 //Services
 builder.Services.AddScoped<IZipCodeService, ZipCodeService>();
@@ -79,6 +84,7 @@ builder.Services.AddHostedService<TimedHostedService>();
 var mapperConfig = new MapperConfiguration(mapperConfig =>
 {
     mapperConfig.AddProfile<ImplementsMapper>();
+    mapperConfig.AddProfile<TicketsMapper>();
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
@@ -92,8 +98,6 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

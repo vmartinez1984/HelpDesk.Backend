@@ -11,15 +11,9 @@ namespace Helpdesk.Core.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        //[Required]
-        //[ForeignKey(nameof(ProjectEntity))]
         public int ProjectId { get; set; }
 
-        //[Required]
-        //[ForeignKey(nameof(AgencyEntity))]
         public int AgencyId { get; set; }
-
-        //public virtual AgencyEntity Agency { get; set; }
 
         [StringLength(255)]
         public string Email { get; set; }

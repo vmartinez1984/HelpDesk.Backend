@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4stW8PAi+Ph5ySlf67SUa+6nQ2s4LG6ZTlas7zoHATc=",
+  "Hash": "p9yvTkGw7wRRDPAq3vYlOQZ2zPkgTdnK5BAA3/I8xL0=",
   "Source": "Helpdesk.Mvc",
   "BasePath": "_content/Helpdesk.Mvc",
   "Mode": "Default",
@@ -338,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/site.js"
+    },
+    {
+      "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/tickets.js",
+      "SourceId": "Helpdesk.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/",
+      "BasePath": "_content/Helpdesk.Mvc",
+      "RelativePath": "js/tickets.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/tickets.js"
     },
     {
       "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

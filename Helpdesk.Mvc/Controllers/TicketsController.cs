@@ -30,8 +30,8 @@ namespace Helpdesk.Mvc.Controllers
 
         public async Task<IActionResult> Create()
         {
-            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
-            ViewData["Categories"] = new SelectList(await _unitOfWorkTickets.Category.GetAsync(),"Id","Name");
+            ViewData["Categories"] = new SelectList(await _unitOfWorkTickets.Category.GetAsync(), "Id", "Name");
+            //ViewData["States"] = new SelectList(await _unitOfWorkTickets.State.GetAsync(), "Id", "Name");
 
             return View();
         }
@@ -47,6 +47,8 @@ namespace Helpdesk.Mvc.Controllers
             }
             else
             {
+                ViewData["Categories"] = new SelectList(await _unitOfWorkTickets.Category.GetAsync(), "Id", "Name");
+                
                 return View();
             }
         }

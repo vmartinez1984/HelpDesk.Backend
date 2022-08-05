@@ -116,6 +116,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     public interface IPersonRepository : IBaseRepository02<PersonEntity>
     {
         Task<List<PersonEntity>> GetAsync(PagerEntity search);
+        Task<List<PersonEntity>> GetByAgencyAsync(int agencyId);
     }
 
     public interface IRoleRepository

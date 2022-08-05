@@ -7,18 +7,22 @@ namespace Tickets.Repository
         public RepositoryTickets(
             ITicketRepository ticket,
             ICategoryRepository category,
-            ISubcategoryRepository sucategory
+            ISubcategoryRepository sucategory,
+            IStateRepository stateRepository
         )
         {
             this.Ticket = ticket;
             this.Category = category;
             this.Subcategory = sucategory;
+            this.State = stateRepository;
         }
         public ITicketRepository Ticket { get; }
 
         public ICategoryRepository Category { get; }
 
         public ISubcategoryRepository Subcategory { get; }
+
+        public IStateRepository State {get;}
     }
 
 }
