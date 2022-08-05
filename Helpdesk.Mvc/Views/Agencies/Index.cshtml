@@ -1,45 +1,9 @@
-@model Helpdesk.Core.Dtos.Outputs.AgencyListDtoOut;
+@model Helpdesk.Core.Dtos.Outputs.AgencyDtoOut;
 @{
     ViewBag.Title = "Agencias";
 }
 
 <div class="container">
-    
-    <div class="card">
-        <div class="card-header">
-            <h2>Buscar agencia</h2>
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="form-group mb-3">
-                    <label asp-for="ProjectId" class="control-label"></label>
-                    <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
-                        <option value="">Seleccione</option>
-                    </select>
-                    <span asp-validation-for="ProjectId" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="Code" class="control-label"></label>
-                    <input asp-for="Code" class="form-control" placeholder="Clave de la agencia"/>
-                    <span asp-validation-for="Code" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control"  placeholder="Nombre de la agencia"/>
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="align-middle" data-feather="search"></i> 
-                        <span class="align-middle">Buscar</span> 
-                    </button>        
-                </div>
-            </form>
-        </div>
-    </div>
 
     <div class="card mt-5">
         <div class="card-header">
@@ -52,74 +16,108 @@
                     <span class="align-middle">Agregar nuevo</span> 
                 </a>
             </p>
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].Code)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].AgencyTypeName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].State)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListAgencies[0].DateRegistration)
-                    </th>
-                    <th></th>
-                </tr>
-                <tbody>
-                    @foreach (var item in Model.ListAgencies)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Code)
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelItem => item.AgencyTypeName)
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelItem => item.State)
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DateRegistration)
-                            </td>
-                            <td>
-                                <a asp-controller="Agencies" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info text-white">
-                                    <i class="align-middle" data-feather="clipboard"></i> 
-                                    <span class="align-middle">Detalles</span>
-                                </a>
-
-                                <a href="~/Agencies/Edit/@item.Id" class="btn btn-warning text-white">
-                                    <i class="align-middle" data-feather="edit"></i> 
-                                    <span class="align-middle">Editar</span>
-                                </a>
-
-                                <a href="~/Agencies/Delete/@item.Id" class="btn btn-danger">
-                                    <i class="align-middle" data-feather="delete"></i> 
-                                    <span class="align-middle">Borrar</span>
-                                </a>
-
-                            </td>
-                        </tr>
-                    }
-                </tbody>
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Code)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AgencyType.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.State)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateRegistration)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
             </table>
         </div>
-        <div class="card-footer">
-            @{
-                await Html.RenderPartialAsync("_Pager", Model);
-            }
-        </div>
+        <div class="card-footer"></div>
     </div>
 </div>
+@section Scripts{
+    <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+    <script>
+        $(document).ready(function(){        
+            $("#table").DataTable({
+                "processing":true,
+                "serverSide": true,
+                "ajax":{
+                    "url": "/Api/Agencies",
+                    "type":"GET",
+                    "datatype":"json"
+                },
+                "pageLength": 10,                
+                "columns":[
+                      {"data":"code", "name":"Clave de agencia"}
+                    , {"data":"agencyType.name", "name":"Tipo"}
+                    , {"data":"name", "name":"Nombre"} 
+                    , {"data":"state", "name":"Estado"} 
+                    , { "data" : "dateRegistration"
+                        , "name" : "Fecha"
+                        , "mRender" : function (data, type, row) {
+                            return data.substring(0,10) //Date.Parse(data).toString().format('DD/MM/YYYY');
+                        }               
+                    }
+                    , { "data" : null,
+                        "bSortable" : false,
+                        "mRender" : function (data, type,value){
+                            return '<a href="/Persons/Details/' + value['id'] + '" class="btn btn-info text-white">'
+                            + '     <i class="align-middle" data-feather="clipboard"></i>'
+                            + '     <span class="align-middle">Detalles</span>'
+                            + '</a>'
+                            + ' <a href="/Persons/Edit/' + value['id'] + '" class="btn btn-warning text-white">'
+                            + '     <i class="align-middle" data-feather="edit"></i> '
+                            + '     <span class="align-middle">Editar</span>'
+                            + ' </a>'
+                            + ' <a href="/Persons/Delete/' + value['id'] + '" class="btn btn-danger">'
+                            + '     <i class="align-middle" data-feather="delete"></i> '
+                            + '     <span class="align-middle">Borrar</span>'
+                            + ' </a>'
+                        }
+                        , "autoWidth":true
+                    }
+                ],
+                lengthChange: true,
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "Registro(s) no encontrado(s)",
+                    "info": "Página _PAGE_ de _PAGES_, _TOTAL_ elementos",
+                    "infoEmpty": "Registros no disponibles",
+                    "infoFiltered": "(de _MAX_ elementos en total)",
+                    "search": "Buscar",
+                    "processing": "<h2 class='text-info'>Cargando, espere un momento</h2>",
+                    paginate: {
+                        previous: '‹',
+                        next: '›'
+                    },
+                    aria: {
+                        paginate: {
+                            previous: 'Anterior',
+                            next: 'Siguiente'
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+}

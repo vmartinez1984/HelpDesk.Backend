@@ -1,4 +1,3 @@
-using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
@@ -17,15 +16,14 @@ namespace Helpdesk.Mvc.Api
         }
 
       
-        [Route("/Api/Projects/{id}/Agencies")]
+        [Route("/Api/Projects/{projectId}/Agencies")]
         public async Task<IActionResult> Get(int projectId)
         {
-            var response = await _unitOfWorkBl.Agency.GetAsync(new AgencySearchDtoIn
-            {
-                ProjectId = projectId
-            });
+            List<AgencyDtoOut> list;
 
-            return Ok(response.ListAgencies);
+            list = await _unitOfWorkBl.Agency.GetByProjectIdAsync(projectId);
+
+            return Ok(list);
         }
 
     }

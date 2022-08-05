@@ -11,6 +11,8 @@ namespace Helpdesk.Core.Entities
         [ForeignKey(nameof(ProjectEntity))]
         public int ProjectId { get; set; }
 
+        public virtual ProjectEntity Project { get; set; }
+
         [ForeignKey(nameof(AgencyTypeEntity))]
         public int AgencyTypeId { get; set; }
 

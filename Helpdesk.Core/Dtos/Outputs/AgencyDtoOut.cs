@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Helpdesk.Core.Dtos.Outputs
 {
@@ -10,8 +11,8 @@ namespace Helpdesk.Core.Dtos.Outputs
         [Display(Name = "Tipo")]
         public int AgencyTypeId { get; set; }
 
-        [Display(Name = "Tipo")]
-        public string AgencyTypeName { get; set; }
+        [Display(Name = "Tipo")]        
+        public AgencyTypeDtoOut AgencyType { get; set; }
 
         [Required(ErrorMessage = "El proyecto es obligatorio")]
         [Display(Name = "Proyecto")]
@@ -19,6 +20,8 @@ namespace Helpdesk.Core.Dtos.Outputs
 
         [Display(Name = "Proyecto")]
         public string ProjectName { get; set; }
+
+        public ProjectDtoOut Project { get; set; }
 
         [Required(ErrorMessage = "La clave de agencia es obligatoria")]
         [StringLength(10)]

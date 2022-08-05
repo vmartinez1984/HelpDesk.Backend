@@ -12,5 +12,7 @@ namespace Helpdesk.Core.Dtos.Outputs
 				return (int)Math.Ceiling((double)TotalRecords / RecordsPerPage);
 			}
 		}
+
+		public int TotalRecordsFiltered { get; set; }
     }
 }

@@ -1,13 +1,11 @@
-namespace Helpdesk.Core.Entities
+namespace Helpdesk.Core.Dtos
 {
-    public class PersonSearchEntity : PagerEntity
+    public class SearchDtoIn
     {
+        public int PageCurrent { get; set; }
+        public int RecordsPerPage { get; set; }
         public string Search { get; set; }
-
         public string SortColumn { get; set; }
-        
         public string SortColumnDir { get; set; }
-
-        public int TotalRecordsFiltered { get; set; }
     }
 }

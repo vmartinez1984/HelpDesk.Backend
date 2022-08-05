@@ -6,7 +6,6 @@ using Helpdesk.Core.Interfaces.IRepositories;
 using Helpdesk.Core.Mappers;
 using Helpdesk.RepositoryEf;
 using Helpdesk.RepositoryEf.Repositories;
-using Heldesk.Api.Middlewares;
 using Helpdesk.Core.Interfaces.IServices;
 using Helpdesk.Services.ZipCodes;
 
@@ -53,15 +52,6 @@ builder.Services.AddScoped<IUnitOfWorkBl, UnitOfWorkBl>();
 //Mappers
 var mapperConfig = new MapperConfiguration(mapperConfig =>
 {
-    mapperConfig.AddProfile<UserMapper>();
-    mapperConfig.AddProfile<ProjectMapper>();
-    mapperConfig.AddProfile<AgencyTypeMapper>();
-    mapperConfig.AddProfile<AgencyMapper>();
-    mapperConfig.AddProfile<ZipCodeMapper>();
-    mapperConfig.AddProfile<AgencySearchInMapper>();
-    mapperConfig.AddProfile<AgencySearchOutMapper>();
-    mapperConfig.AddProfile<AgencySearchResultOutMapper>();
-    mapperConfig.AddProfile<PersonSearchMapper>();
     mapperConfig.AddProfile<ImplementsMapper>();
 });
 IMapper mapper = mapperConfig.CreateMapper();

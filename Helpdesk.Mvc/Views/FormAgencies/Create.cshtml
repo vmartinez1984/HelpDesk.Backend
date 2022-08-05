@@ -19,11 +19,6 @@
                     <h6 class="text-info">Datos de agencia</h6>
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
 
-                    <button class="btn btn-info" type="button" onclick="cleanForm()">
-                        <i class="align-middle" data-feather="plus"></i> 
-                        <span class="align-middle">Agencia nueva</span> 
-                    </button>
-
                     @await Html.PartialAsync("_ModalSearchAgency")
 
                     <div class="newAgency">

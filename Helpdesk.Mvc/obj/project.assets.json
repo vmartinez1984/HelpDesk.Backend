@@ -3237,6 +3237,49 @@
         "runtime": {
           "bin/placeholder/Helpdesk.WorkerServices.dll": {}
         }
+      },
+      "Tickets.BusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Tickets.Core": "1.0.0",
+          "Tickets.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tickets.BusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tickets.BusinessLayer.dll": {}
+        }
+      },
+      "Tickets.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MongoDB.Driver": "2.16.1"
+        },
+        "compile": {
+          "bin/placeholder/Tickets.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tickets.Core.dll": {}
+        }
+      },
+      "Tickets.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0",
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tickets.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tickets.Repository.dll": {}
+        }
       }
     }
   },
@@ -9521,6 +9564,21 @@
       "type": "project",
       "path": "../Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj",
       "msbuildProject": "../Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj"
+    },
+    "Tickets.BusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../Tickets.BusinessLayer/Tickets.BusinessLayer.csproj",
+      "msbuildProject": "../Tickets.BusinessLayer/Tickets.BusinessLayer.csproj"
+    },
+    "Tickets.Core/1.0.0": {
+      "type": "project",
+      "path": "../Tickets.Core/Tickets.Core.csproj",
+      "msbuildProject": "../Tickets.Core/Tickets.Core.csproj"
+    },
+    "Tickets.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Tickets.Repository/Tickets.Repository.csproj",
+      "msbuildProject": "../Tickets.Repository/Tickets.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9534,7 +9592,10 @@
       "Helpdesk.WorkerServices >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.6",
       "Newtonsoft.Json >= 13.0.1",
-      "Rotativa.AspNetCore >= 1.2.0"
+      "Rotativa.AspNetCore >= 1.2.0",
+      "Tickets.BusinessLayer >= 1.0.0",
+      "Tickets.Core >= 1.0.0",
+      "Tickets.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9582,6 +9643,15 @@
             },
             "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj": {
               "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj"
+            },
+            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.BusinessLayer/Tickets.BusinessLayer.csproj": {
+              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.BusinessLayer/Tickets.BusinessLayer.csproj"
+            },
+            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
+            },
+            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
             }
           }
         }

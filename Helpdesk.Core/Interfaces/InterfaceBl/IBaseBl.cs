@@ -16,12 +16,16 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     public interface IResponsiveBl
     {
         Task<bool> ExistsWithoutSendAsync();
+
         Task<ResponsiveDto> GetWithoutSendAsync();
 
         void SendResponsive(string documentId);
 
         void SendResponsive(string email, string documentId);
+
         void UpdateDateSend(int id);
+
+        Task<ResponsivePagerDtoOut> GetAsync(SearchDtoIn searchDtonIn);
     }
 
     public interface IFormAgencyBl
@@ -67,13 +71,14 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
 
     public interface IAgencyBl : IBase02Bl<AgencyDtoIn, AgencyDtoOut>
     {
-        Task<AgencyListDtoOut> GetAsync(AgencySearchDtoIn agencySearchDtoIn);
+        Task<AgencyListDtoOut> GetAsync(SearchDtoIn searchDtoIn);
+        
         Task<List<AgencyDtoOut>> GetByProjectIdAsync(int projectId);
     }
 
     public interface IPersonBl : IBase02Bl<PersonDtoIn, PersonDtoOut>
     {
-        Task<PersonPagerDtoOut> GetAsync(PersonSearchDtonIn personSearch);
+        Task<PersonPagerDtoOut> GetAsync(SearchDtoIn personSearch);
     }
 
     public interface IZipCodeBl

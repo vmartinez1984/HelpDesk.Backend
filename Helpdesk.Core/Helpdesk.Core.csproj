@@ -11,8 +11,4 @@
     <PackageReference Include="MongoDB.Driver" Version="2.16.1" />
   </ItemGroup>
 
-   <ItemGroup>    
-    <ProjectReference Include="..\Helpdesk.Dtos\Helpdesk.Dtos.csproj" />    
-  </ItemGroup>
-  
 </Project>

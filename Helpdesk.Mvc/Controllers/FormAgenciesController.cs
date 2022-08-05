@@ -18,13 +18,9 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            List<FormAgencyDto> list;
-
-            list = await _unitOfWorkBl.FormAgency.GetAsync();
-
-            return View(list);
+            return View();
         }
 
         public async Task<IActionResult> Create()

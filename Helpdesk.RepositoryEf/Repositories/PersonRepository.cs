@@ -38,7 +38,7 @@ namespace Helpdesk.RepositoryEf.Repositories
             return await _appDbContext.Person.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<List<PersonEntity>> GetAsync(PersonSearchEntity search)
+        public async Task<List<PersonEntity>> GetAsync(PagerEntity search)
         {
             List<PersonEntity> list;
             IQueryable<PersonEntity> queryable;
@@ -56,8 +56,8 @@ namespace Helpdesk.RepositoryEf.Repositories
             }
             var query = queryable.ToString();
             list = await queryable
-            .Take(search.RecordsPerPage)
             .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
+            .Take(search.RecordsPerPage)
             .ToListAsync();
             search.TotalRecordsFiltered = await queryable.CountAsync();
 

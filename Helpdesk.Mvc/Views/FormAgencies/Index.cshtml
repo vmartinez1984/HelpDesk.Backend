@@ -1,0 +1,58 @@
+@using Helpdesk.Core.Dtos
+@model ResponsiveDto
+
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Lista de responsivas</h2>
+        </div>
+        <div class="card-body">
+            <p>
+                <a asp-action="Create">
+                    <i class="align-middle" data-feather="plus-circle"></i> 
+                    <span class="align-middle">Agregar nuevo</span> 
+                </a>
+            </p>
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Proyecto
+                        </th>
+                        <th>
+                            Agencia
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>                    
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateRegistration)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+    <script src="/js/responsives.js"></script>
+}

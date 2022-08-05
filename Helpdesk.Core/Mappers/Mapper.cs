@@ -6,96 +6,26 @@ using Helpdesk.Core.Entities;
 
 namespace Helpdesk.Core.Mappers
 {
-    public class UserMapper : Profile
-    {
-        public UserMapper()
-        {
-            CreateMap<UserEntity, UserDtoOut>().ReverseMap();
-            CreateMap<UserEntity, UserDtoIn>().ReverseMap();
-        }
-    }
-
-    public class ProjectMapper : Profile
-    {
-        public ProjectMapper()
-        {
-            CreateMap<ProjectEntity, ProjectDtoOut>().ReverseMap();
-            CreateMap<ProjectEntity, ProjectDtoIn>().ReverseMap();
-        }
-    }
-
-    public class AgencyTypeMapper : Profile
-    {
-        public AgencyTypeMapper()
-        {
-            CreateMap<AgencyTypeEntity, AgencyTypeDtoOut>().ReverseMap();
-            CreateMap<AgencyTypeEntity, AgencyTypeDtoIn>().ReverseMap();
-        }
-    }
-
-    public class AgencyMapper : Profile
-    {
-        public AgencyMapper()
-        {
-            CreateMap<AgencyEntity, AgencyDtoOut>().ReverseMap();
-            CreateMap<AgencyEntity, AgencyDtoIn>().ReverseMap();
-        }
-    }
-
-    public class PersonSearchMapper : Profile
-    {
-        public PersonSearchMapper()
-        {
-            CreateMap<PersonSearchDtonIn, PersonSearchEntity>().ReverseMap();
-            CreateMap<PersonSearchEntity, PersonSearchDto>().ReverseMap();
-        }
-    }
-    public class PersonMapper : Profile
-    {
-        public PersonMapper()
-        {
-            CreateMap<PersonEntity, PersonDtoOut>().ReverseMap();
-            CreateMap<PersonEntity, PersonDtoIn>().ReverseMap();
-        }
-    }
-
-    public class ZipCodeMapper : Profile
-    {
-        public ZipCodeMapper()
-        {
-            CreateMap<ZipCodeEntity, ZipCodeDto>().ReverseMap();
-        }
-    }
-
-    public class AgencySearchInMapper : Profile
-    {
-        public AgencySearchInMapper()
-        {
-            CreateMap<AgencySearchDtoIn, AgencySearchEntity>().ReverseMap();
-        }
-    }
-
-    public class AgencySearchOutMapper : Profile
-    {
-        public AgencySearchOutMapper()
-        {
-            CreateMap<AgencySearchDtoOut, AgencySearchEntity>().ReverseMap();
-        }
-    }
-
-    public class AgencySearchResultOutMapper : Profile
-    {
-        public AgencySearchResultOutMapper()
-        {
-            CreateMap<AgencyListDtoOut, AgencySearchEntityOut>().ReverseMap();
-        }
-    }
-
     public class ImplementsMapper : Profile
     {
         public ImplementsMapper()
         {
-            CreateMap<PersonSearchEntity, PersonSearchDtonIn>();            
+            CreateMap<UserEntity, UserDtoOut>().ReverseMap();
+            CreateMap<UserEntity, UserDtoIn>().ReverseMap();
+
+            CreateMap<ProjectEntity, ProjectDtoOut>().ReverseMap();
+            CreateMap<ProjectEntity, ProjectDtoIn>().ReverseMap();
+
+            CreateMap<AgencyTypeEntity, AgencyTypeDtoOut>().ReverseMap();
+            CreateMap<AgencyTypeEntity, AgencyTypeDtoIn>().ReverseMap();
+
+            CreateMap<AgencyEntity, AgencyDtoOut>().ReverseMap();
+            CreateMap<AgencyEntity, AgencyDtoIn>().ReverseMap();
+
+            CreateMap<PersonEntity, PersonDtoOut>().ReverseMap();
+            CreateMap<PersonEntity, PersonDtoIn>().ReverseMap();
+
+            CreateMap<ZipCodeEntity, ZipCodeDto>().ReverseMap();
 
             CreateMap<RoleEntity, RoleDto>();
 
@@ -117,6 +47,8 @@ namespace Helpdesk.Core.Mappers
 
             CreateMap<ResponsiveEntity, ResponsiveDto>();
             CreateMap<FormAgencyEntity, FormAgencyDto>();
+
+            CreateMap<SearchDtoIn, PagerEntity>();
         }
     }
 }

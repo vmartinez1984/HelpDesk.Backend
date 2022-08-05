@@ -1,0 +1,5 @@
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Tickets.Repository/obj/Debug/net6.0/Helpdesk.Tickets.Repository.csproj.AssemblyReference.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Tickets.Repository/obj/Debug/net6.0/Helpdesk.Tickets.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Tickets.Repository/obj/Debug/net6.0/Helpdesk.Tickets.Repository.AssemblyInfoInputs.cache
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Tickets.Repository/obj/Debug/net6.0/Helpdesk.Tickets.Repository.AssemblyInfo.cs
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Tickets.Repository/obj/Debug/net6.0/Helpdesk.Tickets.Repository.csproj.CoreCompileInputs.cache

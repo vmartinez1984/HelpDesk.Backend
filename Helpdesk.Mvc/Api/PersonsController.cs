@@ -1,4 +1,4 @@
-using Helpdesk.Core.Dtos.Inputs;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
@@ -17,36 +17,26 @@ namespace Helpdesk.Mvc.Api
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] DataTableDto dataTablesIn)
         {
             try
             {
+                PersonPagerDtoOut response;
 
-                var query = Request.Query;
-                var draw = Request.Query["draw"].FirstOrDefault();
-                var start = Request.Query["start"].FirstOrDefault();
-                var length = Request.Query["length"].FirstOrDefault();
-                var sortColumn = Request.Query["columns[" + Request.Query["order[0][column]"].FirstOrDefault() + "][data]"].FirstOrDefault();
-                var sortColumnDir = Request.Query["order[0][dir]"].FirstOrDefault();
-                var searchValue = Request.Query["search[value]"].FirstOrDefault();
-                var pageSize = length == null ? 0 : Convert.ToInt32(length);
-                var skip = start == null ? 0 : Convert.ToInt32(start);
-                sortColumn = sortColumn == "agencyName"? "Agency.Name": sortColumn;
-
-                PersonPagerDtoOut response = await _unitOfWorkBl.Person.GetAsync(new PersonSearchDtonIn
+                response = await _unitOfWorkBl.Person.GetAsync(new SearchDtoIn
                 {
-                    RecordsPerPage = pageSize,
-                    PageCurrent = skip + 1,
-                    Search = searchValue,
-                    SortColumn = sortColumn,
-                    SortColumnDir = sortColumnDir
+                    RecordsPerPage = dataTablesIn.RecordsPerPage,
+                    PageCurrent = dataTablesIn.PageCurrent,
+                    Search = dataTablesIn.SearchValue,
+                    SortColumn = dataTablesIn.SortColumn,
+                    SortColumnDir = dataTablesIn.SortColumnDir
                 });
 
                 return Ok(new
                 {
-                    draw = draw,
-                    recordsFiltered = response.PersonSearch.TotalRecordsFiltered,
-                    recordsTotal = response.PersonSearch.TotalRecords,
+                    draw = dataTablesIn.Draw,
+                    recordsFiltered = response.TotalRecordsFiltered,
+                    recordsTotal = response.TotalRecords,
                     data = response.ListPersons
                 });
             }

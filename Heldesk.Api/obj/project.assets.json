@@ -704,7 +704,7 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
-      "System.Linq.Dynamic.Core/1.2.19": {
+      "System.Linq.Dynamic.Core/1.2.18": {
         "type": "package",
         "compile": {
           "lib/net6.0/System.Linq.Dynamic.Core.dll": {}
@@ -911,7 +911,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1",
-          "System.Linq.Dynamic.Core": "1.2.19"
+          "System.Linq.Dynamic.Core": "1.2.18"
         },
         "compile": {
           "bin/placeholder/Helpdesk.RepositoryEf.dll": {}
@@ -2146,10 +2146,10 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "System.Linq.Dynamic.Core/1.2.19": {
-      "sha512": "R9Iv6uDZQLDecHhBANawccBzm5H6lHTKL65zPfulHBBpeT7NktzLcxA0MfffWsTjCzSo106Vy5QtkwXnlfekJQ==",
+    "System.Linq.Dynamic.Core/1.2.18": {
+      "sha512": "+RH90sKD6SK2c9MD2Xo2jz1hkAJYfgPVyW1VgAwiPURR+JzOJCdvsDBg2Iq97FmTymxlQBY76G1cMxsF6j+6tA==",
       "type": "package",
-      "path": "system.linq.dynamic.core/1.2.19",
+      "path": "system.linq.dynamic.core/1.2.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2190,7 +2190,7 @@
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.pdb",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.pri",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.xml",
-        "system.linq.dynamic.core.1.2.19.nupkg.sha512",
+        "system.linq.dynamic.core.1.2.18.nupkg.sha512",
         "system.linq.dynamic.core.nuspec"
       ]
     },

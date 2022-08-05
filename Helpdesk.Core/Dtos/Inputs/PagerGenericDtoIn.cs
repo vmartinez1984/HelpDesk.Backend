@@ -10,12 +10,12 @@ namespace Helpdesk.Core.Dtos.Inputs
 
         public int TotalPages { get; set; }
 
-        public string? SearchCurrent { get; set; }
+        public string SearchCurrent { get; set; }
 
-        public string? OrderCurrent { get; set; }
+        public string OrderCurrent { get; set; }
 
-        public string? TypeOrderCurrent { get; set; }
+        public string TypeOrderCurrent { get; set; }
 
-        public IEnumerable<T>? Result { get; set; }
+        public IEnumerable<T> Result { get; set; }
     }
 }

@@ -14,6 +14,11 @@ using Helpdesk.Repository.MongoDb.Settings;
 using Helpdesk.Notifications;
 using Rotativa.AspNetCore;
 using Helpdesk.WorkerServices;
+using Tickets.Core.Interfaces.IRepositories;
+using Tickets.Repository;
+using Tickets.Core.Interfaces.IBusinessLayer;
+using Tickets.BusinessLayer.Bl;
+//using Tickets.BusinessLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -45,6 +50,13 @@ builder.Services.AddScoped<IRepository, RepositoryEf>();
 //Mongo Db
 builder.Services.AddScoped<IFormAgencyRepository, FormAgencyRepository>();
 builder.Services.AddScoped<IRepositoryMongoDb, RepositoryMongoDb>();
+//Tickets Repository MongoDB
+builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ISubcategoryRepository, SubcategoryRepository>();
+builder.Services.AddScoped<IRepositoryTickets, RepositoryTickets>();
+builder.Services.AddScoped<ITicketBl, TicketBl>();
+builder.Services.AddScoped<IUnitOfWorkTickets, UnitOfWorkTickets>();
 //Services
 builder.Services.AddScoped<IZipCodeService, ZipCodeService>();
 //Business layer
@@ -66,16 +78,6 @@ builder.Services.AddHostedService<TimedHostedService>();
 //Mappers
 var mapperConfig = new MapperConfiguration(mapperConfig =>
 {
-    mapperConfig.AddProfile<AgencyTypeMapper>();
-    mapperConfig.AddProfile<AgencySearchInMapper>();
-    mapperConfig.AddProfile<AgencySearchOutMapper>();
-    mapperConfig.AddProfile<AgencyMapper>();
-    mapperConfig.AddProfile<AgencySearchResultOutMapper>();
-    mapperConfig.AddProfile<PersonMapper>();
-    mapperConfig.AddProfile<PersonSearchMapper>();
-    mapperConfig.AddProfile<ProjectMapper>();
-    mapperConfig.AddProfile<UserMapper>();
-    mapperConfig.AddProfile<ZipCodeMapper>();
     mapperConfig.AddProfile<ImplementsMapper>();
 });
 IMapper mapper = mapperConfig.CreateMapper();
@@ -107,6 +109,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 IWebHostEnvironment webHostEnvironment = app.Environment;
+//Se indica donde esta los archivos de rotativa
 RotativaConfiguration.Setup((Microsoft.AspNetCore.Hosting.IHostingEnvironment)webHostEnvironment, @"Rotativa/Linux");
 
 app.Run();

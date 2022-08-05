@@ -5,12 +5,13 @@
 
 
 function onchange_SelectProject() {
-    var selectProject
+    var projectId
 
-    selectProject = document.getElementById("selectProject")
-    url = "/Api/agencies/" +  selectProject.value
-
-    //console.log(selectProject.value)
+    projectId = document.getElementById("selectProject").value
+    //console.log(projectId)
+    if(projectId == "")
+        return
+    url = "/Api/Projects/" + projectId + "/Agencies"
     fetch(url)
         .then(response => {
             if (response.ok) {

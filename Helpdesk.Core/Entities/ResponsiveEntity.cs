@@ -7,6 +7,8 @@ namespace Helpdesk.Core.Entities
         [ForeignKey(nameof(AgencyEntity))]
         public int AgencyId { get; set; }
 
+        public virtual AgencyEntity Agency { get; set; }       
+
         public string DocumentId { get; set; }
 
         public DateTime? DateSend { get; set; }

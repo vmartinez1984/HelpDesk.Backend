@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +16,7 @@ namespace Helpdesk.WorkerServices
         private int executionCount = 0;
         private readonly ILogger<TimedHostedService> _logger;
         private readonly IServiceScopeFactory _scopeFactory;
-        private Timer? _timer = null;
+        private Timer _timer = null;
 
         public TimedHostedService(
             ILogger<TimedHostedService> logger
@@ -96,7 +95,7 @@ namespace Helpdesk.WorkerServices
             return Task.CompletedTask;
         }
 
-        private void DoWork(object? state)
+        private void DoWork(object state)
         {
             var count = Interlocked.Increment(ref executionCount);
 

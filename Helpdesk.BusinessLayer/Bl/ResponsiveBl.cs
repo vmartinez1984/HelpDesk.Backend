@@ -13,18 +13,14 @@ namespace Helpdesk.BusinessLayer.Bl
         private IMapper _mapper;
         private EmailNotification _emailNotification;
 
-        //private IRepositoryMongoDb _repositoryMongoDb;
-
         public ResponsiveBl(
             IRepository repository
-            //, IRepositoryMongoDb repositoryMongoDb
             , IMapper mapper
             , EmailNotification emailNotification
         )
         {
             _repository = repository;
             _mapper = mapper;
-            //_repositoryMongoDb = repositoryMongoDb;
             _emailNotification = emailNotification;
         }
 
@@ -35,6 +31,24 @@ namespace Helpdesk.BusinessLayer.Bl
             existsWithoutSend = await _repository.Resposive.ExistsWithoutSendAsync();
 
             return existsWithoutSend;
+        }
+
+        public async Task<ResponsivePagerDtoOut> GetAsync(SearchDtoIn searchDtonIn)
+        {
+            ResponsivePagerDtoOut responsivePagerDtoOut;
+            PagerEntity pagerEntity;
+            List<ResponsiveEntity> entities;
+
+            pagerEntity = _mapper.Map<PagerEntity>(searchDtonIn);
+            entities = await _repository.Resposive.GetAsync(pagerEntity);
+            responsivePagerDtoOut = new ResponsivePagerDtoOut
+            {
+                ListResponsive = _mapper.Map<List<ResponsiveDto>>(entities),
+                TotalRecords = pagerEntity.TotalRecords,
+                TotalRecordsFiltered = pagerEntity.TotalRecordsFiltered
+            };
+
+            return responsivePagerDtoOut;
         }
 
         public async Task<ResponsiveDto> GetWithoutSendAsync()
@@ -51,7 +65,7 @@ namespace Helpdesk.BusinessLayer.Bl
         public void SendResponsive(string documentId)
         {
             ResponsiveEntity entity;
-            
+
             entity = _repository.Resposive.GetAsync(documentId).Result;
 
             _emailNotification.Send(entity.Email, documentId);
@@ -59,9 +73,9 @@ namespace Helpdesk.BusinessLayer.Bl
 
         public void SendResponsive(string email, string documentId)
         {
-            ResponsiveEntity entity;            
+            ResponsiveEntity entity;
 
-            entity = _repository.Resposive.GetAsync(documentId).Result;            
+            entity = _repository.Resposive.GetAsync(documentId).Result;
 
             _emailNotification.Send(email, documentId);
         }

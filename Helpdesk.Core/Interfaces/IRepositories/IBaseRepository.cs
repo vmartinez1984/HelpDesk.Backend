@@ -22,6 +22,8 @@ namespace Helpdesk.Core.Interfaces.IRepositories
         Task<ResponsiveEntity> GetWithoutSendAsync();
 
         Task<ResponsiveEntity> GetAsync(string documentId);
+
+        Task<List<ResponsiveEntity>> GetAsync(PagerEntity search);
     }
 
     public interface IDeviceStateRepository
@@ -106,13 +108,14 @@ namespace Helpdesk.Core.Interfaces.IRepositories
 
     public interface IAgencyRepository : IBaseRepository02<AgencyEntity>
     {
-        Task<AgencySearchEntityOut> GetAsync(AgencySearchEntity agencySearchEntity);
+        Task<List<AgencyEntity>> GetAsync(PagerEntity searchEntity);
+        
         Task<List<AgencyEntity>> GetByProjectIdAsync(int projectId);
     }
 
     public interface IPersonRepository : IBaseRepository02<PersonEntity>
     {
-        Task<List<PersonEntity>> GetAsync(PersonSearchEntity search);
+        Task<List<PersonEntity>> GetAsync(PagerEntity search);
     }
 
     public interface IRoleRepository

@@ -1,4 +1,5 @@
 using AutoMapper;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
@@ -44,7 +45,7 @@ namespace Helpdesk.BusinessLayer.Bl
                 return null;
             item = _mapper.Map<AgencyDtoOut>(entity);
             var agencyType = await _repository.AgencyType.GetAsync(item.AgencyTypeId);
-            item.AgencyTypeName = agencyType.Name;
+            item.AgencyType = _mapper.Map<AgencyTypeDtoOut>(agencyType);
             var project = await _repository.Project.GetAsync(item.ProjectId);
             item.ProjectName = project.Name;
             await SetUserNameAsync(item);
@@ -63,15 +64,22 @@ namespace Helpdesk.BusinessLayer.Bl
             item.UserName = $"{personEntity.Name} {personEntity.LastName}";
         }
 
-        public async Task<AgencyListDtoOut> GetAsync(AgencySearchDtoIn agencySearchDto)
+        public async Task<AgencyListDtoOut> GetAsync(SearchDtoIn searchDto)
         {
             AgencyListDtoOut response;
-            AgencySearchEntity agencySearchEntity;
-            AgencySearchEntityOut agencySearchEntityOut;
+            PagerEntity pagerEntity;
+            List<AgencyEntity> entities;
 
-            agencySearchEntity = _mapper.Map<AgencySearchEntity>(agencySearchDto);
-            agencySearchEntityOut = await _repository.Agency.GetAsync(agencySearchEntity);
-            response = _mapper.Map<AgencyListDtoOut>(agencySearchEntityOut);
+            pagerEntity = _mapper.Map<PagerEntity>(searchDto);
+            entities = await _repository.Agency.GetAsync(pagerEntity);
+            response = new AgencyListDtoOut
+            {
+                ListAgencies = _mapper.Map<List<AgencyDtoOut>>(entities),
+                PageCurrent = pagerEntity.PageCurrent,
+                RecordsPerPage = pagerEntity.RecordsPerPage,
+                TotalRecords = pagerEntity.TotalRecords,
+                TotalRecordsFiltered = pagerEntity.TotalRecordsFiltered
+            };
             await LoadAgencyTypeName(response);
 
             return response;
@@ -88,7 +96,7 @@ namespace Helpdesk.BusinessLayer.Bl
 
                 agencyTypeEntity = listAgencyTypeEntities.Where(x => x.Id == item.AgencyTypeId).FirstOrDefault();
 
-                item.AgencyTypeName = agencyTypeEntity?.Name;
+                item.AgencyType = _mapper.Map<AgencyTypeDtoOut>(agencyTypeEntity);
             });
         }
 

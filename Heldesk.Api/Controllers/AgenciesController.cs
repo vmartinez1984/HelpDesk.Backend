@@ -1,3 +1,4 @@
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +37,7 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetByProjectId([FromQuery] AgencySearchDtoIn searchDto)
+        public async Task<ActionResult> GetByProjectId([FromQuery] SearchDtoIn searchDto)
         {
             return Ok(await _unitOfWorkBl.Agency.GetAsync(searchDto));
         }

@@ -17,7 +17,7 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(FormAgencyDtoIn item)
+        public ActionResult Post(FormAgencyDtoIn item)
         {
             // var agencyType = await _unitOfWorkBl.AgencyType.GetAsync(item.AgencyTypeId);
             // if(agencyType is null){

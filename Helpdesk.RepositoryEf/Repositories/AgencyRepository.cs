@@ -2,6 +2,8 @@ using Helpdesk.RepositoryEf.Contexts;
 using Helpdesk.Core.Entities;
 using Helpdesk.Core.Interfaces.IRepositories;
 using Microsoft.EntityFrameworkCore;
+using Helpdesk.RepositoryEf.Utilities;
+using System.Linq.Dynamic.Core;
 
 namespace Helpdesk.RepositoryEf.Repositories
 {
@@ -32,25 +34,21 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<AgencySearchEntityOut> GetAsync(AgencySearchEntity search)
+        public async Task<List<AgencyEntity>> GetAsync(PagerEntity search)
         {
             List<AgencyEntity> list;
             IQueryable<AgencyEntity> queryable;
-            AgencySearchEntityOut agencySearchEntityOut;
-            
+
             queryable = _appDbContext.Agency;
             queryable = queryable.Where(x => x.IsActive);
-            if (search.ProjectId is not null)
+            search.TotalRecords = queryable.Count();
+            if (string.IsNullOrEmpty(search.Search) == false)
+                queryable = queryable.Where(
+                    x => string.Concat(x.Name, x.Project.Name, x.DateRegistration).Contains(search.Search)
+                );
+            if (string.IsNullOrEmpty(search.SortColumn) == false && string.IsNullOrEmpty(search.SortColumnDir) == false)
             {
-                queryable = queryable.Where(x => x.ProjectId == search.ProjectId);
-            }
-            if (!string.IsNullOrEmpty(search.Name))
-            {
-                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.Name.ToUpper()));
-            }
-            if (!string.IsNullOrEmpty(search.Code))
-            {
-                queryable = queryable.Where(x => x.Code.ToUpper().Contains(search.Code.ToUpper()));
+                queryable = queryable.OrderBy(search.SortColumn.GetSortColumn() + " " + search.SortColumnDir);
             }
             list = await queryable
             .OrderByDescending(x => x.Id)
@@ -58,19 +56,10 @@ namespace Helpdesk.RepositoryEf.Repositories
             .Take(search.RecordsPerPage)
             .ToListAsync();
             search.TotalRecords = await queryable.CountAsync();
-            agencySearchEntityOut = new AgencySearchEntityOut
-            {
-
-                Code = search.Code,
-                Name = search.Name,
-                ProjectId = search.ProjectId,
-                PageCurrent = search.PageCurrent,
-                RecordsPerPage = search.RecordsPerPage,
-                TotalRecords = search.TotalRecords,
-                ListAgencies = list
-            };
-
-            return agencySearchEntityOut;
+            list = await queryable.ToListAsync();
+            search.TotalRecordsFiltered = await queryable.CountAsync();
+            
+            return list;
         }
 
         public async Task<AgencyEntity> GetAsync(int id)
@@ -78,7 +67,7 @@ namespace Helpdesk.RepositoryEf.Repositories
             AgencyEntity entity;
 
             entity = await _appDbContext.Agency.FirstOrDefaultAsync(x => x.Id == id);
-            
+
             return entity;
         }
 
@@ -86,8 +75,8 @@ namespace Helpdesk.RepositoryEf.Repositories
         {
             List<AgencyEntity> entities;
 
-            entities = await _appDbContext.Agency.Where(x=> x.ProjectId == projectId && x.IsActive == true).ToListAsync();
-            
+            entities = await _appDbContext.Agency.Where(x => x.ProjectId == projectId && x.IsActive == true).ToListAsync();
+
             return entities;
         }
 

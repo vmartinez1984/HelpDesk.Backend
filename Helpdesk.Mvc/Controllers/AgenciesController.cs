@@ -18,14 +18,9 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        public async Task<IActionResult> Index([FromQuery] AgencySearchDtoIn agencySearchDtoIn)
-        {
-            AgencyListDtoOut agencyListDto;
-
-            agencyListDto = await _unitOfWorkBl.Agency.GetAsync(agencySearchDtoIn);
-            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
-
-            return View(agencyListDto);
+        public IActionResult Index()
+        {            
+            return View();
         }
 
         public async Task<IActionResult> Create()

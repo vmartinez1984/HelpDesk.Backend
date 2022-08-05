@@ -1,4 +1,5 @@
 using AutoMapper;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
@@ -43,24 +44,21 @@ namespace Helpdesk.BusinessLayer.Bl
             throw new NotImplementedException();
         }
 
-        public async Task<PersonPagerDtoOut> GetAsync(PersonSearchDtonIn search)
+        public async Task<PersonPagerDtoOut> GetAsync(SearchDtoIn search)
         {
             PersonPagerDtoOut response;
-            PersonSearchEntity personSearchEntity;
+            PagerEntity searchEntity;
             List<PersonEntity> entities;
 
-            personSearchEntity = _mapper.Map<PersonSearchEntity>(search);
-            entities = await _repository.Person.GetAsync(personSearchEntity);
+            searchEntity = _mapper.Map<PagerEntity>(search);
+            entities = await _repository.Person.GetAsync(searchEntity);
             response = new PersonPagerDtoOut
             {
                 ListPersons = _mapper.Map<List<PersonDtoOut>>(entities),
-                PersonSearch = new PersonSearchDto
-                {
-                    PageCurrent = personSearchEntity.PageCurrent,
-                    RecordsPerPage = personSearchEntity.RecordsPerPage,
-                    TotalRecords = personSearchEntity.TotalRecords,
-                    TotalRecordsFiltered = personSearchEntity.TotalRecordsFiltered
-                }
+                PageCurrent = searchEntity.PageCurrent,
+                RecordsPerPage = searchEntity.RecordsPerPage,
+                TotalRecords = searchEntity.TotalRecords,
+                TotalRecordsFiltered = searchEntity.TotalRecordsFiltered
             };
             await SetAgencyNamesAsync(response);
 

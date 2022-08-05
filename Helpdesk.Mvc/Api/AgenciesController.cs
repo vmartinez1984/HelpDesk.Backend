@@ -1,4 +1,4 @@
-using Helpdesk.Core.Dtos.Inputs;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
@@ -33,15 +33,27 @@ namespace Helpdesk.Mvc.Api
                 return Ok(item);
         }
 
-
         [HttpGet]
-        public async Task<IActionResult> SearchAgency([FromQuery] AgencySearchDtoIn agencySearchDtoIn)
+        public async Task<IActionResult> SearchAgency([FromQuery] DataTableDto dataTablesIn)
         {
-            AgencyListDtoOut agencyListDto;
+            AgencyListDtoOut response;
 
-            agencyListDto = await _unitOfWorkBl.Agency.GetAsync(agencySearchDtoIn);
+            response = await _unitOfWorkBl.Agency.GetAsync(new SearchDtoIn
+            {
+                RecordsPerPage = dataTablesIn.RecordsPerPage,
+                PageCurrent = dataTablesIn.PageCurrent,
+                Search = dataTablesIn.SearchValue,
+                SortColumn = dataTablesIn.SortColumn,
+                SortColumnDir = dataTablesIn.SortColumnDir
+            });
 
-            return Ok(agencyListDto.ListAgencies);
+               return Ok(new
+                {
+                    draw = dataTablesIn.Draw,
+                    recordsFiltered = response.TotalRecordsFiltered,
+                    recordsTotal = response.TotalRecords,
+                    data = response.ListAgencies
+                });
         }
     }
 }

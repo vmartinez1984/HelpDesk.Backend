@@ -51,14 +51,12 @@ namespace Helpdesk.BusinessLayer.Bl
         }
 
         private async Task SetTotalAgenciesAsync(ProjectDtoOut item)
-        {
-            var agencyPager = await _repository.Agency.GetAsync(new AgencySearchEntity
-            {
-                ProjectId = item.Id,
-                PageCurrent = 1,
-                RecordsPerPage = 10
-            });
-            item.TotalAgencies = agencyPager.TotalRecords;
+        {   
+            List<AgencyEntity> entities;
+
+            entities = await _repository.Agency.GetByProjectIdAsync(item.Id);
+            
+            item.TotalAgencies = entities.Count();
         }
 
         private async Task SetUserNameAsync(ProjectDtoOut item)

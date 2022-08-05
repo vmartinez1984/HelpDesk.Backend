@@ -1,5 +1,4 @@
 ﻿using Helpdesk.Core.Entities;
-using System.Net;
 using Newtonsoft.Json;
 using Helpdesk.Core.Interfaces.IServices;
 
@@ -14,13 +13,13 @@ namespace Helpdesk.Services.ZipCodes
             List<ZipCodeEntity> list;
 
             list = new List<ZipCodeEntity>();
-            await Task.Run(() =>
+            await Task.Run(async () =>
             {
-                using (var webClient = new WebClient())
+                using (var webClient = new HttpClient())
                 {
                     string jsonString;
 
-                    jsonString = webClient.DownloadString(zipCodeApi + zipCode);
+                    jsonString = await webClient.GetStringAsync(zipCodeApi + zipCode);
                     list = JsonConvert.DeserializeObject<List<ZipCodeEntity>>(jsonString);
                 }
             });

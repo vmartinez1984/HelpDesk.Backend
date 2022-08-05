@@ -114,7 +114,8 @@ namespace Helpdesk.BusinessLayer.Bl
             {
                 DeviceStateEntity deviceState;
 
-                deviceState = listDeviceStates.Where(x=> x.Id == item.DeviceStateId).FirstOrDefault();
+                deviceState = listDeviceStates.Where(x=> x.Id == item.DeviceStateId).First();
+                
                 item.DeviceStateName = deviceState.Name;
             }
         }
