@@ -72,9 +72,9 @@
 
                             <div class="col-6">
                                 <div class="form-group mb-3">
-                                    <label asp-for="email" class="control-label"></label>
-                                    <input asp-for="email" class="form-control" maxlength="255" placeholder="correo"/>
-                                    <span asp-validation-for="email" class="text-danger"></span>
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" maxlength="255" placeholder="correo"/>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,9 @@
                         <label for="Notes">Texto de responsiva</label>
                     </div>
 
-                    @await Html.PartialAsync("_Device")
+                    @await Html.PartialAsync("_Device", new DeviceDto())
+
+                    <table id="listDevices"></table>
                     
                     <div class="form-group mb-3 mt-3">
                         <button type="submit" class="btn btn-primary">
@@ -127,5 +129,17 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    <script src="/js/formAgency.js"></script>
+    <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="/js/modalSearchAgency.js"></script>    
+    <script src="/js/formAgency.js"></script>    
 }

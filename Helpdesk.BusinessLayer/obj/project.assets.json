@@ -300,7 +300,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "MongoDB.Driver": "2.16.1"
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Helpdesk.Core.dll": {}
@@ -320,6 +321,35 @@
         },
         "runtime": {
           "bin/placeholder/Helpdesk.Notifications.dll": {}
+        }
+      },
+      "Tickets.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MongoDB.Driver": "2.16.1"
+        },
+        "compile": {
+          "bin/placeholder/Tickets.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tickets.Core.dll": {}
+        }
+      },
+      "Tickets.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0",
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tickets.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tickets.Repository.dll": {}
         }
       }
     }
@@ -901,6 +931,16 @@
       "type": "project",
       "path": "../Helpdesk.Notifications/Helpdesk.Notifications.csproj",
       "msbuildProject": "../Helpdesk.Notifications/Helpdesk.Notifications.csproj"
+    },
+    "Tickets.Core/1.0.0": {
+      "type": "project",
+      "path": "../Tickets.Core/Tickets.Core.csproj",
+      "msbuildProject": "../Tickets.Core/Tickets.Core.csproj"
+    },
+    "Tickets.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Tickets.Repository/Tickets.Repository.csproj",
+      "msbuildProject": "../Tickets.Repository/Tickets.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -908,7 +948,9 @@
       "AutoMapper >= 11.0.1",
       "Helpdesk.Core >= 1.0.0",
       "Helpdesk.Notifications >= 1.0.0",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "Tickets.Core >= 1.0.0",
+      "Tickets.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -941,6 +983,12 @@
             },
             "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
               "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
+            },
+            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
+            },
+            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
             }
           }
         }
@@ -974,6 +1022,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.7, 6.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.7, 6.0.7]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

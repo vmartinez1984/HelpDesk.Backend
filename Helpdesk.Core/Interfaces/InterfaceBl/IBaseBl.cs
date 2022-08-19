@@ -1,6 +1,7 @@
 using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
+using Tickets.Core.Dtos;
 
 namespace Helpdesk.Core.Interfaces.InterfaceBl
 {
@@ -55,11 +56,13 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     {
         Task<UserDtoOut> Login(LoginDto login);
 
-        Task<UserListDtoOut> GetAsync(UserSearchDtoIn userSearch);
+        Task<PagerDtoOut> GetAsync(SearchDtoIn userSearch);
 
         Task<bool> Exists(string email, int id);
+        
+        Task<bool> Exists(string email);
 
-        Task UpdateAsync(UserDtoOut item);
+        Task UpdateAsync(UserDtoOut item);        
     }
 
     public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut>
@@ -97,8 +100,17 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     {
         Task<int> AddAsync(DeviceDtoIn item);
 
-        Task<DeviceListDto> GetAsync(DeviceSearchDtoIn deviceSearch);
+        Task<PagerDtoOut> GetAsync(SearchDtoIn deviceSearch);
 
         Task<DeviceDto> GetAsync(int id);
+    }
+
+     public interface ITicketBl
+    {
+        Task<List<TicketDto>> GetAsync();
+
+        Task<string> AddAsync(TicketDtoIn item);     
+
+        Task<PagerDtoOut> GetAsync(SearchDtoIn search);   
     }
 }

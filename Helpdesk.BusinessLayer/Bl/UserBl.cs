@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
@@ -88,7 +89,7 @@ namespace Helpdesk.BusinessLayer.Bl
 
         public async Task<UserListDtoOut> GetAsync(UserSearchDtoIn userSearch)
         {
-            UserSearchEntity userSearchEntity;            
+            UserSearchEntity userSearchEntity;
             UserListDtoOut userListDtoOut;
             List<UserEntity> listUserEntities;
 
@@ -105,8 +106,8 @@ namespace Helpdesk.BusinessLayer.Bl
         private async Task SetPersonsAsync(List<UserDtoOut> list)
         {
             foreach (var item in list)
-            {               
-               await SetDataUserDto(item);
+            {
+                await SetDataUserDto(item);
             }
         }
 
@@ -127,7 +128,9 @@ namespace Helpdesk.BusinessLayer.Bl
             UserDtoOut item;
 
             entity = await _repository.User.GetAsync(login.User);
-            if (entity.Password == login.Password)
+            if (entity is null)
+                item = null;
+            else if (entity.Password == login.Password)
             {
                 item = _mapper.Map<UserDtoOut>(entity);
                 await SetPersonAsync(item);
@@ -153,6 +156,11 @@ namespace Helpdesk.BusinessLayer.Bl
             return await _repository.User.ExistsAsync(email, userId);
         }
 
+        public async Task<bool> Exists(string email)
+        {
+            return await _repository.User.ExistsAsync(email);
+        }
+
         public async Task UpdateAsync(UserDtoOut item)
         {
             UserEntity userEntity;
@@ -174,5 +182,26 @@ namespace Helpdesk.BusinessLayer.Bl
 
             await _repository.Person.UpdateAsync(personEntity);
         }
+
+        public async Task<PagerDtoOut> GetAsync(SearchDtoIn search)
+        {
+            PagerDtoOut response;
+            PagerEntity pagerEntity;
+            List<UserEntity> entities;
+
+            pagerEntity = _mapper.Map<PagerEntity>(search);
+            entities = await _repository.User.GetAsync(pagerEntity);
+            response = new PagerDtoOut
+            {
+                List = _mapper.Map<List<UserDto>>(entities),
+                PageCurrent = pagerEntity.PageCurrent,
+                RecordsPerPage = pagerEntity.RecordsPerPage,
+                TotalRecords = pagerEntity.TotalRecords,
+                TotalRecordsFiltered = pagerEntity.TotalRecordsFiltered
+            };
+
+            return response;
+        }
+
     }//end class
 }

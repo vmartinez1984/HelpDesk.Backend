@@ -74,7 +74,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
 
         Task UpdateAsync(DeviceEntity entity);
 
-        Task<List<DeviceEntity>> GetAsync(DeviceSearchEntity search);
+        Task<List<DeviceEntity>> GetAsync(PagerEntity search);
     }
 
     public interface IBaseRepository02<T> where T : class
@@ -92,9 +92,9 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     {
         Task<UserEntity> GetAsync(string userName);
 
-        Task<List<UserEntity>> GetAsync(UserSearchEntity userSearch);
+        Task<List<UserEntity>> GetAsync(PagerEntity search);
 
-        Task<bool> ExistsAsync(string email, int userId);
+        Task<bool> ExistsAsync(string email, int? userId = null);
 
         Task<string> GetNameAsync(int userId);
     }

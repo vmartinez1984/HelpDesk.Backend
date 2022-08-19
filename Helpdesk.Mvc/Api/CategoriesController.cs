@@ -1,6 +1,6 @@
+using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
 using Tickets.Core.Dtos;
-using Tickets.Core.Interfaces.IBusinessLayer;
 
 namespace Helpdesk.Mvc.Api
 {
@@ -8,19 +8,19 @@ namespace Helpdesk.Mvc.Api
     [Route("Api/[controller]")]
     public class CategoriesController : ControllerBase
     {
-       private IUnitOfWorkTickets _unitOfWorkTickets;
+       private IUnitOfWorkBl _unitOfWorkBl;
 
-        public CategoriesController(IUnitOfWorkTickets unitOfWorkTickets)
+        public CategoriesController(IUnitOfWorkBl unitOfWorkBl)
         {
-            _unitOfWorkTickets = unitOfWorkTickets;
+            _unitOfWorkBl = unitOfWorkBl;
         }
 
-        [HttpGet("/Api/Categories/{categoryId}/Subcategories")]
+        [HttpGet("{categoryId}/Subcategories")]
         public async Task<IActionResult> Get(string categoryId)
         {
             List<SubcategoryDto> list;
 
-            list = await _unitOfWorkTickets.Subcategory.GetByCategoryAsync(categoryId);
+            list = await _unitOfWorkBl.Subcategory.GetByCategoryAsync(categoryId);
 
             return Ok(list);
         }      

@@ -30,3 +30,5 @@ C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Reposito
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/obj/Debug/net6.0/refint/Helpdesk.RepositoryEf.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/obj/Debug/net6.0/Helpdesk.RepositoryEf.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/obj/Debug/net6.0/ref/Helpdesk.RepositoryEf.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/bin/Debug/net6.0/Tickets.Core.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.RepositoryEf/bin/Debug/net6.0/Tickets.Core.pdb

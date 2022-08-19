@@ -1,3 +1,5 @@
+using Tickets.Core.Interfaces.IBusinessLayer;
+
 namespace Helpdesk.Core.Interfaces.InterfaceBl
 {
     public interface IUnitOfWorkBl
@@ -21,5 +23,13 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         public IFormAgencyBl FormAgency { get; }
 
         public IResponsiveBl Responsive { get; }
+
+        #region  Tickets
+        public ICategoryBl Category { get; }
+
+        public ISubcategoryBl Subcategory { get; }
+
+        public ITicketBl Ticket { get; }
+        #endregion
     }
 }

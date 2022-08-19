@@ -43,7 +43,7 @@ namespace Helpdesk.Core.Dtos
         [DataType(DataType.EmailAddress)]
         [StringLength(255)]
         [Display(Name = "Correo")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Display(Name = "Texto de responsiva")]
         [StringLength(2000)]

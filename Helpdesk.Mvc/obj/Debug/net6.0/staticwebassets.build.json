@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p9yvTkGw7wRRDPAq3vYlOQZ2zPkgTdnK5BAA3/I8xL0=",
+  "Hash": "epVgt7HvEUAZDMisYm0onNpnUA1iPRJJzweeMZML4+E=",
   "Source": "Helpdesk.Mvc",
   "BasePath": "_content/Helpdesk.Mvc",
   "Mode": "Default",
@@ -255,6 +255,23 @@
       "OriginalItemSpec": "wwwroot/img/photos/unsplash-3.jpg"
     },
     {
+      "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/agencies.js",
+      "SourceId": "Helpdesk.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/",
+      "BasePath": "_content/Helpdesk.Mvc",
+      "RelativePath": "js/agencies.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/agencies.js"
+    },
+    {
       "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/app.js",
       "SourceId": "Helpdesk.Mvc",
       "SourceType": "Discovered",
@@ -272,6 +289,23 @@
       "OriginalItemSpec": "wwwroot/js/app.js"
     },
     {
+      "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/devices.js",
+      "SourceId": "Helpdesk.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/",
+      "BasePath": "_content/Helpdesk.Mvc",
+      "RelativePath": "js/devices.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/devices.js"
+    },
+    {
       "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/formAgency.js",
       "SourceId": "Helpdesk.Mvc",
       "SourceType": "Discovered",
@@ -287,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/formAgency.js"
+    },
+    {
+      "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/modalSearchAgency.js",
+      "SourceId": "Helpdesk.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/",
+      "BasePath": "_content/Helpdesk.Mvc",
+      "RelativePath": "js/modalSearchAgency.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/modalSearchAgency.js"
     },
     {
       "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/person.js",
@@ -355,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/tickets.js"
+    },
+    {
+      "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/js/users.js",
+      "SourceId": "Helpdesk.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/",
+      "BasePath": "_content/Helpdesk.Mvc",
+      "RelativePath": "js/users.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/users.js"
     },
     {
       "Identity": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

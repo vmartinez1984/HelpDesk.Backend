@@ -822,13 +822,28 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "MongoDB.Driver": "2.16.1"
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Helpdesk.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/Helpdesk.Core.dll": {}
+        }
+      },
+      "Tickets.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MongoDB.Driver": "2.16.1"
+        },
+        "compile": {
+          "bin/placeholder/Tickets.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tickets.Core.dll": {}
         }
       }
     }
@@ -2357,6 +2372,11 @@
       "type": "project",
       "path": "../Helpdesk.Core/Helpdesk.Core.csproj",
       "msbuildProject": "../Helpdesk.Core/Helpdesk.Core.csproj"
+    },
+    "Tickets.Core/1.0.0": {
+      "type": "project",
+      "path": "../Tickets.Core/Tickets.Core.csproj",
+      "msbuildProject": "../Tickets.Core/Tickets.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2450,6 +2470,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.7, 6.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.7, 6.0.7]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

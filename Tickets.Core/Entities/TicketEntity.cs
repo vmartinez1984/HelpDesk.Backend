@@ -9,8 +9,6 @@ namespace Tickets.Core.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        public string Title { get; set; }
-
         public string Tags { get; set; }
 
         public int AgencyId { get; set; }

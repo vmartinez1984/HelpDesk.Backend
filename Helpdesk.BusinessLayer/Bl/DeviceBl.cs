@@ -27,19 +27,24 @@ namespace Helpdesk.BusinessLayer.Bl
             return entity.Id;
         }
 
-        public async Task<DeviceListDto> GetAsync(DeviceSearchDtoIn deviceSearch)
+        public async Task<PagerDtoOut> GetAsync(SearchDtoIn search)
         {
-            DeviceListDto deviceListDto;
-            List<DeviceEntity> listDeviceEntities;
-            DeviceSearchEntity deviceSearchEntity;
+            PagerDtoOut response;
+            PagerEntity pagerEntity;
+            List<DeviceEntity> entities;
 
-            deviceSearchEntity = _mapper.Map<DeviceSearchEntity>(deviceSearch);
-            listDeviceEntities = await _repository.Device.GetAsync(deviceSearchEntity);
-            deviceListDto = _mapper.Map<DeviceListDto>(deviceSearchEntity);
-            deviceListDto.ListDevices = _mapper.Map<List<DeviceDto>>(listDeviceEntities);
-            await SetStateName(deviceListDto.ListDevices);
+            pagerEntity = _mapper.Map<PagerEntity>(search);
+            entities = await _repository.Device.GetAsync(pagerEntity);
+            response = new PagerDtoOut
+            {
+                List = _mapper.Map<List<DeviceDto>>(entities),
+                PageCurrent = pagerEntity.PageCurrent,
+                RecordsPerPage = pagerEntity.RecordsPerPage,
+                TotalRecords = pagerEntity.TotalRecords,
+                TotalRecordsFiltered = pagerEntity.TotalRecordsFiltered
+            };
 
-            return deviceListDto;
+            return response;
         }
 
         public async Task<DeviceDto> GetAsync(int id)

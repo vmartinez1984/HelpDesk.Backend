@@ -24,6 +24,8 @@ namespace Tickets.Core.Interfaces.IRepositories
         Task<TicketEntity> GetAsync(string id);
 
         Task UpdateAsync(TicketEntity entity);
+
+        Task<List<TicketEntity>> GetAsync(PagerEntity pagerEntity);
     }
 
     public interface ICategoryRepository

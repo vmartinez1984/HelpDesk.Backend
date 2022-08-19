@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Helpdesk.Core.Dtos.Inputs;
 
 namespace Helpdesk.Core.Dtos.Outputs

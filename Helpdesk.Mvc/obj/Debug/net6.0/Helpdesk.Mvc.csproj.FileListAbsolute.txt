@@ -395,7 +395,6 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.RepositoryEf.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Services.ZipCodes.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.WorkerServices.dll
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Tickets.BusinessLayer.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Tickets.Core.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Tickets.Repository.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Core.pdb
@@ -407,7 +406,6 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.WorkerServices.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Tickets.Core.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Tickets.Repository.pdb
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Tickets.BusinessLayer.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.csproj.AssemblyReference.cache
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.GeneratedMSBuildEditorConfig.editorconfig
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.AssemblyInfoInputs.cache

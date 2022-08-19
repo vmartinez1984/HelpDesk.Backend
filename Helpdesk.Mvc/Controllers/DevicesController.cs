@@ -17,24 +17,9 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        public async Task<IActionResult> Index([FromQuery] DeviceSearchDtoIn deviceSearch)
+        public IActionResult Index()
         {
-            DeviceListDto deviceListDto;
-
-            deviceListDto = await _unitOfWorkBl.Device.GetAsync(deviceSearch);
-            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
-
-            return View(deviceListDto);
-        }
-
-        [Route("/Api/Devices/")]
-        public async Task<IActionResult> Search([FromQuery] DeviceSearchDtoIn deviceSearch)
-        {
-            DeviceListDto deviceListDto;
-
-            deviceListDto = await _unitOfWorkBl.Device.GetAsync(deviceSearch);
-
-            return Ok(deviceListDto.ListDevices);
+            return View();
         }
 
         public async Task<IActionResult> Create()

@@ -10,3 +10,6 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/obj/Debug/net6.0/refint/Helpdesk.Core.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/obj/Debug/net6.0/Helpdesk.Core.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/obj/Debug/net6.0/ref/Helpdesk.Core.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/bin/Debug/net6.0/Tickets.Core.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/bin/Debug/net6.0/Tickets.Core.pdb
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/obj/Debug/net6.0/Helpdesk.Core.csproj.CopyComplete

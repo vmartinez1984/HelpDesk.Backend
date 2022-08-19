@@ -27,7 +27,7 @@ namespace Helpdesk.Mvc.Controllers
         {
             ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
             ViewData["ListAgencyType"] = new SelectList(await _unitOfWorkBl.AgencyType.GetAsync(), "Id", "Name");
-            ViewData["ListDevices"] = new SelectList((await _unitOfWorkBl.Device.GetAsync(new DeviceSearchDtoIn { })).ListDevices, "Id", "Name");
+            //ViewData["ListDevices"] = new SelectList((await _unitOfWorkBl.Device.GetAsync(new DeviceSearchDtoIn { })).ListDevices, "Id", "Name");
 
             return View();
         }

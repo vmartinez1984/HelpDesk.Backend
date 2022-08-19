@@ -11,11 +11,12 @@
                     <span class="align-middle">Agregar nuevo</span> 
                 </a>
             </p>
-            <table class="table" id="table">
+            <table class="table" id="tableTickets">
                 <thead>
                     <tr>
-                        <th></th>                       
-                        <th></th>
+                        <th>Categoria</th>                       
+                        <th>Subcategoria</th>
+                        <th><th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -24,3 +25,18 @@
         <div class="card-footer"></div>
     </div>
 </div>
+
+@section Scripts {
+    <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="/js/tickets.js"></script>     
+}

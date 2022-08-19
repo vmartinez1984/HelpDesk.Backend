@@ -17,7 +17,6 @@ using Helpdesk.WorkerServices;
 using Tickets.Core.Interfaces.IRepositories;
 using Tickets.Repository;
 using Tickets.Core.Interfaces.IBusinessLayer;
-using Tickets.BusinessLayer.Bl;
 using Tickets.Core.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,11 +56,6 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ISubcategoryRepository, SubcategoryRepository>();
 builder.Services.AddScoped<IStateRepository, StateRepository>();
 builder.Services.AddScoped<IRepositoryTickets, RepositoryTickets>();
-builder.Services.AddScoped<ITicketBl, TicketBl>();
-builder.Services.AddScoped<ICategoryBl, CategoryBl>();
-builder.Services.AddScoped<ISubcategoryBl, SubcategoryBl>();
-builder.Services.AddScoped<IStateBl, StateBl>();
-builder.Services.AddScoped<IUnitOfWorkTickets, UnitOfWorkTickets>();
 //Services
 builder.Services.AddScoped<IZipCodeService, ZipCodeService>();
 //Business layer
@@ -75,6 +69,9 @@ builder.Services.AddScoped<IZipCodeBl, ZipCodeBl>();
 builder.Services.AddScoped<IRoleBl, RoleBl>();
 builder.Services.AddScoped<IDeviceBl, DeviceBl>();
 builder.Services.AddScoped<IResponsiveBl, ResponsiveBl>();
+builder.Services.AddScoped<ITicketBl, TicketBl>();
+builder.Services.AddScoped<ICategoryBl, CategoryBl>();
+builder.Services.AddScoped<ISubcategoryBl, SubcategoryBl>();
 builder.Services.AddScoped<IUnitOfWorkBl, UnitOfWorkBl>();
 //Services
 builder.Services.AddSingleton<EmailNotification>();

@@ -9,6 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Helpdesk.Core\Helpdesk.Core.csproj" />
     <ProjectReference Include="..\Helpdesk.Notifications\Helpdesk.Notifications.csproj" />
+    <ProjectReference Include="..\Tickets.Core\Tickets.Core.csproj" />
+    <ProjectReference Include="..\Tickets.Repository\Tickets.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

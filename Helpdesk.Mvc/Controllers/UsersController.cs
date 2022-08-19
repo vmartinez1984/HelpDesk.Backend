@@ -18,15 +18,9 @@ namespace Helpdesk.Mvc.Controllers
             _unitOfWorkBl = unitOfWorkBl;
         }
 
-        public async Task<IActionResult> Index(UserSearchDtoIn userSearch)
+        public IActionResult Index()
         {
-            UserListDtoOut userListDtoOut;
-            
-            userListDtoOut = await _unitOfWorkBl.User.GetAsync(userSearch);
-            ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
-            //ViewData["ListAgencies"] = new SelectList(await _unitOfWorkBl.Agency.GetByProjectIdAsync(item.ProjectId), "Id", "Name");
-
-            return View(userListDtoOut);
+            return View();
         }
 
         public async Task<IActionResult> Create()
@@ -38,7 +32,7 @@ namespace Helpdesk.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(UserDtoIn user)        
+        public async Task<IActionResult> Create(UserDtoIn user)
         {
             user.UserId = SessionHelper.GetNameIdentifier(User);
             if (ModelState.IsValid)

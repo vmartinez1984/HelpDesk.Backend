@@ -35,7 +35,9 @@ namespace Helpdesk.Mvc.Controllers
             user = await _unitOfWorkBl.User.Login(login);
             if (user is null)
             {
-                ViewBag.Error = "Usuario y/o contraseña erroneos";
+                //ViewBag.Error = "Usuario y/o contraseña erroneos";
+                ModelState.AddModelError("User","Usuario y/o contraseña erroneos");
+                ModelState.AddModelError("Password","Usuario y/o contraseña erroneos");
                 return View();
             }
             else

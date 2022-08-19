@@ -23,6 +23,7 @@ namespace Helpdesk.Core.Entities
 
         [ForeignKey(nameof(AgencyEntity))]
         public int? AgencyId { get; set; }
+        public virtual DeviceStateEntity DeviceState { get; set; }
     }
 
     public class DeviceStateEntity : BaseEntity { }

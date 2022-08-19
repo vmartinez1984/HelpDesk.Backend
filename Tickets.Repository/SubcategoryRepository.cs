@@ -26,9 +26,13 @@ namespace Tickets.Repository
             throw new NotImplementedException();
         }
 
-        public Task<SubcategoryEntity> GetAsync(string id)
+        public async Task<SubcategoryEntity> GetAsync(string id)
         {
-            throw new NotImplementedException();
+            SubcategoryEntity entity;
+
+            entity = await _collection.Find(x=> x.Id == id).FirstAsync();
+
+            return entity;
         }
 
         public async Task<List<SubcategoryEntity>> GetByCategoryAsync(string categoryId)

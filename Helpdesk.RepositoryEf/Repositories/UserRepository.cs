@@ -2,6 +2,8 @@ using Helpdesk.Core.Entities;
 using Helpdesk.RepositoryEf.Contexts;
 using Helpdesk.Core.Interfaces.IRepositories;
 using Microsoft.EntityFrameworkCore;
+using Helpdesk.RepositoryEf.Utilities;
+using System.Linq.Dynamic.Core;
 
 namespace Helpdesk.RepositoryEf.Repositories
 {
@@ -31,11 +33,11 @@ namespace Helpdesk.RepositoryEf.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<bool> ExistsAsync(string email, int userId)
+        public async Task<bool> ExistsAsync(string email, int? userId)
         {
             bool exists;
 
-            if (userId == 0)
+            if (userId == 0 || userId is null)
                 exists = await _appDbContext.User.CountAsync(x => x.Email == email) == 0 ? false : true;
             else
                 exists = await _appDbContext.User.CountAsync(x => x.Email == email && x.Id != userId) == 0 ? false : true;
@@ -44,7 +46,7 @@ namespace Helpdesk.RepositoryEf.Repositories
         }
 
         public async Task<List<UserEntity>> GetAsync(UserSearchEntity search)
-        {            
+        {
             List<UserEntity> list;
             IQueryable<UserEntity> queryable;
 
@@ -81,6 +83,34 @@ namespace Helpdesk.RepositoryEf.Repositories
         public async Task<UserEntity> GetAsync(string userName)
         {
             return await _appDbContext.User.FirstOrDefaultAsync(x => x.Email == userName);
+        }
+
+        public async Task<List<UserEntity>> GetAsync(PagerEntity search)
+        {
+            List<UserEntity> list;
+            IQueryable<UserEntity> queryable;
+
+            queryable = _appDbContext.User.Include(x => x.Person);
+            queryable = queryable.Where(x => x.IsActive);
+            search.TotalRecords = queryable.Count();
+            if (string.IsNullOrEmpty(search.Search) == false)
+            {
+                queryable = queryable.Where(
+                    x => string.Concat(x.Email, x.Person.Name).Contains(search.Search)
+                );
+            }
+            if (string.IsNullOrEmpty(search.SortColumn) == false && string.IsNullOrEmpty(search.SortColumnDir) == false)
+            {
+                search.SortColumn = search.SortColumn == "fullName" ? "Person.Name" : search.SortColumn;
+                queryable = queryable.OrderBy(search.SortColumn.GetSortColumn() + " " + search.SortColumnDir);
+            }
+            list = await queryable
+              .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
+              .Take(search.RecordsPerPage)
+              .ToListAsync();
+            search.TotalRecordsFiltered = await queryable.CountAsync();
+
+            return list;
         }
 
         public async Task<string> GetNameAsync(int userId)

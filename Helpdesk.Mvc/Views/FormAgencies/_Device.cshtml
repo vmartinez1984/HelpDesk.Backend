@@ -1,26 +1,74 @@
+@using Helpdesk.Core.Dtos
+@model DeviceDto;
 @{
     Layout= null;
 }
-<h6 class="text-primary">Dispositivos</h6>
-<div class="row">
-    <div class="col-8">
-        <div class="form-group mb-3">
-            <label class="control-label">Nombre o número de serie</label>
-            <input id="searchDevice" class="form-control" maxlength="50" placeholder="Nombre o número de serie" onkeyup="onkeyup_searchDevice(event);"/>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="form-group mb-3">
-            <br/>
-            <label class="control-label"></label>
-            <button type="button" class="btn btn-primary" onclick="onclick_searchDevice();">
-                <i class="align-middle" data-feather="search"></i> 
-                <span class="align-middle">Buscar</span>                            
-            </button>
-        </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSelectDevice">
+    <i class="align-middle" data-feather="search"></i> 
+    <span class="align-middle">Buscar dispositivo</span>    
+</button>
+
+<!-- Modal -->
+<div class="modal modal-lg fade" id="modalSelectDevice" tabindex="-1" aria-labelledby="modalSelectDeviceLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-info" id="modalSelectDeviceLabel">Buscar dispositivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table" id="tableDevice" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SerialNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateStart)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateEnd)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DeviceStateName)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SerialNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateStart)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateEnd)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DeviceStateName)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody></tbody>
+                </table>                
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="align-middle" data-feather="x"></i> 
+                    <span class="align-middle">Cerrar</span> 
+                </button>                
+            </div>        
+        </div>        
     </div>
 </div>
-<div id="listDevices" class="border border-primary p-2"></div>
-
-<h6 class="text-info mt-3">Dispositivos agregados a la agencia</h6>
-<div id="listDevicesAdds" class="border border-info p-2"></div>

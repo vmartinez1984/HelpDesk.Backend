@@ -1,52 +1,14 @@
 @using Helpdesk.Core.Dtos.Outputs
-@model UserListDtoOut
+@model UserDto
 @{
     ViewBag.Title = "Usuarios";
 }
 
 <div class="container">
-    
-    <div class="card">
-        <div class="card-header">
-            <h2>Buscar Usuarios</h2>
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="form-group mb-3">
-                    <label asp-for="ProjectId" class="control-label"></label>
-                    <select asp-for="ProjectId" id="selectProject" class="form-select" asp-items="ViewBag.ListProjects" onchange="onchange_SelectProject();"> 
-                        <option value="">Seleccione</option>
-                    </select>
-                    <span asp-validation-for="ProjectId" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="AgencyId" class="control-label"></label>
-                    <select asp-for="AgencyId" class="form-select" asp-items="ViewBag.ListAgencies">
-                        <option value="">Seleccione</option>
-                    </select>
-                    <span asp-validation-for="AgencyId" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="UserEmail" class="control-label"></label>
-                    <input asp-for="UserEmail" class="form-control"  placeholder="Correo"/>
-                    <span asp-validation-for="UserEmail" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="align-middle" data-feather="search"></i> 
-                        <span class="align-middle">Buscar</span> 
-                    </button>        
-                </div>        
-            </form>
-        </div>
-    </div>
 
     <div class="card mt-5">
         <div class="card-header">
-            <h2>Lista de usuario</h2>
+            <h2>Lista de usuarios</h2>
         </div>
         <div class="card-body">
             <p>
@@ -55,70 +17,54 @@
                     <span class="align-middle">Agregar nuevo</span> 
                 </a>
             </p>
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListUsers[0].Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListUsers[0].LastName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListUsers[0].Email)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ListUsers[0].DateRegistration)
-                    </th>
-                    <th></th>
-                </tr>
-                <tbody>
-                @foreach (var item in Model.ListUsers)
-                {
+            <table class="table" id="table">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LastName)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DateRegistration)
-                        </td>
-                        <td>
-                           <a asp-controller="Users" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info text-white">
-                                <i class="align-middle" data-feather="clipboard"></i> 
-                                <span class="align-middle">Detalles</span>
-                            </a>
-
-                            <a asp-controller="Users" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning text-white">
-                                <i class="align-middle" data-feather="edit"></i> 
-                                <span class="align-middle">Editar</span>
-                            </a>
-
-                            <a asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
-                                <i class="align-middle" data-feather="delete"></i> 
-                                <span class="align-middle">Borrar</span>
-                            </a>
-
-                        </td>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Person.DateRegistration)
+                        </th>
+                        <th></th>
                     </tr>
-                }
-                </tbody>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Person.DateRegistration)
+                        </th>
+                        <th></th>
+                    </tr>
+                <tfoot>
+                <tbody></tbody>
             </table>
         </div>
-        <div class="card-footer">
-            @{
-                await Html.RenderPartialAsync("_Pager", Model);
-            }
-        </div>
+        <div class="card-footer"></div>
     </div>
 </div>
 
 @section Scripts {    
-    <script src="/js/person.js"></script>
+     <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+    <script src="/js/users.js"></script>
 }

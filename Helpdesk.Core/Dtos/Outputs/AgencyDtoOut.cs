@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
 namespace Helpdesk.Core.Dtos.Outputs
 {
@@ -77,7 +76,7 @@ namespace Helpdesk.Core.Dtos.Outputs
 
         [StringLength(255)]
         [Display(Name = "Correo")]
-        public string email;
+        public string Email;
 
         [Display(Name = "Fecha de registro")]
         [DataType(DataType.Date)]

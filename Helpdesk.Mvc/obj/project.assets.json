@@ -3140,7 +3140,9 @@
           "AutoMapper": "11.0.1",
           "Helpdesk.Core": "1.0.0",
           "Helpdesk.Notifications": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "Tickets.Core": "1.0.0",
+          "Tickets.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Helpdesk.BusinessLayer.dll": {}
@@ -3154,7 +3156,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "MongoDB.Driver": "2.16.1"
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Helpdesk.Core.dll": {}
@@ -3236,20 +3239,6 @@
         },
         "runtime": {
           "bin/placeholder/Helpdesk.WorkerServices.dll": {}
-        }
-      },
-      "Tickets.BusinessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Tickets.Core": "1.0.0",
-          "Tickets.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Tickets.BusinessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tickets.BusinessLayer.dll": {}
         }
       },
       "Tickets.Core/1.0.0": {
@@ -9565,11 +9554,6 @@
       "path": "../Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj",
       "msbuildProject": "../Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj"
     },
-    "Tickets.BusinessLayer/1.0.0": {
-      "type": "project",
-      "path": "../Tickets.BusinessLayer/Tickets.BusinessLayer.csproj",
-      "msbuildProject": "../Tickets.BusinessLayer/Tickets.BusinessLayer.csproj"
-    },
     "Tickets.Core/1.0.0": {
       "type": "project",
       "path": "../Tickets.Core/Tickets.Core.csproj",
@@ -9593,7 +9577,6 @@
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.6",
       "Newtonsoft.Json >= 13.0.1",
       "Rotativa.AspNetCore >= 1.2.0",
-      "Tickets.BusinessLayer >= 1.0.0",
       "Tickets.Core >= 1.0.0",
       "Tickets.Repository >= 1.0.0"
     ]
@@ -9644,9 +9627,6 @@
             "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj": {
               "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj"
             },
-            "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.BusinessLayer/Tickets.BusinessLayer.csproj": {
-              "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.BusinessLayer/Tickets.BusinessLayer.csproj"
-            },
             "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
               "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
             },
@@ -9689,6 +9669,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.7, 6.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[6.0.7, 6.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.7, 6.0.7]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

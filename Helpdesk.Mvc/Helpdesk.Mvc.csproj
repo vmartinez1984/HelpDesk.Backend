@@ -14,8 +14,7 @@
     <ProjectReference Include="..\Helpdesk.BusinessLayer\Helpdesk.BusinessLayer.csproj" />
     <ProjectReference Include="..\Helpdesk.WorkerServices\Helpdesk.WorkerServices.csproj" />
     <ProjectReference Include="..\Tickets.Core\Tickets.Core.csproj" />    
-    <ProjectReference Include="..\Tickets.Repository\Tickets.Repository.csproj" />
-    <ProjectReference Include="..\Tickets.BusinessLayer\Tickets.BusinessLayer.csproj" />    
+    <ProjectReference Include="..\Tickets.Repository\Tickets.Repository.csproj" />      
   </ItemGroup>
 
   <ItemGroup>

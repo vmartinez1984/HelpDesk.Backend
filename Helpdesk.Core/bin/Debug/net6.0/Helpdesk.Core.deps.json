@@ -9,7 +9,8 @@
       "Helpdesk.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "MongoDB.Driver": "2.16.1"
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
         },
         "runtime": {
           "Helpdesk.Core.dll": {}
@@ -162,7 +163,16 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
-      "System.Security.Principal.Windows/5.0.0": {}
+      "System.Security.Principal.Windows/5.0.0": {},
+      "Tickets.Core/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MongoDB.Driver": "2.16.1"
+        },
+        "runtime": {
+          "Tickets.Core.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -268,6 +278,11 @@
       "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+    },
+    "Tickets.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

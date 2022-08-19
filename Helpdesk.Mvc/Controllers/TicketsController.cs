@@ -11,16 +11,13 @@ namespace Helpdesk.Mvc.Controllers
     [Authorize]
     public class TicketsController : Controller
     {
-        private IUnitOfWorkBl _unitOfWorkBl;
-        private IUnitOfWorkTickets _unitOfWorkTickets;
+        private IUnitOfWorkBl _unitOfWorkBl;        
 
         public TicketsController(
-            IUnitOfWorkBl unitOfWorkBl,
-            IUnitOfWorkTickets unitOfWorkTickets
+            IUnitOfWorkBl unitOfWorkBl            
         )
         {
-            _unitOfWorkBl = unitOfWorkBl;
-            _unitOfWorkTickets = unitOfWorkTickets;
+            _unitOfWorkBl = unitOfWorkBl;            
         }
 
         public IActionResult Index()
@@ -30,8 +27,7 @@ namespace Helpdesk.Mvc.Controllers
 
         public async Task<IActionResult> Create()
         {
-            ViewData["Categories"] = new SelectList(await _unitOfWorkTickets.Category.GetAsync(), "Id", "Name");
-            //ViewData["States"] = new SelectList(await _unitOfWorkTickets.State.GetAsync(), "Id", "Name");
+            ViewData["Categories"] = new SelectList(await _unitOfWorkBl.Category.GetAsync(), "Id", "Name");            
 
             return View();
         }
@@ -42,12 +38,12 @@ namespace Helpdesk.Mvc.Controllers
             item.UserId = SessionHelper.GetNameIdentifier(User);
             if (ModelState.IsValid)
             {
-                await _unitOfWorkTickets.Ticket.AddAsync(item);
+                await _unitOfWorkBl.Ticket.AddAsync(item);
                 return RedirectToAction(nameof(Index));
             }
             else
             {
-                ViewData["Categories"] = new SelectList(await _unitOfWorkTickets.Category.GetAsync(), "Id", "Name");
+                ViewData["Categories"] = new SelectList(await _unitOfWorkBl.Category.GetAsync(), "Id", "Name");
                 
                 return View();
             }

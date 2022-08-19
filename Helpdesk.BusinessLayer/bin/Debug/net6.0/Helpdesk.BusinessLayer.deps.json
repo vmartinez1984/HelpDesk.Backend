@@ -11,7 +11,9 @@
           "AutoMapper": "11.0.1",
           "Helpdesk.Core": "1.0.0",
           "Helpdesk.Notifications": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "Tickets.Core": "1.0.0",
+          "Tickets.Repository": "1.0.0"
         },
         "runtime": {
           "Helpdesk.BusinessLayer.dll": {}
@@ -207,7 +209,8 @@
       "Helpdesk.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "MongoDB.Driver": "2.16.1"
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
         },
         "runtime": {
           "Helpdesk.Core.dll": {}
@@ -219,6 +222,25 @@
         },
         "runtime": {
           "Helpdesk.Notifications.dll": {}
+        }
+      },
+      "Tickets.Core/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MongoDB.Driver": "2.16.1"
+        },
+        "runtime": {
+          "Tickets.Core.dll": {}
+        }
+      },
+      "Tickets.Repository/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0",
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
+        },
+        "runtime": {
+          "Tickets.Repository.dll": {}
         }
       }
     }
@@ -361,6 +383,16 @@
       "sha512": ""
     },
     "Helpdesk.Notifications/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tickets.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tickets.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

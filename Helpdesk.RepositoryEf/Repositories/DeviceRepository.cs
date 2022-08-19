@@ -1,7 +1,9 @@
 using Helpdesk.Core.Entities;
 using Helpdesk.Core.Interfaces.IRepositories;
 using Helpdesk.RepositoryEf.Contexts;
+using Helpdesk.RepositoryEf.Utilities;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
 
 namespace Helpdesk.RepositoryEf.Repositories
 {
@@ -31,35 +33,31 @@ namespace Helpdesk.RepositoryEf.Repositories
             return entity;
         }
 
-        public async Task<List<DeviceEntity>> GetAsync(DeviceSearchEntity search)
+        public async Task<List<DeviceEntity>> GetAsync(PagerEntity search)
         {
             List<DeviceEntity> entities;
             IQueryable<DeviceEntity> queryable;
 
-            queryable = _appDbContext.Device;
+            
+            queryable = _appDbContext.Device.Include(x=> x.DeviceState);
             queryable = queryable.Where(x => x.IsActive);
-            // if (search.ProjectId is not null)
-            // {
-            //     queryable = queryable.Where(x => x.ProjectId == search.ProjectId);
-            // }
-            // if (search.AgencyId is not null)
-            // {
-            //     queryable = queryable.Where(x => x. == search.ProjectId);
-            // }
-            if (!string.IsNullOrEmpty(search.Name))
+            search.TotalRecords = queryable.Count();
+            if (string.IsNullOrEmpty(search.Search) == false)
             {
-                queryable = queryable.Where(x => x.Name.ToUpper().Contains(search.Name.ToUpper()));
+                queryable = queryable.Where(
+                    x => string.Concat(x.Name, x.SerialNumber, x.DateStart, x.DateEnd, x.DeviceState.Name).Contains(search.Search)
+                );
             }
-            if (!string.IsNullOrEmpty(search.SerialNumber))
+            if (string.IsNullOrEmpty(search.SortColumn) == false && string.IsNullOrEmpty(search.SortColumnDir) == false)
             {
-                queryable = queryable.Where(x => x.SerialNumber.ToUpper().Contains(search.SerialNumber.ToUpper()));
+                //search.SortColumn = search.SortColumn == "fullName" ? "Person.Name" : search.SortColumn;
+                queryable = queryable.OrderBy(search.SortColumn.GetSortColumn() + " " + search.SortColumnDir);
             }
             entities = await queryable
-            .OrderByDescending(x => x.Id)
-            .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
-            .Take(search.RecordsPerPage)
-            .ToListAsync();
-            search.TotalRecords = await queryable.CountAsync();
+              .Skip((search.PageCurrent - 1) * search.RecordsPerPage)
+              .Take(search.RecordsPerPage)
+              .ToListAsync();
+            search.TotalRecordsFiltered = await queryable.CountAsync();
 
             return entities;
         }

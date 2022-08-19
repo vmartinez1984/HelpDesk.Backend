@@ -4,9 +4,7 @@ var agencySelected;
 
 listDevices = new Array();
 listDevicesOrigin = new Array();
-function onkeyup_searchDevice(event) {
-
-}
+function onkeyup_searchDevice(event) { }
 
 function onclick_searchDevice() {
     var name;
@@ -175,4 +173,87 @@ function cleanForm(){
     document.getElementById("Phone").value = ""
     document.getElementById("email").value = ""
     document.getElementById("Notes").value = ""
+}
+
+//Create
+function loadPersons(){}
+
+//Load and set data from agency
+function loadAgency(agencyId){
+    var url
+
+    url = "/Api/Agencies/" + agencyId
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                throw response.error
+            }
+        })
+        .then(data => {
+            console.log(data)
+            document.getElementById("ProjectId").value = data.projectId
+            document.getElementById("AgencyTypeId").value = data.agencyTypeId
+            document.getElementById("Code").value = data.code
+            document.getElementById("Name").value = data.name
+            document.getElementById("Phone").value = data.phone
+            document.getElementById("Email").value = data.email
+        });
+}
+
+$(document).ready(function(){        
+    $("#tableDevice").DataTable({
+        "processing":true,
+        "serverSide": true,
+        "ajax":{
+            "url": "/Api/Devices",
+            "type":"GET",
+            "datatype":"json"
+            //, success: function(data){console.log(data)}
+        },
+        "pageLength": 10,                
+        "columns":[
+              {data:"name", name:"Nombre"}
+            , {data:"serialNumber", name:"Número de serie"}
+            , {data:"dateStart", name:"Fecha de inicio"} 
+            , {data:"dateEnd", name:"Fecha fin"} 
+            , {data:"deviceStateName", name:"Estado"}             
+            , { "data" : null,
+                "bSortable" : false,
+                "mRender" : function (data, type,value){
+                    return ''
+                    + '<button type="button" onclick="setDevice(' + value['id'] + ')" class="btn btn-info text-white">'
+                    + '     <i class="align-middle" data-feather="clipboard"></i>'
+                    + '     <span class="align-middle">Seleccionar</span>'
+                    + '</button>'
+                }
+                , "autoWidth":true
+            }
+        ],
+        lengthChange: true,
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Registro(s) no encontrado(s)",
+            "info": "Página _PAGE_ de _PAGES_, _TOTAL_ elementos",
+            "infoEmpty": "Registros no disponibles",
+            "infoFiltered": "(de _MAX_ elementos en total)",
+            "search": "Buscar",
+            "processing": "<h2 class='text-info'>Cargando, espere un momento</h2>",
+            paginate: {
+                previous: '‹',
+                next: '›'
+            },
+            aria: {
+                paginate: {
+                    previous: 'Anterior',
+                    next: 'Siguiente'
+                }
+            }
+        }
+    })
+})
+
+function setDevice(deviceId){
+
 }

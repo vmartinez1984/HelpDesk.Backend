@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Helpdesk.Core.Entities
 {
-    public class AgencyEntity: BaseEntity
+    public class AgencyEntity : BaseEntity
     {
         [StringLength(255)]
-        public string Email;
+        public string Email { get; set; }
 
         [ForeignKey(nameof(ProjectEntity))]
         public int ProjectId { get; set; }
@@ -33,7 +33,7 @@ namespace Helpdesk.Core.Entities
 
         [StringLength(5)]
         public string ZipCode { get; set; }
-        
+
         public int UserId { get; set; }
 
         [StringLength(1000)]

@@ -35,9 +35,13 @@ namespace Tickets.Repository
             return entities;
         }
 
-        public Task<CategoryEntity> GetAsync(string id)
+        public async Task<CategoryEntity> GetAsync(string id)
         {
-            throw new NotImplementedException();
+            CategoryEntity entity;
+            
+            entity = await _collection.Find(x => x.Id == id).FirstAsync();
+
+            return entity;
         }
     }
 }

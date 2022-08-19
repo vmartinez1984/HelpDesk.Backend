@@ -3,6 +3,7 @@ using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Entities;
+using Tickets.Core.Dtos;
 
 namespace Helpdesk.Core.Mappers
 {
@@ -11,6 +12,7 @@ namespace Helpdesk.Core.Mappers
         public ImplementsMapper()
         {
             CreateMap<UserEntity, UserDtoOut>().ReverseMap();
+            CreateMap<UserEntity, UserDto>();
             CreateMap<UserEntity, UserDtoIn>().ReverseMap();
 
             CreateMap<ProjectEntity, ProjectDtoOut>().ReverseMap();
@@ -49,6 +51,8 @@ namespace Helpdesk.Core.Mappers
             CreateMap<FormAgencyEntity, FormAgencyDto>();
 
             CreateMap<SearchDtoIn, PagerEntity>();
+            
+            CreateMap<Tickets.Core.Entities.TicketEntity, TicketDto>();
         }
     }
 }

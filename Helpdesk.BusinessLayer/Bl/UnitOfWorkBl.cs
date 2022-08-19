@@ -1,4 +1,5 @@
 using Helpdesk.Core.Interfaces.InterfaceBl;
+using Tickets.Core.Interfaces.IBusinessLayer;
 
 namespace Helpdesk.BusinessLayer.Bl
 {
@@ -14,7 +15,10 @@ namespace Helpdesk.BusinessLayer.Bl
             IRoleBl roleBl,
             IDeviceBl deviceBl,
             IFormAgencyBl formAgencyBl,
-            IResponsiveBl responsiveBl
+            IResponsiveBl responsiveBl,
+            ITicketBl ticketBl,
+            ICategoryBl categoryBl,
+            ISubcategoryBl subcategoryBl
         )
         {
             this.User = user;
@@ -27,6 +31,9 @@ namespace Helpdesk.BusinessLayer.Bl
             this.Device = deviceBl;
             this.FormAgency = formAgencyBl;
             this.Responsive = responsiveBl;
+            this.Ticket = ticketBl;
+            this.Category = categoryBl;
+            this.Subcategory = subcategoryBl;
         }
 
         public IUserBl User { get; }
@@ -39,5 +46,11 @@ namespace Helpdesk.BusinessLayer.Bl
         public IDeviceBl Device { get; }
         public IFormAgencyBl FormAgency { get; }
         public IResponsiveBl Responsive { get; }
+
+        public ICategoryBl Category { get; }
+
+        public ITicketBl Ticket { get; }
+
+        public ISubcategoryBl Subcategory { get; }
     }
 }
