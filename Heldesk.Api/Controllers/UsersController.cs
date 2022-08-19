@@ -1,6 +1,6 @@
 ﻿using Heldesk.Api.Helpers;
+using Helpdesk.Core.Dtos;
 using Helpdesk.Core.Dtos.Inputs;
-using Helpdesk.Core.Dtos.Outputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,14 +18,14 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] UserSearchDtoIn userSearch)
+        public async Task<IActionResult> Get([FromQuery] SearchDtoIn userSearch)
         {
-            UserListDtoOut item;
+            PagerDtoOut item;
 
             item = await _unitOfWorkBl.User.GetAsync(userSearch);
             HttpContext.AddHeaderTotalRecords(item.TotalRecords);
 
-            return Ok(item.ListUsers);
+            return Ok(item.List);
         }
 
         [HttpGet("{id}")]

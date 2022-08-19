@@ -21,7 +21,7 @@ namespace Tickets.Repository
                 databaseSettings.Value.CategoriesCollection);
         }
 
-        public async Task UpdateAsync(CategoryEntity entity)
+        public Task UpdateAsync(CategoryEntity entity)
         {
             throw new NotImplementedException();
         }

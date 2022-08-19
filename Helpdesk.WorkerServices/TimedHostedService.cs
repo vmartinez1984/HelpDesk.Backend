@@ -109,23 +109,31 @@ namespace Helpdesk.WorkerServices
 
         private void ProcessSendMail()
         {
-            _unitOfWorkBl = _scopeFactory.CreateAsyncScope().ServiceProvider.GetRequiredService<IUnitOfWorkBl>();
-            //Condición: hay correos donde la fecha de envio es nula
-            bool existsWithoutSend = _unitOfWorkBl.Responsive.ExistsWithoutSendAsync().Result;
-            if (existsWithoutSend)
+            try
             {
-                //  Si
-                //      Obtener el correos para enviar
-                ResponsiveDto item;
 
-                item = _unitOfWorkBl.Responsive.GetWithoutSendAsync().Result;
-                //      Enviar los correos
-                _backgroundWorker.RunWorkerAsync(item);
+                _unitOfWorkBl = _scopeFactory.CreateAsyncScope().ServiceProvider.GetRequiredService<IUnitOfWorkBl>();
+                //Condición: hay correos donde la fecha de envio es nula
+                bool existsWithoutSend = _unitOfWorkBl.Responsive.ExistsWithoutSendAsync().Result;
+                if (existsWithoutSend)
+                {
+                    //  Si
+                    //      Obtener el correos para enviar
+                    ResponsiveDto item;
+
+                    item = _unitOfWorkBl.Responsive.GetWithoutSendAsync().Result;
+                    //      Enviar los correos
+                    _backgroundWorker.RunWorkerAsync(item);
+                }
+                else
+                {
+                    //  No
+                    //      Pues nada
+                }
             }
-            else
+            catch (Exception)
             {
-                //  No
-                //      Pues nada
+
             }
         }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z5hBZo2LP/pEVv+/F9o0Zf8yDRQJqdmnNNuqsM8RACEo3AZeAVViNV65thRTBwLhXvKwbdggGmIMBG1Ypf/D3w==",
+  "dgSpecHash": "usUXBfl/OpepuQMeqe4htlo++JWByCUWT0yEQiBSs/Al1v6mxdhXmvsD0hPb1xk50Zu8K8GG5aH0ndKN/wqXow==",
   "success": true,
   "projectFilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/Helpdesk.Mvc.csproj",
   "expectedPackageFiles": [
@@ -204,10 +204,7 @@
     "/home/vmartinez/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.netcore.app.ref/6.0.7/microsoft.netcore.app.ref.6.0.7.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.7/microsoft.aspnetcore.app.ref.6.0.7.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.7/microsoft.netcore.app.host.linux-x64.6.0.7.nupkg.sha512"
+    "/home/vmartinez/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

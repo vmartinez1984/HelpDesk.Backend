@@ -10,8 +10,8 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/Debug/net6.0/Helpdesk.Repository.MongoDb.csproj.CoreCompileInputs.cache
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/Debug/net6.0/Helpdesk.Repository.MongoDb.csproj.CopyComplete
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/Debug/net6.0/Helpdesk.Repository.MongoDb.dll
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/Debug/net6.0/refint/Helpdesk.Repository.MongoDb.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/Debug/net6.0/Helpdesk.Repository.MongoDb.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/Debug/net6.0/ref/Helpdesk.Repository.MongoDb.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/bin/Debug/net6.0/Tickets.Core.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/bin/Debug/net6.0/Tickets.Core.pdb
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Repository.MongoDb/bin/Debug/net6.0/ref/Helpdesk.Repository.MongoDb.dll

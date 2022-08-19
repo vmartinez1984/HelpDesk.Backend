@@ -10,6 +10,6 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/Debug/net6.0/Tickets.Repository.csproj.CoreCompileInputs.cache
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/Debug/net6.0/Tickets.Repository.csproj.CopyComplete
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/Debug/net6.0/Tickets.Repository.dll
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/Debug/net6.0/refint/Tickets.Repository.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/Debug/net6.0/Tickets.Repository.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/Debug/net6.0/ref/Tickets.Repository.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/bin/Debug/net6.0/ref/Tickets.Repository.dll

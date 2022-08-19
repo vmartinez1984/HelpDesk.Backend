@@ -3,7 +3,7 @@ $(document).ready(function(){
         "processing":true,
         "serverSide": true,
         "ajax":{
-            "url": "https://localhost:11028/Api/Responsives",
+            "url": "/Api/Responsives",
             "type":"GET",
             "datatype":"json"
         },

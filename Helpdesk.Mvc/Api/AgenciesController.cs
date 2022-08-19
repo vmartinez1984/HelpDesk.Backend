@@ -36,24 +36,32 @@ namespace Helpdesk.Mvc.Api
         [HttpGet]
         public async Task<IActionResult> SearchAgency([FromQuery] DataTableDto dataTablesIn)
         {
-            AgencyListDtoOut response;
-
-            response = await _unitOfWorkBl.Agency.GetAsync(new SearchDtoIn
+            try
             {
-                RecordsPerPage = dataTablesIn.RecordsPerPage,
-                PageCurrent = dataTablesIn.PageCurrent,
-                Search = dataTablesIn.SearchValue,
-                SortColumn = dataTablesIn.SortColumn,
-                SortColumnDir = dataTablesIn.SortColumnDir
-            });
+                AgencyListDtoOut response;
 
-            return Ok(new
+                response = await _unitOfWorkBl.Agency.GetAsync(new SearchDtoIn
+                {
+                    RecordsPerPage = dataTablesIn.RecordsPerPage,
+                    PageCurrent = dataTablesIn.PageCurrent,
+                    Search = dataTablesIn.SearchValue,
+                    SortColumn = dataTablesIn.SortColumn,
+                    SortColumnDir = dataTablesIn.SortColumnDir
+                });
+
+                return Ok(new
+                {
+                    draw = dataTablesIn.Draw,
+                    recordsFiltered = response.TotalRecordsFiltered,
+                    recordsTotal = response.TotalRecords,
+                    data = response.ListAgencies
+                });
+            }
+            catch (Exception ex)
             {
-                draw = dataTablesIn.Draw,
-                recordsFiltered = response.TotalRecordsFiltered,
-                recordsTotal = response.TotalRecords,
-                data = response.ListAgencies
-            });
+                // TODO
+                return StatusCode(500, ex);
+            }
         }
 
         [HttpGet]

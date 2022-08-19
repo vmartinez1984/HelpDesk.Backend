@@ -5,6 +5,7 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Mvc.deps.json
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Mvc.runtimeconfig.json
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Mvc.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/ref/Helpdesk.Mvc.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/Helpdesk.Mvc.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Antiforgery.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -422,7 +423,6 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/scopedcss/projectbundle/Helpdesk.Mvc.bundle.scp.css
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.csproj.CopyComplete
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.dll
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/refint/Helpdesk.Mvc.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/ref/Helpdesk.Mvc.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/Helpdesk.Mvc.genruntimeconfig.cache
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Mvc/obj/Debug/net6.0/ref/Helpdesk.Mvc.dll

@@ -40,7 +40,7 @@ namespace Tickets.Core.Dtos
         [Required(ErrorMessage = "Anote la descripción")]
         [Display(Name = "Descripción")]
         public string Description { get; set; }
-        
+
         [Display(Name = "Solución")]
         public string Solution { get; set; }
     }
@@ -48,6 +48,24 @@ namespace Tickets.Core.Dtos
     public class TicketDto : TicketDtoIn
     {
         public string Id { get; set; }
+
+        public string Category { get; set; }
+
+        public string Subcategory { get; set; }
+
+        public string DescriptionShort
+        {
+            get
+            {
+                string content;
+
+                content = this.ListLog[0].Content;
+                content = content.Length >= 25 ? content.Substring(0, 25) : content;
+                return $"{content}...";
+            }
+        }
+
+        public List<LogDto> ListLog { get; set; }
     }
 
     public class LogDto
@@ -56,7 +74,7 @@ namespace Tickets.Core.Dtos
 
         public string Content { get; set; }
 
-        public int UserId { get; set; }
+        public string UserName { get; set; }
 
         public DateTime DateRegistration { get; set; }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b/kNRDYCbz82FF/or7SnnkKlvUzMncdWhk5LSVxJnMQ49cY2GMq5aOq41zILyeSiCspHddlxvHeYmP4XSRmJkg==",
+  "dgSpecHash": "F02jX8hTvOxSwMQLDAGjmXOuS7vp3OqaifYPhla5KdF+ps9wpUZxy5fiy9nSKYY7seNbLiwfOlJH9GcaTtzZsQ==",
   "success": true,
   "projectFilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj",
   "expectedPackageFiles": [
@@ -18,9 +18,7 @@
     "/home/vmartinez/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.netcore.app.ref/6.0.7/microsoft.netcore.app.ref.6.0.7.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.7/microsoft.aspnetcore.app.ref.6.0.7.nupkg.sha512"
+    "/home/vmartinez/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

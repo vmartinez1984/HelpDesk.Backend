@@ -7,6 +7,6 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/Tickets.Core.AssemblyInfo.cs
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/Tickets.Core.csproj.CoreCompileInputs.cache
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/Tickets.Core.dll
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/refint/Tickets.Core.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/Tickets.Core.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/ref/Tickets.Core.dll
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/bin/Debug/net6.0/ref/Tickets.Core.dll

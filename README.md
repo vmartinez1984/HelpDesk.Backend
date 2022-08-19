@@ -64,3 +64,7 @@ Se utiliza un backgroung worker por que es mas facil de administrar ya que puede
 
 # How should I inject a DbContext instance into an IHostedService?
 https://stackoverflow.com/questions/48368634/how-should-i-inject-a-dbcontext-instance-into-an-ihostedservice
+
+# You intended to execute a .NET SDK command: No .NET SDKs were found
+
+https://exerror.com/you-intended-to-execute-a-net-sdk-command-no-net-sdks-were-found/

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Helpdesk.Core.Dtos.Inputs;
 using Helpdesk.Core.Interfaces.InterfaceBl;
 using Microsoft.AspNetCore.Mvc;

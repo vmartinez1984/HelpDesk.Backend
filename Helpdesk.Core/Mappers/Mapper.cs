@@ -52,6 +52,8 @@ namespace Helpdesk.Core.Mappers
 
             CreateMap<SearchDtoIn, PagerEntity>();
             
+            CreateMap<Tickets.Core.Entities.LogEntity, LogDto>();
+
             CreateMap<Tickets.Core.Entities.TicketEntity, TicketDto>();
         }
     }

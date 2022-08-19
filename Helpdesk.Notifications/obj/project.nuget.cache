@@ -1,15 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "op2dCHcE0x04z55irnQFrx/hYVTmMoKmWyY2oZa1uTptLXdSXu1rPNow6rZuOtdO1GwusNNPd5Fpj4ADxpRucg==",
+  "dgSpecHash": "JrqCUvmFiqIVKdNpRyp7JuFkxZR/LfA7W6Llzylyokc8h8mDma0OHopPDgoAJ9bgNOTVqjw/bY72ef1+On/2nQ==",
   "success": true,
   "projectFilePath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
   "expectedPackageFiles": [
     "/home/vmartinez/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/home/vmartinez/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.netcore.app.ref/6.0.7/microsoft.netcore.app.ref.6.0.7.nupkg.sha512",
-    "/home/vmartinez/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.7/microsoft.aspnetcore.app.ref.6.0.7.nupkg.sha512"
+    "/home/vmartinez/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

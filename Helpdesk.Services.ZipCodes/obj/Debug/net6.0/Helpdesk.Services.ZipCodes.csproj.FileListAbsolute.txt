@@ -10,8 +10,8 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/Debug/net6.0/Helpdesk.Services.ZipCodes.csproj.CoreCompileInputs.cache
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/Debug/net6.0/Helpdesk.Services.ZipCodes.csproj.CopyComplete
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/Debug/net6.0/Helpdesk.Services.ZipCodes.dll
-/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/Debug/net6.0/refint/Helpdesk.Services.ZipCodes.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/Debug/net6.0/Helpdesk.Services.ZipCodes.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/Debug/net6.0/ref/Helpdesk.Services.ZipCodes.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/bin/Debug/net6.0/Tickets.Core.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/bin/Debug/net6.0/Tickets.Core.pdb
+/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Services.ZipCodes/bin/Debug/net6.0/ref/Helpdesk.Services.ZipCodes.dll

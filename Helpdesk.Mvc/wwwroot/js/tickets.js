@@ -61,13 +61,13 @@ $(document).ready(function () {
             "url": "/Api/Tickets",
             "type": "GET",
             "datatype": "json"
-            , success: function(data){console.log(data)}
+           //, success: function(data){console.log(data)}
         },
         "pageLength": 10,
         "columns": [
-            { "data": "category", "name": "Clave" }
-            , { "data": "agencyType.name", "name": "Tipo" }
-            , { "data": "name", "name": "Nombre" }
+            { "data": "agencyName", "name": "Agencia" }
+            , { "data": "descriptionShort", "name": "Descripción" }
+            // , { "data": "name", "name": "Nombre" }
             // , { "data": "state", "name": "Estado" }
             // , {
             //     "data": "dateRegistration"
@@ -77,17 +77,22 @@ $(document).ready(function () {
             //         //Date.Parse(data).toString().format('DD/MM/YYYY');
             //     }
             // }
-            // , {
-            //     "data": null,
-            //     "bSortable": false,
-            //     "mRender": function (data, type, value) {
-            //         return '<button type="button" onclick="setAgency(' + value['id'] + ')" class="btn btn-info text-white">'
-            //             + '     <i class="align-middle" data-feather="clipboard"></i>'
-            //             + '     <span class="align-middle">Seleccionar</span>'
-            //             + '</button>'
-            //     }
-            //     , "autoWidth": true
-            // }
+            , {
+                "data": null,
+                "bSortable": false,
+                "mRender": function (data, type, value) {
+                    return ''
+                    + '<a href="/Tickets/Details/' + value['id'] + '" class="btn btn-info text-white">'
+                    + '     <i class="align-middle" data-feather="clipboard"></i>'
+                    + '     <span class="align-middle">Detalles</span>'
+                    + '</a>'
+                    + '<a href="/Tickets/Edit/' + value['id'] + '" class="btn btn-warning text-white">'
+                    + '     <i class="align-middle" data-feather="clipboard"></i>'
+                    + '     <span class="align-middle">Editar</span>'
+                    + '</a>'
+                }
+                , "autoWidth": true
+            }
         ],
         lengthChange: true,
         "language": {
