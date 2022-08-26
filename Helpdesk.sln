@@ -11,9 +11,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.Core", "Helpdesk.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.RepositoryEf", "Helpdesk.RepositoryEf\Helpdesk.RepositoryEf.csproj", "{27E88F31-C430-41D6-8695-592553C17334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heldesk.Api", "Heldesk.Api\Heldesk.Api.csproj", "{8ED85944-EE47-4E82-9006-0C811C770730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heldesk.Api", "Heldesk.Api\Heldesk.Api.csproj", "{8ED85944-EE47-4E82-9006-0C811C770730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk.Mvc", "Helpdesk.Mvc\Helpdesk.Mvc.csproj", "{12FAD49A-45BD-47C9-A1DC-5E443DC48BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.Mvc", "Helpdesk.Mvc\Helpdesk.Mvc.csproj", "{12FAD49A-45BD-47C9-A1DC-5E443DC48BD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.Notifications", "Helpdesk.Notifications\Helpdesk.Notifications.csproj", "{6E3BC8BF-C725-4405-9A3A-80059B9F877E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.Repository.MongoDb", "Helpdesk.Repository.MongoDb\Helpdesk.Repository.MongoDb.csproj", "{18F6298E-F4E1-4534-9EAE-6CC5BCA5B545}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.Services.ZipCodes", "Helpdesk.Services.ZipCodes\Helpdesk.Services.ZipCodes.csproj", "{AC6524D2-E018-45A6-AC47-2FC0534E8444}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpdesk.WorkerServices", "Helpdesk.WorkerServices\Helpdesk.WorkerServices.csproj", "{D81866E6-8342-424A-8D05-7BF2B3FFACC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tickets.Core", "Tickets.Core\Tickets.Core.csproj", "{67434453-65FC-4BE4-9DB4-2635BB7F61C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tickets.Repository", "Tickets.Repository\Tickets.Repository.csproj", "{EC1119E7-3C8E-4783-865C-A41C2CF434BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F48B080-3E68-454D-9DA3-C0D981B1CFBB}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +62,30 @@ Global
 		{12FAD49A-45BD-47C9-A1DC-5E443DC48BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12FAD49A-45BD-47C9-A1DC-5E443DC48BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12FAD49A-45BD-47C9-A1DC-5E443DC48BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E3BC8BF-C725-4405-9A3A-80059B9F877E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E3BC8BF-C725-4405-9A3A-80059B9F877E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E3BC8BF-C725-4405-9A3A-80059B9F877E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E3BC8BF-C725-4405-9A3A-80059B9F877E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18F6298E-F4E1-4534-9EAE-6CC5BCA5B545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F6298E-F4E1-4534-9EAE-6CC5BCA5B545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F6298E-F4E1-4534-9EAE-6CC5BCA5B545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F6298E-F4E1-4534-9EAE-6CC5BCA5B545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6524D2-E018-45A6-AC47-2FC0534E8444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6524D2-E018-45A6-AC47-2FC0534E8444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6524D2-E018-45A6-AC47-2FC0534E8444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6524D2-E018-45A6-AC47-2FC0534E8444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81866E6-8342-424A-8D05-7BF2B3FFACC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81866E6-8342-424A-8D05-7BF2B3FFACC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81866E6-8342-424A-8D05-7BF2B3FFACC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81866E6-8342-424A-8D05-7BF2B3FFACC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67434453-65FC-4BE4-9DB4-2635BB7F61C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67434453-65FC-4BE4-9DB4-2635BB7F61C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67434453-65FC-4BE4-9DB4-2635BB7F61C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67434453-65FC-4BE4-9DB4-2635BB7F61C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1119E7-3C8E-4783-865C-A41C2CF434BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1119E7-3C8E-4783-865C-A41C2CF434BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1119E7-3C8E-4783-865C-A41C2CF434BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1119E7-3C8E-4783-865C-A41C2CF434BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

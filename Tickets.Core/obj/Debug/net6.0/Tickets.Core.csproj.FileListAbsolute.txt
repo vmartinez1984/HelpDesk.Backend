@@ -10,3 +10,15 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/Tickets.Core.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/Debug/net6.0/ref/Tickets.Core.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/bin/Debug/net6.0/ref/Tickets.Core.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\bin\Debug\net6.0\Tickets.Core.deps.json
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\bin\Debug\net6.0\Tickets.Core.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\bin\Debug\net6.0\Tickets.Core.pdb
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.csproj.AssemblyReference.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.AssemblyInfoInputs.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.AssemblyInfo.cs
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.csproj.CoreCompileInputs.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\refint\Tickets.Core.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\Tickets.Core.pdb
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Tickets.Core\obj\Debug\net6.0\ref\Tickets.Core.dll

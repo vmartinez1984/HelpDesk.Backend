@@ -80,22 +80,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.1.0"
           }
         }
       },
@@ -368,12 +368,12 @@
           "runtimes/win/native/snappy32.dll": {
             "rid": "win",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.1.1.7"
           },
           "runtimes/win/native/snappy64.dll": {
             "rid": "win",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.1.1.7"
           }
         }
       },
@@ -538,6 +538,14 @@
           }
         }
       },
+      "System.Linq.Dynamic.Core/1.2.18": {
+        "runtime": {
+          "lib/net6.0/System.Linq.Dynamic.Core.dll": {
+            "assemblyVersion": "1.2.18.0",
+            "fileVersion": "1.2.18.0"
+          }
+        }
+      },
       "System.Runtime.Caching/4.7.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.7.0"
@@ -622,7 +630,10 @@
         "dependencies": {
           "AutoMapper": "11.0.1",
           "Helpdesk.Core": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Helpdesk.Notifications": "1.0.0",
+          "Newtonsoft.Json": "13.0.1",
+          "Tickets.Core": "1.0.0",
+          "Tickets.Repository": "1.0.0"
         },
         "runtime": {
           "Helpdesk.BusinessLayer.dll": {}
@@ -631,10 +642,19 @@
       "Helpdesk.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "MongoDB.Driver": "2.16.1"
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
         },
         "runtime": {
           "Helpdesk.Core.dll": {}
+        }
+      },
+      "Helpdesk.Notifications/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "Helpdesk.Notifications.dll": {}
         }
       },
       "Helpdesk.RepositoryEf/1.0.0": {
@@ -642,7 +662,8 @@
           "Helpdesk.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
-          "Pomelo.EntityFrameworkCore.MySql": "6.0.1"
+          "Pomelo.EntityFrameworkCore.MySql": "6.0.1",
+          "System.Linq.Dynamic.Core": "1.2.18"
         },
         "runtime": {
           "Helpdesk.RepositoryEf.dll": {}
@@ -655,6 +676,25 @@
         },
         "runtime": {
           "Helpdesk.Services.ZipCodes.dll": {}
+        }
+      },
+      "Tickets.Core/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MongoDB.Driver": "2.16.1"
+        },
+        "runtime": {
+          "Tickets.Core.dll": {}
+        }
+      },
+      "Tickets.Repository/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0",
+          "MongoDB.Driver": "2.16.1",
+          "Tickets.Core": "1.0.0"
+        },
+        "runtime": {
+          "Tickets.Repository.dll": {}
         }
       }
     }
@@ -1001,6 +1041,13 @@
       "path": "system.identitymodel.tokens.jwt/6.8.0",
       "hashPath": "system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512"
     },
+    "System.Linq.Dynamic.Core/1.2.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+RH90sKD6SK2c9MD2Xo2jz1hkAJYfgPVyW1VgAwiPURR+JzOJCdvsDBg2Iq97FmTymxlQBY76G1cMxsF6j+6tA==",
+      "path": "system.linq.dynamic.core/1.2.18",
+      "hashPath": "system.linq.dynamic.core.1.2.18.nupkg.sha512"
+    },
     "System.Runtime.Caching/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -1074,12 +1121,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Helpdesk.Notifications/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Helpdesk.RepositoryEf/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Helpdesk.Services.ZipCodes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tickets.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tickets.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

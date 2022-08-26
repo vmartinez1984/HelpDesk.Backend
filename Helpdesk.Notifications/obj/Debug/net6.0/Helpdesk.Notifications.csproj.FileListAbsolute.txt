@@ -10,3 +10,15 @@
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/Helpdesk.Notifications.pdb
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/Debug/net6.0/ref/Helpdesk.Notifications.dll
 /media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/bin/Debug/net6.0/ref/Helpdesk.Notifications.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\bin\Debug\net6.0\Helpdesk.Notifications.deps.json
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\bin\Debug\net6.0\Helpdesk.Notifications.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\bin\Debug\net6.0\Helpdesk.Notifications.pdb
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.csproj.AssemblyReference.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.AssemblyInfoInputs.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.AssemblyInfo.cs
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.csproj.CoreCompileInputs.cache
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\refint\Helpdesk.Notifications.dll
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\Helpdesk.Notifications.pdb
+C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Notifications\obj\Debug\net6.0\ref\Helpdesk.Notifications.dll
