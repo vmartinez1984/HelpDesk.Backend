@@ -16,9 +16,9 @@ namespace Heldesk.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(bool isActivate = true)
         {
-            return Ok(await _unitOfWorkBl.Project.GetAsync());
+            return Ok(await _unitOfWorkBl.Project.GetAsync(isActivate));
         }
 
         [HttpPost]

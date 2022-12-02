@@ -27,6 +27,11 @@ namespace Helpdesk.BusinessLayer.Bl
             return entity.Id;
         }
 
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<PagerDtoOut> GetAsync(SearchDtoIn search)
         {
             PagerDtoOut response;
@@ -54,8 +59,24 @@ namespace Helpdesk.BusinessLayer.Bl
 
             entity = await _repository.Device.GetAsync(id);
             item = _mapper.Map<DeviceDto>(entity);
+            item.DeviceStateName = await _repository.DeviceState.GetDeviceStateNameAsync(item.DeviceStateId);
 
             return item;
+        }
+
+        public async Task UpdateAsync(DeviceDtoIn item, int id)
+        {
+            DeviceEntity entity;
+
+            entity = await _repository.Device.GetAsync(id);
+            entity.Name = item.Name;
+            entity.SerialNumber = item.SerialNumber;
+            entity.DateStart = item.DateStart;
+            entity.DateEnd = item.DateEnd;
+            entity.DeviceStateId = item.DeviceStateId;
+            entity.Notes = item.Notes;
+
+            await _repository.Device.UpdateAsync(entity);
         }
 
         private async Task SetStateName(List<DeviceDto> listDevices)

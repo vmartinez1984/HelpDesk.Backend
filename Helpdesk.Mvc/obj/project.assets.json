@@ -562,11 +562,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.6": {
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "6.0.6",
-          "Microsoft.CodeAnalysis.Razor": "6.0.6"
+          "Microsoft.AspNetCore.Razor.Language": "6.0.8",
+          "Microsoft.CodeAnalysis.Razor": "6.0.8"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
@@ -575,11 +575,11 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/6.0.6": {
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/6.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "6.0.6",
-          "Microsoft.CodeAnalysis.Razor": "6.0.6",
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "6.0.8",
+          "Microsoft.CodeAnalysis.Razor": "6.0.8",
           "Microsoft.Extensions.DependencyModel": "6.0.0"
         },
         "compile": {
@@ -672,7 +672,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Razor.Language/6.0.6": {
+      "Microsoft.AspNetCore.Razor.Language/6.0.8": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
@@ -893,10 +893,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Razor/6.0.6": {
+      "Microsoft.CodeAnalysis.Razor/6.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "6.0.6",
+          "Microsoft.AspNetCore.Razor.Language": "6.0.8",
           "Microsoft.CodeAnalysis.CSharp": "4.0.0",
           "Microsoft.CodeAnalysis.Common": "4.0.0"
         },
@@ -4249,24 +4249,24 @@
         "microsoft.aspnetcore.mvc.razor.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.6": {
-      "sha512": "gx0rAsUrvW8NQff55NcEqteVmgAez7ZJKhGv3ecQ1BYm0u+ONtHD1R2eBVe/6pTqHrGSWlv4iWSsYjmD70vaSg==",
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.8": {
+      "sha512": "zBENAUijwKwHdUxXUk9TpvoWJuXc0dMppToKqRM5hdYN8WlpEbtjIPIUdmtwGkt29nkm0i6KxvKEt9a39yP/dw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.razor.extensions/6.0.6",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/6.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll",
-        "microsoft.aspnetcore.mvc.razor.extensions.6.0.6.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.extensions.6.0.8.nupkg.sha512",
         "microsoft.aspnetcore.mvc.razor.extensions.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/6.0.6": {
-      "sha512": "BGHsjsOAH2slUhvCynOuWin2k9WJ5iNKVHwuqH1bNruWrIe9T5g5DlG5vApBLWfTbtxdWD21B4aJZNJT9dZWuQ==",
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/6.0.8": {
+      "sha512": "x0387GPRJWpyqvYSxg8Y0fzE9ECEJoQA1wsrpA5DU9mXr5zfxWqvgcvNV87RvNRQBqdjzCqwLu+LSoxyvlTtJw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/6.0.6",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/6.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4276,7 +4276,7 @@
         "buildTransitive/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
         "lib/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll",
         "lib/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.xml",
-        "microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.6.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.8.nupkg.sha512",
         "microsoft.aspnetcore.mvc.razor.runtimecompilation.nuspec"
       ]
     },
@@ -4332,17 +4332,17 @@
         "microsoft.aspnetcore.razor.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Razor.Language/6.0.6": {
-      "sha512": "I1WUhNrZA38OQ95WydhNE/EmAuf05+4RWdyWpi332l9f6NCN3R041/181wvYVvn6rdbOaDDUWZuUpmcH7NwSOA==",
+    "Microsoft.AspNetCore.Razor.Language/6.0.8": {
+      "sha512": "5HSg+7F1kVauirGQJTfmr5OvxbyWXetNZ1tkz3dV0DG1uT4PqcTUKbe2gy0lmQXnnzX9R97ZiWzMBhLWeuLP/A==",
       "type": "package",
-      "path": "microsoft.aspnetcore.razor.language/6.0.6",
+      "path": "microsoft.aspnetcore.razor.language/6.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll",
-        "microsoft.aspnetcore.razor.language.6.0.6.nupkg.sha512",
+        "microsoft.aspnetcore.razor.language.6.0.8.nupkg.sha512",
         "microsoft.aspnetcore.razor.language.nuspec"
       ]
     },
@@ -4611,17 +4611,17 @@
         "microsoft.codeanalysis.csharp.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.Razor/6.0.6": {
-      "sha512": "xyDnmneKSrKI31DMu3oj5j0WjPslwThdE5mj4fjRob+X3Jk2WUnZn1f0Fuml3xYVjaAlbskJlSN66XTRceYOhg==",
+    "Microsoft.CodeAnalysis.Razor/6.0.8": {
+      "sha512": "CwTImQOoLI9oV329WFtZs+RIf+zeLeKtv89N8prThh2sBLuYfJcW5RRibmhtGe84gDMOFrgbtNGMgBLXH1yw/w==",
       "type": "package",
-      "path": "microsoft.codeanalysis.razor/6.0.6",
+      "path": "microsoft.codeanalysis.razor/6.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll",
-        "microsoft.codeanalysis.razor.6.0.6.nupkg.sha512",
+        "microsoft.codeanalysis.razor.6.0.8.nupkg.sha512",
         "microsoft.codeanalysis.razor.nuspec"
       ]
     },
@@ -10126,7 +10126,7 @@
       "Helpdesk.RepositoryEf >= 1.0.0",
       "Helpdesk.Services.ZipCodes >= 1.0.0",
       "Helpdesk.WorkerServices >= 1.0.0",
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.6",
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.8",
       "Newtonsoft.Json >= 13.0.1",
       "Rotativa.AspNetCore >= 1.2.0",
       "Tickets.Core >= 1.0.0",
@@ -10134,58 +10134,56 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vmartinez\\.nuget\\packages\\": {}
+    "/home/vmartinez/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Mvc\\Helpdesk.Mvc.csproj",
+      "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Helpdesk.Mvc.csproj",
       "projectName": "Helpdesk.Mvc",
-      "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Mvc\\Helpdesk.Mvc.csproj",
-      "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Mvc\\obj\\",
+      "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Helpdesk.Mvc.csproj",
+      "packagesPath": "/home/vmartinez/.nuget/packages/",
+      "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/vmartinez/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Repository.MongoDb\\Helpdesk.Repository.MongoDb.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Repository.MongoDb\\Helpdesk.Repository.MongoDb.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.WorkerServices\\Helpdesk.WorkerServices.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.WorkerServices\\Helpdesk.WorkerServices.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
             }
           }
         }
@@ -10202,7 +10200,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
-            "version": "[6.0.6, )"
+            "version": "[6.0.8, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -10232,7 +10230,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
       }
     }
   }

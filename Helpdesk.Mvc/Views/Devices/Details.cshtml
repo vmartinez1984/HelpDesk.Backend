@@ -1,0 +1,65 @@
+@using Helpdesk.Core.Dtos
+@model DeviceDto
+
+@{
+    ViewBag.Title = "Dispositivos";
+}
+<h1 class="h3 mb-3">Dispositivos</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Detalle del dispositivo</h5>
+            </div>
+            <div class="card-body">  
+               <dl class="row">
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                     <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.SerialNumber)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.SerialNumber)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Notes)
+                    </dd>
+                    
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.DeviceStateName)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.DeviceStateName)
+                    </dd>
+                    @* <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.UserName)
+                    </dd> *@
+                                      
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>    
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span>
+    </a>
+</div>

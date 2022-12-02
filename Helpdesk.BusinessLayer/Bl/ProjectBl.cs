@@ -17,6 +17,7 @@ namespace Helpdesk.BusinessLayer.Bl
             _repository = repository;
             _mapper = mapper;
         }
+
         public async Task<int> AddAsync(ProjectDtoIn item)
         {
             ProjectEntity entity;
@@ -33,7 +34,7 @@ namespace Helpdesk.BusinessLayer.Bl
 
             userEntity = await _repository.User.GetAsync(item.DeleteUserId);
             item.Reason = $"{item.Reason}, baja por {userEntity.Email} {userEntity.Id}, {DateTime.Now} ";
-            
+
             await _repository.Project.DeleteAsync(item.Id, item.Reason);
         }
 
@@ -51,11 +52,11 @@ namespace Helpdesk.BusinessLayer.Bl
         }
 
         private async Task SetTotalAgenciesAsync(ProjectDtoOut item)
-        {   
+        {
             List<AgencyEntity> entities;
 
             entities = await _repository.Agency.GetByProjectIdAsync(item.Id);
-            
+
             item.TotalAgencies = entities.Count();
         }
 
@@ -71,12 +72,12 @@ namespace Helpdesk.BusinessLayer.Bl
             item.UserName = $"{person.Name} {person.LastName}";
         }
 
-        public async Task<List<ProjectDtoOut>> GetAsync()
+        public async Task<List<ProjectDtoOut>> GetAsync(bool isActivate = true)
         {
             List<ProjectDtoOut> list;
             List<ProjectEntity> entities;
 
-            entities = await _repository.Project.GetAsync();
+            entities = await _repository.Project.GetAsync(isActivate);
             list = _mapper.Map<List<ProjectDtoOut>>(entities);
 
             return list;
@@ -96,6 +97,31 @@ namespace Helpdesk.BusinessLayer.Bl
         public Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task Activate(int projectId)
+        {
+            ProjectEntity entity;
+
+            entity = await _repository.Project.GetAsync(projectId);
+            entity.IsActive = true;
+
+            await _repository.Project.UpdateAsync(entity);
+        }
+
+        public async Task ActivateAsync(ProjectDeleteDtoIn item)
+        {
+            UserEntity userEntity;
+            ProjectEntity projectEntity;
+            string fullName;
+
+            userEntity = await _repository.User.GetAsync(item.DeleteUserId);
+            fullName = userEntity.Person is null ? string.Empty : $"{userEntity.Person.Name} {userEntity.Person.LastName}";
+            projectEntity = await _repository.Project.GetAsync(item.Id);
+            projectEntity.Reason += $"Activado por {userEntity.Email} {userEntity.Id} {fullName}, {DateTime.Now} ";
+            projectEntity.IsActive = true;
+
+            await _repository.Project.UpdateAsync(projectEntity);
         }
     }
 }

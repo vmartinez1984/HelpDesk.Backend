@@ -1,0 +1,68 @@
+@using Helpdesk.Core.Dtos.Inputs;
+@model ProjectDeleteDtoIn
+@{
+    ViewData["Title"] = "Projectos";
+}
+
+<div class="mb-3">
+	<h1 class="h3 d-inline align-middle">Proyectos</h1>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+				<h5 class="card-title mb-0">Activar proyecto</h5>
+			</div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Notes)
+                    </dd>
+
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.DateRegistration)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.DateRegistration)
+                    </dd>        
+                </dl>
+            </div>
+            <div class="card-footer">
+                <form asp-action="Activate">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="Name" />
+
+                    <div class="form-group">
+                        <label class="control-label">Anote el motivo del activado</label>
+                        <input asp-for="Reason" class="form-control" placeholder="Motivo del activado"/>
+                        <span asp-validation-for="Reason" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit"  class="btn btn-success mt-1" > 
+                        <i class="align-middle" data-feather="delete"></i> 
+                        <span class="align-middle">Activar</span>  
+                    </button>|
+                    <a asp-action="Index" class="aling-middle">
+                        Regresar
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,44 +1,57 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Heldesk.Api\\Heldesk.Api.csproj": {}
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Heldesk.Api/Heldesk.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Heldesk.Api\\Heldesk.Api.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Heldesk.Api/Heldesk.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Heldesk.Api\\Heldesk.Api.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Heldesk.Api/Heldesk.Api.csproj",
         "projectName": "Heldesk.Api",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Heldesk.Api\\Heldesk.Api.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Heldesk.Api\\obj\\",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Heldesk.Api/Heldesk.Api.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Heldesk.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj"
               },
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
               },
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
               },
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj"
+              },
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj"
+              },
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj"
+              },
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj"
+              },
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
+              },
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
               }
             }
           }
@@ -53,6 +66,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -77,45 +94,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
         "projectName": "Helpdesk.BusinessLayer",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\obj\\",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
               },
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
               },
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
               },
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
               }
             }
           }
@@ -155,36 +170,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj",
         "projectName": "Helpdesk.Core",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\obj\\",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
               }
             }
           }
@@ -224,28 +237,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
         "projectName": "Helpdesk.Notifications",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\obj\\",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -285,36 +296,101 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj",
-        "projectName": "Helpdesk.RepositoryEf",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\Helpdesk.RepositoryEf.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.RepositoryEf\\obj\\",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj",
+        "projectName": "Helpdesk.Repository.MongoDb",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/Helpdesk.Repository.MongoDb.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Repository.MongoDb/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.16.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj",
+        "projectName": "Helpdesk.RepositoryEf",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/Helpdesk.RepositoryEf.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.RepositoryEf/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
               }
             }
           }
@@ -374,36 +450,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj",
         "projectName": "Helpdesk.Services.ZipCodes",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\Helpdesk.Services.ZipCodes.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Services.ZipCodes\\obj\\",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/Helpdesk.Services.ZipCodes.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Services.ZipCodes/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
               }
             }
           }
@@ -439,28 +513,97 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj",
-        "projectName": "Tickets.Core",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\obj\\",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj",
+        "projectName": "Helpdesk.WorkerServices",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/Helpdesk.WorkerServices.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.WorkerServices/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Logging.ApplicationInsights": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj",
+        "projectName": "Tickets.Core",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -504,36 +647,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj",
         "projectName": "Tickets.Repository",
-        "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj",
-        "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\obj\\",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj",
+        "packagesPath": "/home/vmartinez/.nuget/packages/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/vmartinez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
               }
             }
           }
@@ -573,7 +714,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

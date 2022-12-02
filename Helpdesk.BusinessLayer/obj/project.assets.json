@@ -1006,43 +1006,41 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vmartinez\\.nuget\\packages\\": {}
+    "/home/vmartinez/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj",
+      "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
       "projectName": "Helpdesk.BusinessLayer",
-      "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\Helpdesk.BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.BusinessLayer\\obj\\",
+      "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
+      "packagesPath": "/home/vmartinez/.nuget/packages/",
+      "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/vmartinez/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Core\\Helpdesk.Core.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Helpdesk.Notifications\\Helpdesk.Notifications.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Core\\Tickets.Core.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
             },
-            "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj": {
-              "projectPath": "C:\\Users\\vmartinez\\Source\\Repos\\vmartinez1984\\HelpDesk.Backend\\Tickets.Repository\\Tickets.Repository.csproj"
+            "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+              "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
             }
           }
         }
@@ -1082,7 +1080,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
       }
     }
   }

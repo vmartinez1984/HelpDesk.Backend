@@ -26,5 +26,14 @@ namespace Helpdesk.RepositoryEf.Repositories
 
             return entities;
         }
+
+        public async Task<string> GetDeviceStateNameAsync(int deviceStateId)
+        {
+            DeviceStateEntity entity;
+
+            entity = await _appDbContext.DeviceState.Where(x=> x.Id == deviceStateId).FirstOrDefaultAsync();
+
+            return entity.Name;
+        }
     }
 }

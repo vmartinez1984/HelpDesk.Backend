@@ -8,161 +8,173 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Helpdesk.Mvc
 build_property.RootNamespace = Helpdesk.Mvc
-build_property.ProjectDir = C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Mvc\
+build_property.ProjectDir = /home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\vmartinez\Source\Repos\vmartinez1984\HelpDesk.Backend\Helpdesk.Mvc
+build_property.MSBuildProjectDirectory = /home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmNpZXNcQ3JlYXRlLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWdlbmNpZXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmNpZXNcRGVsZXRlLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWdlbmNpZXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmNpZXNcRGV0YWlscy5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWdlbmNpZXMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmNpZXNcRWRpdC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWdlbmNpZXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmNpZXNcSW5kZXguY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Agencies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWdlbmNpZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Devices/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xDcmVhdGUuY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Devices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Devices/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlc1xJbmRleC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Devices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/ConfirmRegister.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybUFnZW5jaWVzXENvbmZpcm1SZWdpc3Rlci5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Devices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybUFnZW5jaWVzXENyZWF0ZS5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Devices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGV2aWNlcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybUFnZW5jaWVzXEluZGV4LmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/ConfirmRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybUFnZW5jaWVzL0NvbmZpcm1SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybUFnZW5jaWVzXFJlZ2lzdGVyLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybUFnZW5jaWVzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/_Device.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybUFnZW5jaWVzXF9EZXZpY2UuY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybUFnZW5jaWVzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybUFnZW5jaWVzL1JlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/FormAgencies/_Device.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybUFnZW5jaWVzL19EZXZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Persons/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uc1xDcmVhdGUuY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Persons/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uc1xJbmRleC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Persons/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ucy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGVsZXRlLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Persons/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ucy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGV0YWlscy5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Activate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvamVjdHMvQWN0aXZhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvamVjdHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvamVjdHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvamVjdHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_LayoutLogin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvamVjdHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_LayoutPdf.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQZGYuY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Projects/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvamVjdHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_ModalSearchAgency.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Nb2RhbFNlYXJjaEFnZW5jeS5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_Pager.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdlci5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_LayoutPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRQZGYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Tickets/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xDcmVhdGUuY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_ModalSearchAgency.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Nb2RhbFNlYXJjaEFnZW5jeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Tickets/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_Pager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19QYWdlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Tickets/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Tickets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vmartinez/Source/Repos/vmartinez1984/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-cjrtl6y3sf
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Mvc/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-tzpziui3tr

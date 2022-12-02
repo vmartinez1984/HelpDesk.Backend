@@ -29,6 +29,8 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     public interface IDeviceStateRepository
     {
         Task<List<DeviceStateEntity>> GetAsync();
+
+        Task<string> GetDeviceStateNameAsync(int deviceStateId);
     }
 
     public interface IBaseRepository<T> where T : class
@@ -59,7 +61,7 @@ namespace Helpdesk.Core.Interfaces.IRepositories
 
         Task DeleteAsync(int id, int userId);
 
-        Task<List<T>> GetAsync();
+        //Task<List<T>> GetAsync();
 
         Task<T> GetAsync(int id);
 
@@ -102,9 +104,14 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     public interface IProjectRepository : IBaseRepositoryCatalog<ProjectEntity>
     {
         Task DeleteAsync(int id, string reason);
+
+        Task<List<ProjectEntity>> GetAsync(bool isActivate);
     }
 
-    public interface IAgencyTypeRepository : IBaseRepositoryCatalog<AgencyTypeEntity> { }
+    public interface IAgencyTypeRepository : IBaseRepositoryCatalog<AgencyTypeEntity>
+    {
+        Task<List<AgencyTypeEntity>> GetAsync();
+    }
 
     public interface IAgencyRepository : IBaseRepository02<AgencyEntity>
     {
@@ -123,5 +130,5 @@ namespace Helpdesk.Core.Interfaces.IRepositories
     {
         Task<List<RoleEntity>> GetAsync();
     }
-
+    
 }

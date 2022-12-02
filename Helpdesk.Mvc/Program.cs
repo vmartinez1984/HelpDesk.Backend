@@ -21,7 +21,7 @@ using Tickets.Core.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
-//Autenticacion
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme
 ).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
@@ -30,8 +30,6 @@ builder.Services.AddAuthentication(
         options.LoginPath = "/Login/Index";
         options.LogoutPath = "/Account/Logout";
     });
-//builder.Services.AddRazorPages();
-builder.Services.AddControllersWithViews();
 //Configuration mongoDb
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("HelpdeskDatabaseMongoDb"));
 builder.Services.Configure<TicketsDbSettings>(builder.Configuration.GetSection("TicketsDbSettings"));

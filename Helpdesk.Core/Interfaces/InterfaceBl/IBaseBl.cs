@@ -10,7 +10,7 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task<int> AddAsync(T item);
         Task DeleteAsync(int id);
         Task<U> GetAsync(int id);
-        Task<List<U>> GetAsync();
+        //Task<List<U>> GetAsync();
         Task UpdateAsync(T item, int id);
     }
 
@@ -68,9 +68,18 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
     public interface IProjectBl : IBaseBl<ProjectDtoIn, ProjectDtoOut>
     {
         Task DeleteAsync(ProjectDeleteDtoIn item);
+
+        Task<List<ProjectDtoOut>> GetAsync(bool isActivate = true);
+
+        Task Activate(int projectId);
+        
+        Task ActivateAsync(ProjectDeleteDtoIn item);
     }
 
-    public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut> { }
+    public interface IAgencyTypeBl : IBaseBl<AgencyTypeDtoIn, AgencyTypeDtoOut>
+    {        
+        Task<List<AgencyTypeDtoOut>> GetAsync();
+    }
 
     public interface IAgencyBl : IBase02Bl<AgencyDtoIn, AgencyDtoOut>
     {
@@ -96,13 +105,9 @@ namespace Helpdesk.Core.Interfaces.InterfaceBl
         Task<List<RoleDto>> GetAsync();
     }
 
-    public interface IDeviceBl
-    {
-        Task<int> AddAsync(DeviceDtoIn item);
-
-        Task<PagerDtoOut> GetAsync(SearchDtoIn deviceSearch);
-
-        Task<DeviceDto> GetAsync(int id);
+    public interface IDeviceBl:IBaseBl<DeviceDtoIn, DeviceDto>
+    {       
+        Task<PagerDtoOut> GetAsync(SearchDtoIn deviceSearch);        
     }
 
      public interface ITicketBl

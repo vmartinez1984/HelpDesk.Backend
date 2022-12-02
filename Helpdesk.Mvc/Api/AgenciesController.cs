@@ -54,7 +54,7 @@ namespace Helpdesk.Mvc.Api
                     draw = dataTablesIn.Draw,
                     recordsFiltered = response.TotalRecordsFiltered,
                     recordsTotal = response.TotalRecords,
-                    data = response.ListAgencies
+                    data = response.ListAgencies.Where(x=> x.Id != 1)
                 });
             }
             catch (Exception ex)

@@ -1,0 +1,94 @@
+@model Helpdesk.Core.Dtos.DeviceDto
+@{
+    ViewData["Title"] = "Dispositivos";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Agregar dispositivos</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+                    <input type="hidden" asp-for="Id" />
+                    @* <div class="form-group mb-3">
+                        <label asp-for="ProjectId" class="control-label"></label>
+                        <select asp-for="ProjectId" class="form-select" asp-items="ViewBag.ListProjects">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="AgencyTypeId" class="control-label"></label>
+                        <select asp-for="AgencyTypeId" class="form-select" asp-items="ViewBag.ListAgencyType">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="AgencyTypeId" class="text-danger"></span>
+                    </div> *@
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Nombre del dispositivo"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="SerialNumber" class="control-label"></label>
+                        <input asp-for="SerialNumber" class="form-control"  placeholder="Número de serie"/>
+                        <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="DateStart" class="control-label"></label>
+                        <input asp-for="DateStart" class="form-control" placeholder="Fecha inicio"/>
+                        <span asp-validation-for="DateStart" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="DateEnd" class="control-label"></label>                        
+                        <input asp-for="DateEnd" class="form-control" maxlength="50" placeholder="Fecha fin"/>
+                        <span asp-validation-for="DateEnd" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Notes" class="control-label"></label>                        
+                        <input asp-for="Notes" class="form-control" maxlength="50" placeholder="Notas"/>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+                
+                    <input asp-for="DeviceStateId" value="1" type="hidden"/>
+                    @* <div class="form-group mb-3">
+                        <label asp-for="DeviceStateId" class="control-label"></label>
+                        <select asp-for="DeviceStateId" class="form-select">
+                            <option value="">Seleccione</option>
+                        </select>
+                        <span asp-validation-for="DeviceStateId" class="text-danger"></span>
+                    </div> *@
+
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="align-middle" data-feather="save"></i> 
+                            <span class="align-middle">Guardar</span>                            
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">
+        <i class="align-middle" data-feather="list"></i> 
+        <span class="align-middle">Regresar a la lista</span> 
+    </a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -46,39 +46,36 @@ namespace Helpdesk.Mvc.Controllers
             }
         }
 
-        // public async Task<IActionResult> Edit(int? id)
-        // {
-        //     if (id == null)
-        //     {
-        //         return NotFound();
-        //     }
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //     AgencyDtoOut item;
+            DeviceDto item;
 
-        //     item = await _unitOfWorkBl.Agency.GetAsync((int)id);
-        //     ViewData["ListProjects"] = new SelectList(await _unitOfWorkBl.Project.GetAsync(), "Id", "Name");
-        //     ViewData["ListAgencyType"] = new SelectList(await _unitOfWorkBl.AgencyType.GetAsync(), "Id", "Name");
-        //     ViewData["ListZipCodes"] = new SelectList(await _unitOfWorkBl.ZipCode.GetAsync(item.ZipCode), "Settement", "Settement");
+            item = await _unitOfWorkBl.Device.GetAsync((int)id);
 
-        //     return View(item);
-        // }
+            return View(item);
+        }
 
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Edit(int id, AgencyDtoIn item)
-        // {
-        //     item.UserId = SessionHelper.GetNameIdentifier(User);
-        //     if (ModelState.IsValid)
-        //     {
-        //         await _unitOfWorkBl.Agency.UpdateAsync(item, id);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, DeviceDtoIn item)
+        {
+            item.UserId = SessionHelper.GetNameIdentifier(User);
+            if (ModelState.IsValid)
+            {
+                await _unitOfWorkBl.Device.UpdateAsync(item, id);
 
-        //         return RedirectToAction(nameof(Index));
-        //     }
-        //     else
-        //     {
-        //         return View();
-        //     }
-        // }
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
+        }
 
         // //https://localhost:7018/Api/zipcodes/42950
         // [Route("/Api/Zipcodes/{zipCode}")]
@@ -91,48 +88,14 @@ namespace Helpdesk.Mvc.Controllers
         //     return Ok(list);
         // }
 
-        // public async Task<IActionResult> Delete(int? id)
-        // {
-        //     if (id == null)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     AgencyDtoOut item;
-
-        //     item = await _unitOfWorkBl.Agency.GetAsync((int)id);
-
-        //     return View(item);
-        // }
-
-        // [HttpPost]
-        // public async Task<IActionResult> Delete(AgencyDtoOut item)
-        // {
-        //     item.UserId = SessionHelper.GetNameIdentifier(User);
-
-        //     await _unitOfWorkBl.Agency.DeleteAsync(item.Id);
-
-        //     return RedirectToAction(nameof(Index));
-        // }
-
-        // public async Task<IActionResult> Details(int id)
-        // {
-        //     AgencyDtoOut item;
-
-        //     item = await _unitOfWorkBl.Agency.GetAsync(id);
-
-        //     return View(item);
-        // }
-
-        //Api
-        [Route("/Api/Devices/{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            DeviceDto deviceDto;
+            DeviceDto item;
 
-            deviceDto = await _unitOfWorkBl.Device.GetAsync(id);
+            item = await _unitOfWorkBl.Device.GetAsync(id);
 
-            return Ok(deviceDto);
-        }
+            return View(item);
+        }       
+        
     }
 }

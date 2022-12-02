@@ -23,9 +23,9 @@ namespace Helpdesk.Core.Dtos.Inputs
 
         public DateTime DateRegistration { get; set; }
 
-        [Required(ErrorMessage = "Anote el motivo del borrado")]
+        [Required(ErrorMessage = "Anote el motivo")]
         [StringLength(255)]        
-        [Display(Name = "Anote motivo del borrado")]
+        [Display(Name = "Anote motivo")]
         public string Reason { get; set; }
     }
 }

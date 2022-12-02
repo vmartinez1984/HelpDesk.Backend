@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {}
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {}
   },
   "projects": {
-    "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
         "projectName": "Helpdesk.BusinessLayer",
-        "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/Helpdesk.BusinessLayer.csproj",
         "packagesPath": "/home/vmartinez/.nuget/packages/",
-        "outputPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.BusinessLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/vmartinez/.nuget/NuGet/NuGet.Config"
@@ -26,17 +26,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
-                "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj"
               },
-              "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
-                "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj"
               },
-              "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
-                "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
               },
-              "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
-                "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj"
               }
             }
           }
@@ -66,7 +66,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,18 +76,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj",
         "projectName": "Helpdesk.Core",
-        "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/Helpdesk.Core.csproj",
         "packagesPath": "/home/vmartinez/.nuget/packages/",
-        "outputPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Core/obj/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/vmartinez/.nuget/NuGet/NuGet.Config"
@@ -101,8 +102,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
-                "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
               }
             }
           }
@@ -132,7 +133,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -141,18 +143,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
         "projectName": "Helpdesk.Notifications",
-        "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/Helpdesk.Notifications.csproj",
         "packagesPath": "/home/vmartinez/.nuget/packages/",
-        "outputPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Helpdesk.Notifications/obj/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Helpdesk.Notifications/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/vmartinez/.nuget/NuGet/NuGet.Config"
@@ -190,7 +192,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -199,18 +202,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj",
         "projectName": "Tickets.Core",
-        "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj",
         "packagesPath": "/home/vmartinez/.nuget/packages/",
-        "outputPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/obj/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/vmartinez/.nuget/NuGet/NuGet.Config"
@@ -252,7 +255,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -261,18 +265,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
+    "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj",
+        "projectUniqueName": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj",
         "projectName": "Tickets.Repository",
-        "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj",
+        "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/Tickets.Repository.csproj",
         "packagesPath": "/home/vmartinez/.nuget/packages/",
-        "outputPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Repository/obj/",
+        "outputPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Repository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/vmartinez/.nuget/NuGet/NuGet.Config"
@@ -287,8 +291,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
-                "projectPath": "/media/vmartinez/X-Files1/Documents/HelpDesk/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
+              "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj": {
+                "projectPath": "/home/vmartinez/Source/CSharp/HelpDesk.Backend/Tickets.Core/Tickets.Core.csproj"
               }
             }
           }
@@ -318,7 +322,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -327,7 +332,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     }

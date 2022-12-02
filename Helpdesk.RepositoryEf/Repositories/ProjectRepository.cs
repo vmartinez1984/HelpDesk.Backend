@@ -38,9 +38,9 @@ namespace Helpdesk.RepositoryEf.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<ProjectEntity>> GetAsync()
+        public async Task<List<ProjectEntity>> GetAsync(bool isActivate = true)
         {
-            return await _appDbContext.Project.Where(x => x.IsActive).ToListAsync();
+            return await _appDbContext.Project.Where(x => x.IsActive == isActivate).ToListAsync();
         }
 
         public async Task<ProjectEntity> GetAsync(int id)

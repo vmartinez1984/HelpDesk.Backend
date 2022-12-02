@@ -18,12 +18,13 @@ namespace Helpdesk.Mvc.Controllers
 
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(bool isActivate = true)
         {
             var userId = SessionHelper.GetNameIdentifier(User);
             List<ProjectDtoOut> list;
 
-            list = await _unitOfWorkBl.Project.GetAsync();
+            list = await _unitOfWorkBl.Project.GetAsync(isActivate);
+            ViewBag.IsActivate = isActivate;
 
             return View(list);
         }
@@ -130,6 +131,58 @@ namespace Helpdesk.Mvc.Controllers
             {
                 item.DeleteUserId = SessionHelper.GetNameIdentifier(User);
                 await _unitOfWorkBl.Project.DeleteAsync(item);
+
+                return RedirectToAction(nameof(Index));
+            }
+
+
+            ProjectDeleteDtoIn projectDeleteDtoIn;
+
+            var item1 = await _unitOfWorkBl.Project.GetAsync(item.Id);
+            projectDeleteDtoIn = new ProjectDeleteDtoIn
+            {
+                DateRegistration = item.DateRegistration,
+                Id = item1.Id,
+                Name = item1.Name,
+                Notes = item1.Notes,
+                UserId = item1.UserId
+            };
+
+            return View(projectDeleteDtoIn);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Activate(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            ProjectDtoOut item;
+            ProjectDeleteDtoIn projectDeleteDtoIn;
+
+            item = await _unitOfWorkBl.Project.GetAsync((int)id);
+            projectDeleteDtoIn = new ProjectDeleteDtoIn
+            {
+                DateRegistration = item.DateRegistration,
+                Id = item.Id,
+                Name = item.Name,
+                Notes = item.Notes,
+                UserId = item.UserId
+            };
+
+            return View(projectDeleteDtoIn);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Activate(ProjectDeleteDtoIn item)
+        {
+            if (ModelState.IsValid)
+            {
+                item.DeleteUserId = SessionHelper.GetNameIdentifier(User);
+                await _unitOfWorkBl.Project.ActivateAsync(item);
 
                 return RedirectToAction(nameof(Index));
             }
